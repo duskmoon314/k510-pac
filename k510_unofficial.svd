@@ -1,0 +1,1983 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/ARM-software/CMSIS_5/develop/CMSIS/Utilities/CMSIS-SVD.xsd">
+  <vendor>Canaan</vendor>
+  <name>K510</name>
+  <version>1.0</version>
+  <description>Canaan K510 unofficial SVD file maintained by community</description>
+
+  <addressUnitBits>8</addressUnitBits>
+  <width>64</width>
+  <size>32</size>
+  <access>read-write</access>
+  <resetValue>0x00000000</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+
+  <peripherals>
+
+    <peripheral>
+      <dim>4</dim>
+      <dimIncrement>0x10000</dimIncrement>
+      <name>UART%s</name>
+      <description>Universal Asynchronous Receivers/Transmitters</description>
+      <groupName>Peripheral</groupName>
+      <baseAddress>0x96000000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>UART0</name>
+        <value>1</value>
+      </interrupt>
+      <interrupt>
+        <name>UART1</name>
+        <value>2</value>
+      </interrupt>
+      <interrupt>
+        <name>UART2</name>
+        <value>3</value>
+      </interrupt>
+      <interrupt>
+        <name>UART3</name>
+        <value>4</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>UART_RBR</name>
+          <description>Receive Buffer Register</description>
+          <addressOffset>0x0</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>RBR</name>
+              <description>Receive Buffer Register</description>
+              <bitRange>[8:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_DLL</name>
+          <description>Divisor Latch (Low) Register</description>
+          <addressOffset>0x0</addressOffset>
+          <access>read-write</access>
+          <fields>
+            <field>
+              <name>DLL</name>
+              <description>Divisor Latch Low</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_THR</name>
+          <description>Transmit Holding Register</description>
+          <addressOffset>0x0</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>THR</name>
+              <description>Transmit Holding Register</description>
+              <bitRange>[8:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_DLH</name>
+          <description>Divisor Latch (High) Register</description>
+          <addressOffset>0x4</addressOffset>
+          <access>read-write</access>
+          <fields>
+            <field>
+              <name>DLH</name>
+              <description>Divisor Latch High</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_IER</name>
+          <description>Interrupt Enable Register</description>
+          <addressOffset>0x4</addressOffset>
+          <fields>
+            <field>
+              <name>PTIME</name>
+              <description>Programmable THRE Interrupt Mode Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ELCOLR</name>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EDSSI</name>
+              <description>Enable Modem Status Interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ELSI</name>
+              <description>Enable Receiver Line Status Interrupt</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ETBEI</name>
+              <description>Enable Transmit Holding Register Empty Interrupt</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ERBFI</name>
+              <description>Enable Receive Data Available Interrupt</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_FCR</name>
+          <description>FIFO Control Register</description>
+          <addressOffset>0x8</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>RT</name>
+              <description>RCVR Trigger</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FIFO_CHAR_1</name>
+                  <description>1 character in FIFO</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_QUARTER_FULL</name>
+                  <description>FIFO 1/4 full</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_HALF_FULL</name>
+                  <description>FIFO 1/2 full</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_FULL_2</name>
+                  <description>FIFO 2 less than full</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TET</name>
+              <description>TX Empty Trigger</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FIFO_EMPTY</name>
+                  <description>FIFO empty</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_CHAR_2</name>
+                  <description>2 characters in FIFO</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_QUARTER_FULL</name>
+                  <description>FIFO 1/4 full</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_HALF_FULL</name>
+                  <description>FIFO 1/2 full</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMAM</name>
+              <description>DMA Mode</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <description>Mode 0</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <description>Mode 1</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>XFIFOR</name>
+              <description>XMIT FIFO Reset</description>
+              <bitRange>[2:2]</bitRange>
+              <modifiedWriteValues>clear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>reset</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RFIFOR</name>
+              <description>RCVR FIFO Reset</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>clear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>reset</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFOE</name>
+              <description>FIFO Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_IIR</name>
+          <description>Interrupt Identification Register</description>
+          <addressOffset>0x8</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>FIFOSE</name>
+              <description>FIFOs Enabled</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ID</name>
+              <description>Interrupt ID</description>
+              <bitRange>[3:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODEM_STATUS</name>
+                  <description>modem status</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT_PENDING</name>
+                  <description>no interrupt pending</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>THR_EMPTY</name>
+                  <description>THR empty</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RECEIVED_DATA_AVAILABLE</name>
+                  <description>received data available</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RECEIVER_LINE_STATUS</name>
+                  <description>receiver line status</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY_DETECT</name>
+                  <description>busy detect</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHARACTER_TIMEOUT</name>
+                  <description>character timeout</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_LCR</name>
+          <description>Line Control Register</description>
+          <addressOffset>0xC</addressOffset>
+          <fields>
+            <field>
+              <name>DLAB</name>
+              <description>Divisor Latch Access Bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>BC</name>
+              <description>Break Control Bit</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SP</name>
+              <description>Stick Parity</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EPS</name>
+              <description>Even Parity Select</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ODD_PARITY</name>
+                  <description>an odd parity is transmitted or checked</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EVEN_PARITY</name>
+                  <description>an even parity is transmitted or checked</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PEN</name>
+              <description>Parity Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>STOP</name>
+              <description>Number of stop bits</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>STOP_1BIT</name>
+                  <description>1 stop bit</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STOP_1_5BIT_OR_2BIT</name>
+                  <description>1.5 stop bits or 2 stop bits</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DLS</name>
+              <description>Data Length Select</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CHAR_5BITS</name>
+                  <description>5 data bits per character</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHAR_6BITS</name>
+                  <description>6 data bits per character</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHAR_7BITS</name>
+                  <description>7 data bits per character</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHAR_8BITS</name>
+                  <description>8 data bits per character</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_MCR</name>
+          <description>Modem Control Register</description>
+          <addressOffset>0x10</addressOffset>
+          <fields>
+            <field>
+              <name>SIRE</name>
+              <description>SIR Mode Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>AFCE</name>
+              <description>Automatic Flow Control Enable</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOOPBACK</name>
+              <description>Loopback Bit</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OUT2</name>
+              <description>Out2</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OUT2_0</name>
+                  <description>out2_n de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUT2_1</name>
+                  <description>out2_n asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OUT1</name>
+              <description>Out1</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OUT1_0</name>
+                  <description>out1_n de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUT1_1</name>
+                  <description>out1_n asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTS</name>
+              <description>Request to Send</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Request to Send rts_n de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Request to Send rts_n asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DTR</name>
+              <description>Data Terminal Ready</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Data Terminal Ready dtr_n de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Data Terminal Ready dtr_n asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_LSR</name>
+          <description>Line Status Register</description>
+          <addressOffset>0x14</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>ADDR_RCVD</name>
+              <description>Address Received Bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DATA</name>
+                  <description>the character is data</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADDR</name>
+                  <description>the character is an address</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RFE</name>
+              <description>Receive FIFO Error Bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_RX_FIFO_ERROR</name>
+                  <description>no error in RX FIFO</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RX_FIFO_ERROR</name>
+                  <description>error in RX FIFO</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TEMT</name>
+              <description>Transmitter Empty Bit</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>transmitter is not empty</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>transmitter is empty</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>THRE</name>
+              <description>Transmit Holding Register Empty Bit</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>transmitter is not empty</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>transmitter is empty</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>BI</name>
+              <description>Break Interrupt Bit</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_BREAK</name>
+                  <description>no break detected</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BREAK</name>
+                  <description>break detected</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FE</name>
+              <description>Framing Error Bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_FRAMING_ERROR</name>
+                  <description>no framing error</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FRAMING_ERROR</name>
+                  <description>framing error</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PE</name>
+              <description>Parity Error Bit</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PARITY_ERROR</name>
+                  <description>no parity error</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PARITY_ERROR</name>
+                  <description>parity error</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>OE</name>
+              <description>Overrun Error Bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_OVERRUN_ERROR</name>
+                  <description>no overrun error</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OVERRUN_ERROR</name>
+                  <description>overrun error</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DR</name>
+              <description>Data Ready Bit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_READY</name>
+                  <description>data not ready</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>READY</name>
+                  <description>data ready</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_MSR</name>
+          <description>Modem Status Register</description>
+          <addressOffset>0x18</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>DCD</name>
+              <description>Data Carrier Detect</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DEASSERTED</name>
+                  <description>dcd_n input is de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ASSERTED</name>
+                  <description>dcd_n input is asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RI</name>
+              <description>Ring Indicator</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DEASSERTED</name>
+                  <description>ri_n input is de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ASSERTED</name>
+                  <description>ri_n input is asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DSR</name>
+              <description>Data Set Ready</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DEASSERTED</name>
+                  <description>dsr_n input is de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ASSERTED</name>
+                  <description>dsr_n input is asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CTS</name>
+              <description>Clear To Send</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DEASSERTED</name>
+                  <description>cts_n input is de-asserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ASSERTED</name>
+                  <description>cts_n input is asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DDCD</name>
+              <description>Delta Data Carrier Detect</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_CHANGE</name>
+                  <description>no change on dcd_n since last read of MSR</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHANGE</name>
+                  <description>change on dcd_n since last read of MSR</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TERI</name>
+              <description>Trailing Edge of Ring Indicator</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_CHANGE</name>
+                  <description>no change on ri_n since last read of MSR</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHANGE</name>
+                  <description>change on ri_n since last read of MSR</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DDST</name>
+              <description>Delta Data Set Ready</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_CHANGE</name>
+                  <description>no change on dsr_n since last read of MSR</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHANGE</name>
+                  <description>change on dsr_n since last read of MSR</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DCTS</name>
+              <description>Delta Clear To Send</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_CHANGE</name>
+                  <description>no change on cts_n since last read of MSR</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CHANGE</name>
+                  <description>change on cts_n since last read of MSR</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_SCR</name>
+          <description>Scratch Pad Register</description>
+          <addressOffset>0x1C</addressOffset>
+          <fields>
+            <field>
+              <name>SCR</name>
+              <description>Scratch Pad Register</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_LPDLL</name>
+          <description>Low Power Divisor Latch Low Register</description>
+          <addressOffset>0x20</addressOffset>
+          <fields>
+            <field>
+              <name>LPDLL</name>
+              <description>Low Power Divisor Latch Low Register</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_LPDLH</name>
+          <description>Low Power Divisor Latch High Register</description>
+          <addressOffset>0x24</addressOffset>
+          <fields>
+            <field>
+              <name>LPDLH</name>
+              <description>Low Power Divisor Latch High Register</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>UART_SRBR%s</name>
+          <description>Shadow Receive Buffer Register</description>
+          <addressOffset>0x30</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>SRBR</name>
+              <description>Shadow Receive Buffer Register</description>
+              <bitRange>[8:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>UART_STHR%s</name>
+          <description>Shadow Transmit Holding Register</description>
+          <addressOffset>0x30</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>STHR</name>
+              <description>Shadow Transmit Holding Register</description>
+              <bitRange>[8:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_FAR</name>
+          <description>FIFO Access Register</description>
+          <addressOffset>0x70</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>FAR</name>
+              <description>FIFO Access</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>FIFO access mode disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>FIFO access mode enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_TFR</name>
+          <description>Transmit FIFO Read</description>
+          <addressOffset>0x74</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>TFR</name>
+              <description>Transmit FIFO Read</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_RFW</name>
+          <description>Receive FIFO control</description>
+          <addressOffset>0x78</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>RFFE</name>
+              <description>Receive FIFO Framing Error</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Receive FIFO framing error disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Receive FIFO framing error enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RFPE</name>
+              <description>Receive FIFO Parity Error</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Receive FIFO parity error disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Receive FIFO parity error enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RFWD</name>
+              <description>Receive FIFO Write Data</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_USR</name>
+          <description>UART Status Register</description>
+          <addressOffset>0x7C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>RFF</name>
+              <description>Receive FIFO Full</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_FULL</name>
+                  <description>Receive FIFO not full</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FULL</name>
+                  <description>Receive FIFO full</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RFNE</name>
+              <description>Receive FIFO Not Empty</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Receive FIFO empty</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>Receive FIFO not empty</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TFE</name>
+              <description>Transmit FIFO Empty</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>Transmit FIFO not empty</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>Transmit FIFO empty</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TFNF</name>
+              <description>Transmit FIFO Not Full</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FULL</name>
+                  <description>Transmit FIFO full</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOT_FULL</name>
+                  <description>Transmit FIFO not full</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>BUSY</name>
+              <description>UART Busy</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <description>uart is idle or inactive</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <description>uart is busy</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_TFL</name>
+          <description>Transmit FIFO Level</description>
+          <addressOffset>0x80</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>TFL</name>
+              <description>Transmit FIFO Level</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_RFL</name>
+          <description>Receive FIFO Level</description>
+          <addressOffset>0x84</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>RFL</name>
+              <description>Receive FIFO Level</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_SRR</name>
+          <addressOffset>0x88</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>XFR</name>
+              <description>XMIT FIFO Reset</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>RFR</name>
+              <description>RCVR FIFO Reset</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>UR</name>
+              <description>UART Reset</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Reset UART</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_SRTS</name>
+          <addressOffset>0x8C</addressOffset>
+          <fields>
+            <field>
+              <name>SRTS</name>
+              <description>Shadow Request to Send</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DEASSERTED</name>
+                  <description>Deasserted</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ASSERTED</name>
+                  <description>Asserted</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_SBCR</name>
+          <addressOffset>0x90</addressOffset>
+          <fields>
+            <field>
+              <name>SBCR</name>
+              <description>Shadow Break Control</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_BREAK</name>
+                  <description>No spacing on serial output</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BREAK</name>
+                  <description>Serial output forced to the spacing</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_SDMAM</name>
+          <description>Shadow DMA Mode</description>
+          <addressOffset>0x94</addressOffset>
+          <fields>
+            <field>
+              <name>SDMAM</name>
+              <description>Shadow DMA Mode</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <description>Mode 0</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <description>Mode 1</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_SFE</name>
+          <description>Shadow FIFO Enable</description>
+          <addressOffset>0x98</addressOffset>
+          <fields>
+            <field>
+              <name>SFE</name>
+              <description>Shadow FIFO Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_SRT</name>
+          <description>Shadow Receive Trigger</description>
+          <addressOffset>0x9C</addressOffset>
+          <fields>
+            <field>
+              <name>SRT</name>
+              <description>Shadow RCVR Trigger</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FIFO_CHAR_1</name>
+                  <description>1 character in FIFO</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_QUARTER_FULL</name>
+                  <description>FIFO 1/4 full</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_HALF_FULL</name>
+                  <description>FIFO 1/2 full</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_FULL_2</name>
+                  <description>FIFO 2 less than full</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_STET</name>
+          <description>Shadow Transmit Empty Trigger</description>
+          <addressOffset>0xA0</addressOffset>
+          <fields>
+            <field>
+              <name>STET</name>
+              <description>Shadow TX Empty Trigger</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FIFO_EMPTY</name>
+                  <description>FIFO empty</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_CHAR_2</name>
+                  <description>2 characters in FIFO</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_QUARTER_FULL</name>
+                  <description>FIFO 1/4 full</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_HALF_FULL</name>
+                  <description>FIFO 1/2 full</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_HTX</name>
+          <description>Halt Tx</description>
+          <addressOffset>0xA4</addressOffset>
+          <fields>
+            <field>
+              <name>HTX</name>
+              <description>Halt Tx</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Halt Transmission disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Halt Transmission enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_DMASA</name>
+          <description>DMA Software Acknowledge Register</description>
+          <addressOffset>0xA8</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>DMASA</name>
+              <description>DMA Software Acknowledge Register</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SOFT_ACK</name>
+                  <description>DMA software acknowledge</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_TCR</name>
+          <description>enable or disable RS485 mode</description>
+          <addressOffset>0xAC</addressOffset>
+          <resetValue>0x4</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <name>XFER_MODE</name>
+              <description>Transfer Mode</description>
+              <bitRange>[4:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <description>Mode 0</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <description>Mode 1</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE2</name>
+                  <description>Mode 2</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DE_POL</name>
+              <description>Driver Enable Polarity</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ACTIVE_LOW</name>
+                  <description>Driver Enable active low</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE_HIGH</name>
+                  <description>Driver Enable active high</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RE_POL</name>
+              <description>Receiver Enable Polarity</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ACTIVE_LOW</name>
+                  <description>Receiver Enable active low</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE_HIGH</name>
+                  <description>Receiver Enable active high</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RS485_EN</name>
+              <description>RS485 Transfer Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>RS485 transfer disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>RS485 transfer enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_DE_EN</name>
+          <description>The Driver Output Enable Register</description>
+          <addressOffset>0xB0</addressOffset>
+          <fields>
+            <field>
+              <name>DE_EN</name>
+              <description>DE Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>De-assert 'de' signal</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Assert 'de' signal</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_RE_EN</name>
+          <description>The Receiver Output Enable Register</description>
+          <addressOffset>0xB4</addressOffset>
+          <fields>
+            <field>
+              <name>RE_EN</name>
+              <description>RE Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>De-assert 're' signal</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Assert 're' signal</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_DET</name>
+          <description>The Driver Output Enable Timing Register</description>
+          <addressOffset>0xB8</addressOffset>
+          <fields>
+            <field>
+              <name>DE_DEASSERTION_TIME</name>
+              <description>DE Deassertion Time</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>DE_ASSERTION_TIME</name>
+              <description>DE Assertion Time</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_TAT</name>
+          <description>The Turn Around Timing Register</description>
+          <addressOffset>0xBC</addressOffset>
+          <fields>
+            <field>
+              <name>RE_TO_DE</name>
+              <description>Receiver Enable to Driver Enable Turn Around Time</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>DE_TO_RE</name>
+              <description>Driver Enable to Receiver Enable Turn Around Time</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_DLF</name>
+          <description>Fractional Baud rate Divisor</description>
+          <addressOffset>0xC0</addressOffset>
+          <fields>
+            <field>
+              <name>DLF</name>
+              <description>Fractional part of divisor</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_RAR</name>
+          <description>Receive Address Register</description>
+          <addressOffset>0xC4</addressOffset>
+          <fields>
+            <field>
+              <name>RAR</name>
+              <description>Receive Address</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_TAR</name>
+          <description>Transmit Address Register</description>
+          <addressOffset>0xC8</addressOffset>
+          <fields>
+            <field>
+              <name>TAR</name>
+              <description>Transmit Address</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_LCR_EXT</name>
+          <description>Line Control Register Extended</description>
+          <addressOffset>0xCC</addressOffset>
+          <fields>
+            <field>
+              <name>TRANSMIT_MODE</name>
+              <description>Transmit Mode Control</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SEND_ADDR</name>
+              <description>Send Address Control</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>ADDR_MATCH</name>
+              <description>Address Match Mode</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL_MODE</name>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADDRESS_MATCH_MODE</name>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DLS_E</name>
+              <description>Extension for DLS</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_CPR</name>
+          <description>Component Parameter Register</description>
+          <addressOffset>0xF4</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>FIFO_MODE</name>
+              <description>FIFO Mode</description>
+              <bitRange>[23:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FIFO_MODE_0</name>
+                  <description>FIFO mode is 0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_16</name>
+                  <description>FIFO mode is 16</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_32</name>
+                  <description>FIFO mode is 32</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_64</name>
+                  <description>FIFO mode is 64</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_128</name>
+                  <description>FIFO mode is 128</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_256</name>
+                  <description>FIFO mode is 256</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_512</name>
+                  <description>FIFO mode is 512</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_1024</name>
+                  <description>FIFO mode is 1024</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO_MODE_2048</name>
+                  <description>FIFO mode is 2048</description>
+                  <value>0x80</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_EXTRA</name>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>DMA_EXTRA disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>DMA_EXTRA enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>UART_ADD_ENCODED_PARAMS</name>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>UART_ADD_ENCODED_PARAMS disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>UART_ADD_ENCODED_PARAMS enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SHADOW</name>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>SHADOW disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>SHADOW enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_STAT</name>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>FIFO_STAT disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>FIFO_STAT enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_ACCESS</name>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>FIFO_ACCESS disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>FIFO_ACCESS enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADDITIONAL_FEATURES</name>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>ADDITIONAL_FEATURES disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>ADDITIONAL_FEATURES enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SIR_LP_MODE</name>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>SIR_LP_MODE disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>SIR_LP_MODE enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SIR_MODE</name>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>SIR_MODE disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>SIR_MODE enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>THRE_MODE</name>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>THRE_MODE disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>THRE_MODE enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>AFCE_MODE</name>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>AFCE_MODE disabled</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>AFCE_MODE enabled</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>APB_DATA_WIDTH</name>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>APB_8BITS</name>
+                  <description>APB data width is 8 bits</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB_16BITS</name>
+                  <description>APB data width is 16 bits</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB_32BITS</name>
+                  <description>APB data width is 32 bits</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_UCV</name>
+          <addressOffset>0xF8</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>UART_COMPONENT_VERSION</name>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>UART_CTR</name>
+          <addressOffset>0xFC</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>PERIPHERAL_ID</name>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+  </peripherals>
+</device>
