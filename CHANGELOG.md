@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- register description of sysctl
+  - uart_sclk_cfg
+  - uart_rst_ctl
+
 ## [0.0.1] - 2022-05-20
 
 ### Added

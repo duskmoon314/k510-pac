@@ -30,6 +30,7 @@ extern "C" {
     fn UART1();
     fn UART2();
     fn UART3();
+    fn SYSCTL();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -39,16 +40,60 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 5] = [
+pub static __EXTERNAL_INTERRUPTS: [Vector; 21] = [
     Vector { _reserved: 0 },
     Vector { _handler: UART0 },
     Vector { _handler: UART1 },
     Vector { _handler: UART2 },
     Vector { _handler: UART3 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: SYSCTL },
 ];
 #[doc(hidden)]
 pub mod interrupt;
 pub use self::interrupt::Interrupt;
+#[doc = "System Control"]
+pub struct SYSCTL {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SYSCTL {}
+impl SYSCTL {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const sysctl::RegisterBlock = 0x9700_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const sysctl::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SYSCTL {
+    type Target = sysctl::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SYSCTL {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYSCTL").finish()
+    }
+}
+#[doc = "System Control"]
+pub mod sysctl;
 #[doc = "Universal Asynchronous Receivers/Transmitters"]
 pub struct UART0 {
     _marker: PhantomData<*const ()>,
@@ -160,6 +205,8 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
 #[allow(non_snake_case)]
 pub struct Peripherals {
+    #[doc = "SYSCTL"]
+    pub SYSCTL: SYSCTL,
     #[doc = "UART0"]
     pub UART0: UART0,
     #[doc = "UART1"]
@@ -186,6 +233,9 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
+            SYSCTL: SYSCTL {
+                _marker: PhantomData,
+            },
             UART0: UART0 {
                 _marker: PhantomData,
             },

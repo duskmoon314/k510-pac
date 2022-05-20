@@ -16,6 +16,125 @@
   <peripherals>
 
     <peripheral>
+      <name>SYSCTL</name>
+      <description>System Control</description>
+      <groupName>System</groupName>
+      <baseAddress>0x97000000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x10000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>SYSCTL</name>
+        <value>20</value>
+      </interrupt>
+      <registers>
+
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>UART%s_SCLK_CFG</name>
+          <description>UART[i] host module serial interface clock configure register</description>
+          <addressOffset>0x105C</addressOffset>
+          <resetValue>0x00001000</resetValue>
+          <resetMask>0x070011F1</resetMask>
+          <fields>
+            <field>
+              <name>WE_12</name>
+              <description>Write enable for bit 12</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_8_4</name>
+              <description>Write enable for bit [8:4]</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_0</name>
+              <description>Write enable for bit 0</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>uart_sclk_en</name>
+              <description>UART[i] host module serial clock enable control bit</description>
+              <bitRange>[12:12]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable uart_sclk_output</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable uart_sclk_output</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>uart_sclk_div</name>
+              <description>UART[i] host module serial clock division ratio configure</description>
+              <bitRange>[8:4]</bitRange>
+            </field>
+            <field>
+              <name>uart_sclk_sel</name>
+              <description>UART[i] host module serial clock source selection</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OSCILLATOR</name>
+                  <description>25MHz clock from oscillator</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL</name>
+                  <description>25MHz clock from PLL</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>UART%s_RST_CTL</name>
+          <description>UART[i] host module reset control register</description>
+          <addressOffset>0x2058</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x80000001</resetMask>
+          <fields>
+            <field>
+              <name>uart_rst_done</name>
+              <description>UART[i] host module reseting done status bit.\n\nWriting '1' to clear this status bit.</description>
+              <bitRange>[31:31]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_EVENT</name>
+                  <description>no event</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DONE</name>
+                  <description>module reseting done</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <dim>4</dim>
       <dimIncrement>0x10000</dimIncrement>
       <name>UART%s</name>
