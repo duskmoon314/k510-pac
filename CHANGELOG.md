@@ -10,6 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - register description of sysctl
+  - pll_cfg0
+  - pll_cfg1
+  - pll_ctl
+  - pll_stat
+  - soc_boot_ctrl
+  - reset_status
+  - osc_25m_off
   - uart_sclk_cfg
   - uart_rst_ctl
 

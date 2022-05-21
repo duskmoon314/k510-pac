@@ -30,6 +30,517 @@
         <value>20</value>
       </interrupt>
       <registers>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x10</dimIncrement>
+          <name>PLL%s_CFG0</name>
+          <description>PLL[i] configuration register 0</description>
+          <addressOffset>0x0</addressOffset>
+          <resetValue>0x0100004F</resetValue>
+          <resetMask>0x7F3F1FFFF</resetMask>
+          <fields>
+            <field>
+              <name>WE_27_24</name>
+              <description>Write enable for bits [27:24]</description>
+              <bitRange>[30:30]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_21_16</name>
+              <description>Write enable for bits [21:16]</description>
+              <bitRange>[29:29]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_12_0</name>
+              <description>Write enable for bits [12:0]</description>
+              <bitRange>[28:28]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>pll_out_div</name>
+              <description>PLL[i] VCO output clock post division ratio. It is strongly suggested not to modify this value.</description>
+              <bitRange>[27:24]</bitRange>
+            </field>
+            <field>
+              <name>pll_ref_div</name>
+              <description>PLL[i] reference clock path division ratio.</description>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>pll_fb_div</name>
+              <description>PLL[i] feedback path clock division ratio.</description>
+              <bitRange>[12:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x10</dimIncrement>
+          <name>PLL%s_CFG1</name>
+          <description>PLL[i] configuration register 1</description>
+          <addressOffset>0x4</addressOffset>
+          <resetValue>0x00020027</resetValue>
+          <resetMask>0x1F0F0FFF</resetMask>
+          <fields>
+            <field>
+              <name>WE_19_16</name>
+              <description>Write enable for bits [19:16]</description>
+              <bitRange>[28:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_11_0</name>
+              <description>Write enable for bits [11:0]</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>pll_bypass</name>
+              <description>PLL[i] bypass mode enable control bit.</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PLL bypass mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PLL bypass mode</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_test</name>
+              <description>PLL[i] test mode enable control bit.</description>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PLL test mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PLL test mode</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_ensat</name>
+              <description>PLL[i] saturation behavior enable control bit.</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PLL saturation behavior</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PLL saturation behavior</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_fasten</name>
+              <description>PLL[i] fast locking circuit enable control bit.</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PLL fast locking circuit</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PLL fast locking circuit</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_bwadj</name>
+              <description>PLL[i] bandwidth adjustment parameter.</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x10</dimIncrement>
+          <name>PLL%s_CTL</name>
+          <description>PLL[i] control register</description>
+          <addressOffset>0x8</addressOffset>
+          <resetValue>0x00003100</resetValue>
+          <resetMask>0x0F0FF111</resetMask>
+          <fields>
+            <field>
+              <name>WE_19_12</name>
+              <description>Write enable for bits [19:12]</description>
+              <bitRange>[27:27]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_8</name>
+              <description>Write enable for bit 8</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_4</name>
+              <description>Write enable for bit 4</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_0</name>
+              <description>Write enable for bit 0</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>pll_lock_tim</name>
+              <description>The time required for PLL[i] to reach lock state.</description>
+              <bitRange>[19:12]</bitRange>
+            </field>
+            <field>
+              <name>pll_clk_oe</name>
+              <description>PLL[i] VSO output clock enable control bit.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PLL VSO output clock</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PLL VSO output clock</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_init</name>
+              <description>PLL[i] initialization trigger bit.</description>
+              <bitRange>[4:4]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_OPERATION</name>
+                  <description>No operation</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>START</name>
+                  <description>Start PLL initialization sequence</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_pwrdwn</name>
+              <description>PLL[i] go power-down mode trigger bit.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_OPERATION</name>
+                  <description>No operation</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>power_down</name>
+                  <description>Put PLL[i] into power-down mode</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x10</dimIncrement>
+          <name>PLL%s_STAT</name>
+          <description>PLL[i] status register</description>
+          <addressOffset>0xC</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>pll_fsm_stat</name>
+              <description>PLL[i] controlling FSM current status</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>POWER_DOWN</name>
+                  <description>PLL[i] is in POWER_DOWN mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET_PLL</name>
+                  <description>PLL[i] is in RESET_PLL mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WAIT_LOCK</name>
+                  <description>PLL[i] is in WAIT_LOCK mode</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_READY</name>
+                  <description>PLL[i] is in PLL_READY mode</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_fb_slip</name>
+              <description>This is the feedback clock path frequency/phase slip status</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OK</name>
+                  <description>PLL working OK</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SLIP</name>
+                  <description>There are frequency/phase slip on feedback clock</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_ref_slip</name>
+              <description>This is the reference clock path frequency/phase slip status</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OK</name>
+                  <description>PLL working OK</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SLIP</name>
+                  <description>There are frequency/phase slip on reference clock</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll_lock</name>
+              <description>PLL[i] current lock status</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_LOCKED</name>
+                  <description>PLL[i] not in lock state</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOCKED</name>
+                  <description>PLL[i] in lock state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SOC_BOOT_CTL</name>
+          <description>SoC boot control register</description>
+          <addressOffset>0x40</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>otp_bypass</name>
+              <description>SoC core otp_bypass pin</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable OTP bypass</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable OTP bypass</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_boot_ctl</name>
+              <description>SoC core boot_ctl pin</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <description>Boot mode 0: from UART</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <description>Boot mode 1: from SD</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE2</name>
+                  <description>Boot mode 2: from SPI NAND</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE3</name>
+                  <description>Boot mode 3: from eMMC</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>RESET_STATUS</name>
+          <description>Reset status register</description>
+          <addressOffset>0x44</addressOffset>
+          <resetValue>0x00000020</resetValue>
+          <resetMask>0x0001002F</resetMask>
+          <fields>
+            <field>
+              <name>WE_0</name>
+              <description>Write enable for bit 0</description>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>offchip_reset_status</name>
+              <description>offchip reset status</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_RESET</name>
+                  <description>offchip reset doen't occur</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>offchip reset occurs</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>wdt1_reset_status</name>
+              <description>WDT1 reset status</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_RESET</name>
+                  <description>WDT1 reset doen't occur</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>WDT1 reset occurs</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>wdt0_reset_status</name>
+              <description>WDT0 reset status</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_RESET</name>
+                  <description>WDT0 reset doen't occur</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>WDT0 reset occurs</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soft_reset_status</name>
+              <description>Soft reset status</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_RESET</name>
+                  <description>Soft reset doen't occur</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESET</name>
+                  <description>Soft reset occurs</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clear_reset_status</name>
+              <description>Clear reset status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_operation</name>
+                  <description>No operation</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>clear</name>
+                  <description>Clear all reset status</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>OSC_25M_OFF</name>
+          <description>OSC 25M clock off register</description>
+          <addressOffset>0x48</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x00010001</resetMask>
+          <fields>
+            <field>
+              <name>WE_0</name>
+              <description>Write enable for bit 0</description>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>osc_25m_clock_off</name>
+              <description>osc 25m clock off</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <description>25m_osc enable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <description>25m_osc off</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
 
         <register>
           <dim>4</dim>
