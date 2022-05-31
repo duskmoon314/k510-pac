@@ -74,11 +74,43 @@ status register"]
     pub cpu_wakup_cfg: crate::Reg<cpu_wakup_cfg::CPU_WAKUP_CFG_SPEC>,
     #[doc = "0x80 - SoC internal Timer module's timer pause control register"]
     pub timer_pause_ctl: crate::Reg<timer_pause_ctl::TIMER_PAUSE_CTL_SPEC>,
-    _reserved28: [u8; 0x0fd8],
+    _reserved28: [u8; 0x0c],
+    #[doc = "0x90 - Sysctl module interrupt 0 raw status register"]
+    pub sys_ctl_int0_raw: crate::Reg<sys_ctl_int0_raw::SYS_CTL_INT0_RAW_SPEC>,
+    #[doc = "0x94 - Sysctl module interrupt 0 interrupt enable register"]
+    pub sys_ctl_int0_en: crate::Reg<sys_ctl_int0_en::SYS_CTL_INT0_EN_SPEC>,
+    #[doc = "0x98 - Sysctl module interrupt 0 interrupt status register"]
+    pub sys_ctl_int0_stat: crate::Reg<sys_ctl_int0_stat::SYS_CTL_INT0_STAT_SPEC>,
+    _reserved31: [u8; 0x04],
+    #[doc = "0xa0 - Sysctl module interrupt 1 raw status register"]
+    pub sys_ctl_int1_raw: crate::Reg<sys_ctl_int1_raw::SYS_CTL_INT1_RAW_SPEC>,
+    #[doc = "0xa4 - Sysctl module interrupt 1 interrupt enable register"]
+    pub sys_ctl_int1_en: crate::Reg<sys_ctl_int1_en::SYS_CTL_INT1_EN_SPEC>,
+    #[doc = "0xa8 - Sysctl module interrupt 1 interrupt status register"]
+    pub sys_ctl_int1_stat: crate::Reg<sys_ctl_int1_stat::SYS_CTL_INT1_STAT_SPEC>,
+    _reserved34: [u8; 0x04],
+    #[doc = "0xb0 - Sysctl module interrupt 2 raw status register"]
+    pub sys_ctl_int2_raw: crate::Reg<sys_ctl_int2_raw::SYS_CTL_INT2_RAW_SPEC>,
+    #[doc = "0xb4 - Sysctl module interrupt 2 interrupt enable register"]
+    pub sys_ctl_int2_en: crate::Reg<sys_ctl_int2_en::SYS_CTL_INT2_EN_SPEC>,
+    #[doc = "0xb8 - Sysctl module interrupt 2 interrupt status register"]
+    pub sys_ctl_int2_stat: crate::Reg<sys_ctl_int2_stat::SYS_CTL_INT2_STAT_SPEC>,
+    _reserved37: [u8; 0x44],
+    #[doc = "0x100..0x108 - AX25M dual-core CPU hart\\[i\\]
+reset vector register."]
+    pub ax25m_hart_rstvec: [crate::Reg<ax25m_hart_rstvec::AX25M_HART_RSTVEC_SPEC>; 2],
+    #[doc = "0x108 - AX25P processor CPU core reset vector register."]
+    pub ax25p_core_rstvec: crate::Reg<ax25p_core_rstvec::AX25P_CORE_RSTVEC_SPEC>,
+    _reserved39: [u8; 0x0c],
+    #[doc = "0x118 - SoC sleep mode control register"]
+    pub soc_sleep_mask: crate::Reg<soc_sleep_mask::SOC_SLEEP_MASK_SPEC>,
+    #[doc = "0x11c - Test pin group select register"]
+    pub test_pin_sel: crate::Reg<test_pin_sel::TEST_PIN_SEL_SPEC>,
+    _reserved41: [u8; 0x0f3c],
     #[doc = "0x105c..0x106c - UART\\[i\\]
 host module serial interface clock configure register"]
     pub uart_sclk_cfg: [crate::Reg<uart_sclk_cfg::UART_SCLK_CFG_SPEC>; 4],
-    _reserved29: [u8; 0x0fec],
+    _reserved42: [u8; 0x0fec],
     #[doc = "0x2058..0x2068 - UART\\[i\\]
 host module reset control register"]
     pub uart_rst_ctl: [crate::Reg<uart_rst_ctl::UART_RST_CTL_SPEC>; 4],
@@ -151,6 +183,59 @@ pub mod cpu_wakup_cfg;
 pub type TIMER_PAUSE_CTL = crate::Reg<timer_pause_ctl::TIMER_PAUSE_CTL_SPEC>;
 #[doc = "SoC internal Timer module's timer pause control register"]
 pub mod timer_pause_ctl;
+#[doc = "SYS_CTL_INT0_RAW register accessor: an alias for `Reg<SYS_CTL_INT0_RAW_SPEC>`"]
+pub type SYS_CTL_INT0_RAW = crate::Reg<sys_ctl_int0_raw::SYS_CTL_INT0_RAW_SPEC>;
+#[doc = "Sysctl module interrupt 0 raw status register"]
+pub mod sys_ctl_int0_raw;
+#[doc = "SYS_CTL_INT0_EN register accessor: an alias for `Reg<SYS_CTL_INT0_EN_SPEC>`"]
+pub type SYS_CTL_INT0_EN = crate::Reg<sys_ctl_int0_en::SYS_CTL_INT0_EN_SPEC>;
+#[doc = "Sysctl module interrupt 0 interrupt enable register"]
+pub mod sys_ctl_int0_en;
+#[doc = "SYS_CTL_INT0_STAT register accessor: an alias for `Reg<SYS_CTL_INT0_STAT_SPEC>`"]
+pub type SYS_CTL_INT0_STAT = crate::Reg<sys_ctl_int0_stat::SYS_CTL_INT0_STAT_SPEC>;
+#[doc = "Sysctl module interrupt 0 interrupt status register"]
+pub mod sys_ctl_int0_stat;
+#[doc = "SYS_CTL_INT1_RAW register accessor: an alias for `Reg<SYS_CTL_INT1_RAW_SPEC>`"]
+pub type SYS_CTL_INT1_RAW = crate::Reg<sys_ctl_int1_raw::SYS_CTL_INT1_RAW_SPEC>;
+#[doc = "Sysctl module interrupt 1 raw status register"]
+pub mod sys_ctl_int1_raw;
+#[doc = "SYS_CTL_INT1_EN register accessor: an alias for `Reg<SYS_CTL_INT1_EN_SPEC>`"]
+pub type SYS_CTL_INT1_EN = crate::Reg<sys_ctl_int1_en::SYS_CTL_INT1_EN_SPEC>;
+#[doc = "Sysctl module interrupt 1 interrupt enable register"]
+pub mod sys_ctl_int1_en;
+#[doc = "SYS_CTL_INT1_STAT register accessor: an alias for `Reg<SYS_CTL_INT1_STAT_SPEC>`"]
+pub type SYS_CTL_INT1_STAT = crate::Reg<sys_ctl_int1_stat::SYS_CTL_INT1_STAT_SPEC>;
+#[doc = "Sysctl module interrupt 1 interrupt status register"]
+pub mod sys_ctl_int1_stat;
+#[doc = "SYS_CTL_INT2_RAW register accessor: an alias for `Reg<SYS_CTL_INT2_RAW_SPEC>`"]
+pub type SYS_CTL_INT2_RAW = crate::Reg<sys_ctl_int2_raw::SYS_CTL_INT2_RAW_SPEC>;
+#[doc = "Sysctl module interrupt 2 raw status register"]
+pub mod sys_ctl_int2_raw;
+#[doc = "SYS_CTL_INT2_EN register accessor: an alias for `Reg<SYS_CTL_INT2_EN_SPEC>`"]
+pub type SYS_CTL_INT2_EN = crate::Reg<sys_ctl_int2_en::SYS_CTL_INT2_EN_SPEC>;
+#[doc = "Sysctl module interrupt 2 interrupt enable register"]
+pub mod sys_ctl_int2_en;
+#[doc = "SYS_CTL_INT2_STAT register accessor: an alias for `Reg<SYS_CTL_INT2_STAT_SPEC>`"]
+pub type SYS_CTL_INT2_STAT = crate::Reg<sys_ctl_int2_stat::SYS_CTL_INT2_STAT_SPEC>;
+#[doc = "Sysctl module interrupt 2 interrupt status register"]
+pub mod sys_ctl_int2_stat;
+#[doc = "AX25M_HART_RSTVEC register accessor: an alias for `Reg<AX25M_HART_RSTVEC_SPEC>`"]
+pub type AX25M_HART_RSTVEC = crate::Reg<ax25m_hart_rstvec::AX25M_HART_RSTVEC_SPEC>;
+#[doc = "AX25M dual-core CPU hart\\[i\\]
+reset vector register."]
+pub mod ax25m_hart_rstvec;
+#[doc = "AX25P_CORE_RSTVEC register accessor: an alias for `Reg<AX25P_CORE_RSTVEC_SPEC>`"]
+pub type AX25P_CORE_RSTVEC = crate::Reg<ax25p_core_rstvec::AX25P_CORE_RSTVEC_SPEC>;
+#[doc = "AX25P processor CPU core reset vector register."]
+pub mod ax25p_core_rstvec;
+#[doc = "SOC_SLEEP_MASK register accessor: an alias for `Reg<SOC_SLEEP_MASK_SPEC>`"]
+pub type SOC_SLEEP_MASK = crate::Reg<soc_sleep_mask::SOC_SLEEP_MASK_SPEC>;
+#[doc = "SoC sleep mode control register"]
+pub mod soc_sleep_mask;
+#[doc = "TEST_PIN_SEL register accessor: an alias for `Reg<TEST_PIN_SEL_SPEC>`"]
+pub type TEST_PIN_SEL = crate::Reg<test_pin_sel::TEST_PIN_SEL_SPEC>;
+#[doc = "Test pin group select register"]
+pub mod test_pin_sel;
 #[doc = "UART_SCLK_CFG register accessor: an alias for `Reg<UART_SCLK_CFG_SPEC>`"]
 pub type UART_SCLK_CFG = crate::Reg<uart_sclk_cfg::UART_SCLK_CFG_SPEC>;
 #[doc = "UART\\[i\\]

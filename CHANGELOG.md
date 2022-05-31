@@ -28,6 +28,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - timer_pause_ctl
   - uart_sclk_cfg
   - uart_rst_ctl
+  - sys_ctl_int012_raw
+  - sys_ctl_int012_en
+  - sys_ctl_int012_stat
+  - AX25M_HART_RSTVEC
+  - AX25P_CORE_RSTVEC
+  - SOC_SLEEP_MASK
+  - TEST_PIN_SEL
 
 ## [0.0.1] - 2022-05-20
 

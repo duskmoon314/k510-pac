@@ -894,6 +894,2131 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>SYS_CTL_INT0_RAW</name>
+          <description>Sysctl module interrupt 0 raw status register</description>
+          <addressOffset>0x90</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x000387FB</resetMask>
+          <fields>
+            <field>
+              <name>pd_usb_pd_raw</name>
+              <description>USB power domain go power-off interrupt status bit</description>
+              <bitRange>[17:17]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_USB enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_h264_pd_raw</name>
+              <description>H264 power domain go power-off interrupt status bit</description>
+              <bitRange>[16:16]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_H264 enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_disp_pd_raw</name>
+              <description>DISP power domain go power-off interrupt status bit</description>
+              <bitRange>[15:15]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_DISP enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_isp_pd_raw</name>
+              <description>ISP power domain go power-off interrupt status bit</description>
+              <bitRange>[10:10]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_ISP enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_mctl_pd_raw</name>
+              <description>Memory Controller power domain go power-off interrupt status bit</description>
+              <bitRange>[9:9]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_MCTL enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram1_pd_raw</name>
+              <description>SRAM1 power domain go power-off interrupt status bit</description>
+              <bitRange>[8:8]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_RAM1 enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram0_pd_raw</name>
+              <description>SRAM0 power domain go power-off interrupt status bit</description>
+              <bitRange>[7:7]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_RAM0 enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_stor_pd_raw</name>
+              <description>Storage power domain go power-off interrupt status bit</description>
+              <bitRange>[6:6]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_STOR enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_peri_pd_raw</name>
+              <description>Peripheral power domain go power-off interrupt status bit</description>
+              <bitRange>[5:5]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_PERI enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_sec_pd_raw</name>
+              <description>Security power domain go power-off interrupt status bit</description>
+              <bitRange>[4:4]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_SEC enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_gnne_pd_raw</name>
+              <description>GNNE power domain go power-off interrupt status bit</description>
+              <bitRange>[3:3]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_GNNE enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpup_pd_raw</name>
+              <description>CPUp (AX25P) power domain go power-off interrupt status bit</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_CPUp enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpum_pd_raw</name>
+              <description>CPUM (AX25M) power domain go power-off interrupt status bit</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_CPUM enter Power-Off state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT0_EN</name>
+          <description>Sysctl module interrupt 0 interrupt enable register</description>
+          <addressOffset>0x94</addressOffset>
+          <fields>
+            <field>
+              <name>pd_usb_pd_ien</name>
+              <description>USB power domain go power-off interrupt enable bit</description>
+              <bitRange>[17:17]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_h264_pd_ien</name>
+              <description>H264 power domain go power-off interrupt enable bit</description>
+              <bitRange>[16:16]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_disp_pd_ien</name>
+              <description>DISP power domain go power-off interrupt enable bit</description>
+              <bitRange>[15:15]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_isp_pd_ien</name>
+              <description>ISP power domain go power-off interrupt enable bit</description>
+              <bitRange>[10:10]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_mctl_pd_ien</name>
+              <description>Memory Controller power domain go power-off interrupt enable bit</description>
+              <bitRange>[9:9]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram1_pd_ien</name>
+              <description>SRAM1 power domain go power-off interrupt enable bit</description>
+              <bitRange>[8:8]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram0_pd_ien</name>
+              <description>SRAM0 power domain go power-off interrupt enable bit</description>
+              <bitRange>[7:7]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_stor_pd_ien</name>
+              <description>Storage power domain go power-off interrupt enable bit</description>
+              <bitRange>[6:6]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_peri_pd_ien</name>
+              <description>Peripheral power domain go power-off interrupt enable bit</description>
+              <bitRange>[5:5]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_sec_pd_ien</name>
+              <description>Security power domain go power-off interrupt enable bit</description>
+              <bitRange>[4:4]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_gnne_pd_ien</name>
+              <description>GNNE power domain go power-off interrupt enable bit</description>
+              <bitRange>[3:3]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpup_pd_ien</name>
+              <description>CPUp (AX25P) power domain go power-off interrupt enable bit</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpum_pd_ien</name>
+              <description>CPUm (AX25M) power domain go power-off interrupt enable bit</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT0_STAT</name>
+          <description>Sysctl module interrupt 0 interrupt status register</description>
+          <addressOffset>0x98</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>pd_usb_pd_stat</name>
+              <description>USB power domain go power-off interrupt status bit</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_h264_pd_stat</name>
+              <description>H264 power domain go power-off interrupt status bit</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_disp_pd_stat</name>
+              <description>DISP power domain go power-off interrupt status bit</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_isp_pd_stat</name>
+              <description>ISP power domain go power-off interrupt status bit</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_mctl_pd_stat</name>
+              <description>MCTL power domain go power-off interrupt status bit</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram1_pd_stat</name>
+              <description>SRAM1 power domain go power-off interrupt status bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram0_pd_stat</name>
+              <description>SRAM0 power domain go power-off interrupt status bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_stor_pd_stat</name>
+              <description>STOR power domain go power-off interrupt status bit</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_peri_pd_stat</name>
+              <description>Peripheral power domain go power-off interrupt status bit</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_sec_pd_stat</name>
+              <description>Security power domain go power-off interrupt status bit</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_gnne_pd_stat</name>
+              <description>GNNE power domain go power-off interrupt status bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpup_pd_stat</name>
+              <description>CPUp (AX25P) power domain go power-off interrupt status bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpum_pd_stat</name>
+              <description>CPUm (AX25M) power domain go power-off interrupt status bit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT1_RAW</name>
+          <description>Sysctl module interrupt 1 raw status register</description>
+          <addressOffset>0xA0</addressOffset>
+          <modifiedWriteValues>oneToClear</modifiedWriteValues>
+          <fields>
+            <field>
+              <name>pd_usb_pu_raw</name>
+              <description>USB power domain go power-up interrupt status bit</description>
+              <bitRange>[17:17]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_USB enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_h264_pu_raw</name>
+              <description>H264 power domain go power-up interrupt status bit</description>
+              <bitRange>[16:16]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_H264 enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_disp_pu_raw</name>
+              <description>DISP power domain go power-up interrupt status bit</description>
+              <bitRange>[15:15]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_DISP enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_isp_pu_raw</name>
+              <description>ISP power domain go power-up interrupt status bit</description>
+              <bitRange>[10:10]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_ISP enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_mctl_pu_raw</name>
+              <description>Memory Controller power domain go power-up interrupt status bit</description>
+              <bitRange>[9:9]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_MCTL enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram1_pu_raw</name>
+              <description>SRAM1 power domain go power-up interrupt status bit</description>
+              <bitRange>[8:8]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_RAM1 enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram0_pu_raw</name>
+              <description>SRAM0 power domain go power-up interrupt status bit</description>
+              <bitRange>[7:7]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_RAM0 enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_stor_pu_raw</name>
+              <description>Storage power domain go power-up interrupt status bit</description>
+              <bitRange>[6:6]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_STOR enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_peri_pu_raw</name>
+              <description>Peripheral power domain go power-up interrupt status bit</description>
+              <bitRange>[5:5]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_PERI enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_sec_pu_raw</name>
+              <description>Security power domain go power-up interrupt status bit</description>
+              <bitRange>[4:4]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_SEC enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_gnne_pu_raw</name>
+              <description>GNNE power domain go power-up interrupt status bit</description>
+              <bitRange>[3:3]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_GNNE enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpup_pu_raw</name>
+              <description>CPUp (AX25P) power domain go power-up interrupt status bit</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_CPUp enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpum_pu_raw</name>
+              <description>CPUM (AX25M) power domain go power-up interrupt status bit</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>PD_CPUM enter Power-On state</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT1_EN</name>
+          <description>Sysctl module interrupt 1 interrupt enable register</description>
+          <addressOffset>0xA4</addressOffset>
+          <fields>
+            <field>
+              <name>pd_usb_pu_ien</name>
+              <description>USB power domain go power-up interrupt enable bit</description>
+              <bitRange>[17:17]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_h264_pu_ien</name>
+              <description>H264 power domain go power-up interrupt enable bit</description>
+              <bitRange>[16:16]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_disp_pu_ien</name>
+              <description>DISP power domain go power-up interrupt enable bit</description>
+              <bitRange>[15:15]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_isp_pu_ien</name>
+              <description>ISP power domain go power-up interrupt enable bit</description>
+              <bitRange>[10:10]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_mctl_pu_ien</name>
+              <description>Memory Controller power domain go power-up interrupt enable bit</description>
+              <bitRange>[9:9]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram1_pu_ien</name>
+              <description>SRAM1 power domain go power-up interrupt enable bit</description>
+              <bitRange>[8:8]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram0_pu_ien</name>
+              <description>SRAM0 power domain go power-up interrupt enable bit</description>
+              <bitRange>[7:7]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_stor_pu_ien</name>
+              <description>Storage power domain go power-up interrupt enable bit</description>
+              <bitRange>[6:6]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_peri_pu_ien</name>
+              <description>Peripheral power domain go power-up interrupt enable bit</description>
+              <bitRange>[5:5]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_sec_pu_ien</name>
+              <description>Security power domain go power-up interrupt enable bit</description>
+              <bitRange>[4:4]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_gnne_pu_ien</name>
+              <description>GNNE power domain go power-up interrupt enable bit</description>
+              <bitRange>[3:3]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpup_pu_ien</name>
+              <description>CPUp (AX25P) power domain go power-up interrupt enable bit</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpum_pu_ien</name>
+              <description>CPUm (AX25M) power domain go power-up interrupt enable bit</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT1_STAT</name>
+          <description>Sysctl module interrupt 1 interrupt status register</description>
+          <addressOffset>0xA8</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>pd_usb_pu_stat</name>
+              <description>USB power domain go power-up interrupt status bit</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_h264_pu_stat</name>
+              <description>H264 power domain go power-up interrupt status bit</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_disp_pu_stat</name>
+              <description>DISP power domain go power-up interrupt status bit</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_isp_pu_stat</name>
+              <description>ISP power domain go power-up interrupt status bit</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_mctl_pu_stat</name>
+              <description>MCTL power domain go power-up interrupt status bit</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram1_pu_stat</name>
+              <description>SRAM1 power domain go power-up interrupt status bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_ram0_pu_stat</name>
+              <description>SRAM0 power domain go power-up interrupt status bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_stor_pu_stat</name>
+              <description>STOR power domain go power-up interrupt status bit</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_peri_pu_stat</name>
+              <description>Peripheral power domain go power-up interrupt status bit</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_sec_pu_stat</name>
+              <description>Security power domain go power-up interrupt status bit</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_gnne_pu_stat</name>
+              <description>GNNE power domain go power-up interrupt status bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpup_pu_stat</name>
+              <description>CPUp (AX25P) power domain go power-up interrupt status bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pd_cpum_pu_stat</name>
+              <description>CPUm (AX25M) power domain go power-up interrupt status bit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT2_RAW</name>
+          <description>Sysctl module interrupt 2 raw status register</description>
+          <addressOffset>0xB0</addressOffset>
+          <fields>
+            <field>
+              <name>ddrc_dfs_fail_raw</name>
+              <description>ddrc dfs fail interrupt raw status bit</description>
+              <bitRange>[7:7]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>ddrc dfs fail</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddrc_dfs_success_raw</name>
+              <description>ddrc dfs success interrupt raw status bit</description>
+              <bitRange>[6:6]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>ddrc dfs success</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_dslp_wakup_raw</name>
+              <description>SoC core wake up from DEEPSLEEP mode interrupt raw status bit</description>
+              <bitRange>[5:5]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>SoC core wake up from DEEPSLEEP mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_slp1_wakup_raw</name>
+              <description>SoC core wake up from SLEEP1 mode interrupt raw status bit</description>
+              <bitRange>[4:4]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>SoC core wake up from SLEEP1 mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_slp0_wakup_raw</name>
+              <description>SoC core wake up from SLEEP0 mode interrupt raw status bit</description>
+              <bitRange>[3:3]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>SoC core wake up from SLEEP0 mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_dslp_raw</name>
+              <description>SoC core entering DEEPSLEEP mode interrupt raw status bit</description>
+              <bitRange>[2:2]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>SoC core entering DEEPSLEEP mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_slp1_raw</name>
+              <description>SoC core entering SLEEP1 mode interrupt raw status bit</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>SoC core entering SLEEP1 mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_slp0_raw</name>
+              <description>SoC core entering SLEEP0 mode interrupt raw status bit</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>SoC core entering SLEEP0 mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT2_EN</name>
+          <description>Sysctl module interrupt 2 interrupt enable register</description>
+          <addressOffset>0xB4</addressOffset>
+          <fields>
+            <field>
+              <name>ddrc_dfs_fail_ien</name>
+              <description>ddrc dfs fail interrupt enable bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddrc_dfs_success_ien</name>
+              <description>ddrc dfs success interrupt enable bit</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_dslp_wakup_ien</name>
+              <description>SoC core wake up from DEEPSLEEP mode interrupt enable bit</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_slp1_wakup_ien</name>
+              <description>SoC core wake up from SLEEP1 mode interrupt enable bit</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_slp0_wakup_ien</name>
+              <description>SoC core wake up from SLEEP0 mode interrupt enable bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_dslp_ien</name>
+              <description>SoC core entering DEEPSLEEP mode interrupt enable bit</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_slp1_ien</name>
+              <description>SoC core entering SLEEP1 mode interrupt enable bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_slp0_ien</name>
+              <description>SoC core entering SLEEP0 mode interrupt enable bit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable interrupt</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SYS_CTL_INT2_STAT</name>
+          <description>Sysctl module interrupt 2 interrupt status register</description>
+          <addressOffset>0xB8</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>ddrc_dfs_fail_stat</name>
+              <description>ddrc dfs fail interrupt status bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddrc_dfs_success_stat</name>
+              <description>ddrc dfs success interrupt status bit</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_dslp_wakup_stat</name>
+              <description>SoC core wake up from DEEPSLEEP mode interrupt status bit</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_slp1_wakup_stat</name>
+              <description>SoC core wake up from SLEEP1 mode interrupt status bit</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_slp0_wakup_stat</name>
+              <description>SoC core wake up from SLEEP0 mode interrupt status bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_dslp_stat</name>
+              <description>SoC core entering DEEPSLEEP mode interrupt status bit</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_slp1_stat</name>
+              <description>SoC core entering SLEEP1 mode interrupt status bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>soc_go_slp0_stat</name>
+              <description>SoC core entering SLEEP0 mode interrupt status bit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_INTERRUPT</name>
+                  <description>No interrupt</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Interrupt happens</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>AX25M_HART%s_RSTVEC</name>
+          <description>AX25M dual-core CPU hart[i] reset vector register.</description>
+          <addressOffset>0x100</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>RESET_VECTOR</name>
+              <description>AX25M dual-core CPU hart0 reset vector. After releasing reset to AX25M CPU, hart[i] will start program excution from address set here</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>AX25P_CORE_RSTVEC</name>
+          <description>AX25P processor CPU core reset vector register.</description>
+          <addressOffset>0x108</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>RESET_VECTOR</name>
+              <description>AX25P single-core CPU reset vector. After releasing reset to AX25P CPU, the core will start program excution from address set here</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SOC_SLEEP_MASK</name>
+          <description>SoC sleep mode control register</description>
+          <addressOffset>0x118</addressOffset>
+          <fields>
+            <field>
+              <dim>14</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>WE_%s</name>
+              <description>Write enable for bit i</description>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>usb_slp_mask</name>
+              <description>PD_USB sleep mask bit</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_USB sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_USB sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>h264_slp_mask</name>
+              <description>PD_H264 sleep mask bit</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_H264 sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_H264 sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>disp_slp_mask</name>
+              <description>PD_DISP sleep mask bit</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_DISP sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_DISP sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>isp_slp_mask</name>
+              <description>PD_ISP sleep mask bit</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_ISP sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_ISP sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sram1_slp_mask</name>
+              <description>PD_SRAM1 sleep mask bit</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_SRAM1 sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_SRAM1 sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sram0_slp_mask</name>
+              <description>PD_SRAM0 sleep mask bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_SRAM0 sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_SRAM0 sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mctl_slp_mask</name>
+              <description>PD_MCTL sleep mask bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_MCTL sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_MCTL sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>peri_slp_mask</name>
+              <description>PD_PERI sleep mask bit</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_PERI sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_PERI sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>stor_slp_mask</name>
+              <description>PD_STOR sleep mask bit</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_STOR sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_STOR sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>gnne_slp_mask</name>
+              <description>PD_GNNE sleep mask bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNMASK</name>
+                  <description>Unmask PD_GNNE sleep</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask PD_GNNE sleep</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TEST_PIN_SEL</name>
+          <description>Test pin group select register</description>
+          <addressOffset>0x11C</addressOffset>
+          <fields>
+            <field>
+              <name>TEST_PIN_GROUP_SEL</name>
+              <description>test pin group sel</description>
+              <bitRange>[2:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>G0</name>
+                  <description>group 0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G1</name>
+                  <description>group 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G2</name>
+                  <description>group 2</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G3</name>
+                  <description>group 3</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G4</name>
+                  <description>group 4</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G5</name>
+                  <description>group 5</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G6</name>
+                  <description>group 6</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
 
         <register>
           <dim>4</dim>
