@@ -55,11 +55,30 @@ status register"]
     pub reset_status: crate::Reg<reset_status::RESET_STATUS_SPEC>,
     #[doc = "0x48 - OSC 25M clock off register"]
     pub osc_25m_off: crate::Reg<osc_25m_off::OSC_25M_OFF_SPEC>,
-    _reserved19: [u8; 0x1010],
+    _reserved19: [u8; 0x14],
+    #[doc = "0x60 - SoC global reset control register"]
+    pub soc_glb_rst: crate::Reg<soc_glb_rst::SOC_GLB_RST_SPEC>,
+    #[doc = "0x64 - SoC reset timing configuration register"]
+    pub soc_reset_tim: crate::Reg<soc_reset_tim::SOC_RESET_TIM_SPEC>,
+    #[doc = "0x68 - SoC sleep mode timing configuration register"]
+    pub soc_sleep_tim: crate::Reg<soc_sleep_tim::SOC_SLEEP_TIM_SPEC>,
+    #[doc = "0x6c - SoC sleep mode control register"]
+    pub soc_sleep_ctl: crate::Reg<soc_sleep_ctl::SOC_SLEEP_CTL_SPEC>,
+    #[doc = "0x70 - Clock stable timing configuration register"]
+    pub clk_stable_tim: crate::Reg<clk_stable_tim::CLK_STABLE_TIM_SPEC>,
+    #[doc = "0x74 - CPU wake-up timing configuration register"]
+    pub cpu_wakup_tim: crate::Reg<cpu_wakup_tim::CPU_WAKUP_TIM_SPEC>,
+    #[doc = "0x78 - SoC wake-up cause status register"]
+    pub soc_wakup_src: crate::Reg<soc_wakup_src::SOC_WAKUP_SRC_SPEC>,
+    #[doc = "0x7c - CPU wake-up (when SoC core is woken up) configuration register"]
+    pub cpu_wakup_cfg: crate::Reg<cpu_wakup_cfg::CPU_WAKUP_CFG_SPEC>,
+    #[doc = "0x80 - SoC internal Timer module's timer pause control register"]
+    pub timer_pause_ctl: crate::Reg<timer_pause_ctl::TIMER_PAUSE_CTL_SPEC>,
+    _reserved28: [u8; 0x0fd8],
     #[doc = "0x105c..0x106c - UART\\[i\\]
 host module serial interface clock configure register"]
     pub uart_sclk_cfg: [crate::Reg<uart_sclk_cfg::UART_SCLK_CFG_SPEC>; 4],
-    _reserved20: [u8; 0x0fec],
+    _reserved29: [u8; 0x0fec],
     #[doc = "0x2058..0x2068 - UART\\[i\\]
 host module reset control register"]
     pub uart_rst_ctl: [crate::Reg<uart_rst_ctl::UART_RST_CTL_SPEC>; 4],
@@ -96,6 +115,42 @@ pub mod reset_status;
 pub type OSC_25M_OFF = crate::Reg<osc_25m_off::OSC_25M_OFF_SPEC>;
 #[doc = "OSC 25M clock off register"]
 pub mod osc_25m_off;
+#[doc = "SOC_GLB_RST register accessor: an alias for `Reg<SOC_GLB_RST_SPEC>`"]
+pub type SOC_GLB_RST = crate::Reg<soc_glb_rst::SOC_GLB_RST_SPEC>;
+#[doc = "SoC global reset control register"]
+pub mod soc_glb_rst;
+#[doc = "SOC_RESET_TIM register accessor: an alias for `Reg<SOC_RESET_TIM_SPEC>`"]
+pub type SOC_RESET_TIM = crate::Reg<soc_reset_tim::SOC_RESET_TIM_SPEC>;
+#[doc = "SoC reset timing configuration register"]
+pub mod soc_reset_tim;
+#[doc = "SOC_SLEEP_TIM register accessor: an alias for `Reg<SOC_SLEEP_TIM_SPEC>`"]
+pub type SOC_SLEEP_TIM = crate::Reg<soc_sleep_tim::SOC_SLEEP_TIM_SPEC>;
+#[doc = "SoC sleep mode timing configuration register"]
+pub mod soc_sleep_tim;
+#[doc = "SOC_SLEEP_CTL register accessor: an alias for `Reg<SOC_SLEEP_CTL_SPEC>`"]
+pub type SOC_SLEEP_CTL = crate::Reg<soc_sleep_ctl::SOC_SLEEP_CTL_SPEC>;
+#[doc = "SoC sleep mode control register"]
+pub mod soc_sleep_ctl;
+#[doc = "CLK_STABLE_TIM register accessor: an alias for `Reg<CLK_STABLE_TIM_SPEC>`"]
+pub type CLK_STABLE_TIM = crate::Reg<clk_stable_tim::CLK_STABLE_TIM_SPEC>;
+#[doc = "Clock stable timing configuration register"]
+pub mod clk_stable_tim;
+#[doc = "CPU_WAKUP_TIM register accessor: an alias for `Reg<CPU_WAKUP_TIM_SPEC>`"]
+pub type CPU_WAKUP_TIM = crate::Reg<cpu_wakup_tim::CPU_WAKUP_TIM_SPEC>;
+#[doc = "CPU wake-up timing configuration register"]
+pub mod cpu_wakup_tim;
+#[doc = "SOC_WAKUP_SRC register accessor: an alias for `Reg<SOC_WAKUP_SRC_SPEC>`"]
+pub type SOC_WAKUP_SRC = crate::Reg<soc_wakup_src::SOC_WAKUP_SRC_SPEC>;
+#[doc = "SoC wake-up cause status register"]
+pub mod soc_wakup_src;
+#[doc = "CPU_WAKUP_CFG register accessor: an alias for `Reg<CPU_WAKUP_CFG_SPEC>`"]
+pub type CPU_WAKUP_CFG = crate::Reg<cpu_wakup_cfg::CPU_WAKUP_CFG_SPEC>;
+#[doc = "CPU wake-up (when SoC core is woken up) configuration register"]
+pub mod cpu_wakup_cfg;
+#[doc = "TIMER_PAUSE_CTL register accessor: an alias for `Reg<TIMER_PAUSE_CTL_SPEC>`"]
+pub type TIMER_PAUSE_CTL = crate::Reg<timer_pause_ctl::TIMER_PAUSE_CTL_SPEC>;
+#[doc = "SoC internal Timer module's timer pause control register"]
+pub mod timer_pause_ctl;
 #[doc = "UART_SCLK_CFG register accessor: an alias for `Reg<UART_SCLK_CFG_SPEC>`"]
 pub type UART_SCLK_CFG = crate::Reg<uart_sclk_cfg::UART_SCLK_CFG_SPEC>;
 #[doc = "UART\\[i\\]

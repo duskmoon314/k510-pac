@@ -541,6 +541,359 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>SOC_GLB_RST</name>
+          <description>SoC global reset control register</description>
+          <addressOffset>0x60</addressOffset>
+          <access>write-only</access>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x00010001</resetMask>
+          <fields>
+            <field>
+              <name>WE_0</name>
+              <description>Write enable for bit 0</description>
+              <bitRange>[16:16]</bitRange>
+            </field>
+            <field>
+              <name>SOC_CORE_GLOBAL_RESET</name>
+              <description>SoC core global reset</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_operation</name>
+                  <description>No operation</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reset</name>
+                  <description>Reset SoC core</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SOC_RESET_TIM</name>
+          <description>SoC reset timing configuration register</description>
+          <addressOffset>0x64</addressOffset>
+          <resetValue>0x00060010</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>reset1_time</name>
+              <description>The Max allowed time SoC after soc reset assert, then the system will enter Mission state.</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>reset0_time</name>
+              <description>The Max allowed time SoC between offchip reset and global reset assert. The time unit here is a cycle of 32KHz clock.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SOC_SLEEP_TIM</name>
+          <description>SoC sleep mode timing configuration register</description>
+          <addressOffset>0x68</addressOffset>
+          <resetValue>0x00000008</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>enter_sleep1_time</name>
+              <description>The Max allowed time SoC can stay in NAP mode. If no wakeup event detected, SoC core will then enter SLEEP1 mode. The time unit here is a cycle of 32KHz clock.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SOC_SLEEP_CTL</name>
+          <description>SoC sleep mode control register</description>
+          <addressOffset>0x6C</addressOffset>
+          <resetValue>0x00000060</resetValue>
+          <resetMask>0x0F000071</resetMask>
+          <fields>
+            <field>
+              <name>WE_6</name>
+              <description>Write enable for bit 6</description>
+              <bitRange>[27:27]</bitRange>
+            </field>
+            <field>
+              <name>WE_5</name>
+              <description>Write enable for bit 5</description>
+              <bitRange>[26:26]</bitRange>
+            </field>
+            <field>
+              <name>WE_4</name>
+              <description>Write enable for bit 4</description>
+              <bitRange>[25:25]</bitRange>
+            </field>
+            <field>
+              <name>WE_0</name>
+              <description>Write enable for bit 0</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>pll3_init_en</name>
+              <description>PLL3 auto initialization enable bit.</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PLL auto initialization</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PLL auto initialization</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pll2_init_en</name>
+              <description>PLL2 auto initialization enable bit.</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable PLL auto initialization</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable PLL auto initialization</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>auto_slp_en</name>
+              <description>SoC core auto sleep enable control bit.</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable SoC core auto sleep entering feature</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable SoC core auto sleep entering feature</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>core_sleep_req</name>
+              <description>SoC core go sleep request bit</description>
+              <bitRange>[0:0]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_operation</name>
+                  <description>No operation</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sleep</name>
+                  <description>Request SoC core to enter SLEEP mode</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CLK_STABLE_TIM</name>
+          <description>Clock stable timing configuration register</description>
+          <addressOffset>0x70</addressOffset>
+          <resetValue>0x000A0001</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>pll_stable_time</name>
+              <description>The Max allowed time SoC for PLL oscillator stable. The time unit here is a cycle of 32KHz clock.</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>clk_25m_stable_time</name>
+              <description>The Max allowed time SoC for 25MHz oscillator stable. The time unit here is a cycle of 32KHz clock.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CPU_WAKUP_TIM</name>
+          <description>CPU wake-up timing configuration register</description>
+          <addressOffset>0x74</addressOffset>
+          <resetValue>0x00000002</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>cpu_wakeup_time</name>
+              <description>The Max allowed time SoC can stay in WAKECPU mode. Then SoC core will enter Mission mode. The time unit here is a cycle of 32KHz clock.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SOC_WAKUP_SRC</name>
+          <description>SoC wake-up cause status register</description>
+          <addressOffset>0x78</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>dslp_wakup_cause</name>
+              <description>The cause of SoC waking up from DEEPSLEEP mode.</description>
+              <bitRange>[11:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTC</name>
+                  <description>SoC is woken up by RTC generate event</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIMER</name>
+                  <description>SoC is woken up by TIMER generate event</description>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GPIO</name>
+                  <description>SoC is woken up by GPIO key pressing event</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>slp1_wakup_cause</name>
+              <description>The cause of SoC waking up from SLEEP1 mode.</description>
+              <bitRange>[7:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTC</name>
+                  <description>SoC is woken up by RTC generate event</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VAD</name>
+                  <description>SoC is woken up by VAD generate event</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIMER</name>
+                  <description>SoC is woken up by TIMER generate event</description>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GPIO</name>
+                  <description>SoC is woken up by GPIO key pressing event</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>slp0_wakup_cause</name>
+              <description>The cause of SoC waking up from SLEEP0 mode.</description>
+              <bitRange>[3:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTC</name>
+                  <description>SoC is woken up by RTC generate event</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VAD</name>
+                  <description>SoC is woken up by VAD generate event</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TIMER</name>
+                  <description>SoC is woken up by TIMER generate event</description>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GPIO</name>
+                  <description>SoC is woken up by GPIO key pressing event</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>CPU_WAKUP_CFG</name>
+          <description>CPU wake-up (when SoC core is woken up) configuration register</description>
+          <addressOffset>0x7C</addressOffset>
+          <resetValue>0x00000003</resetValue>
+          <resetMask>03000003</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>WE_%s</name>
+              <description>Write enable for bit</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>m,p</dimIndex>
+              <name>soc_wakup_ax25%s_en</name>
+              <description>AX25M/AX25P auto wake-up enable when SoC wakes up.</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Don't wakeup when SoC waks up from SLEEP mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Auto Waking-up when SoC wakes up from SLEEP mode</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TIMER_PAUSE_CTL</name>
+          <description>SoC internal Timer module's timer pause control register</description>
+          <addressOffset>0x80</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x003F003F</resetMask>
+          <fields>
+            <field>
+              <dim>6</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>WE_%s</name>
+              <description>Write enable for bit</description>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <dim>6</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>timer_t%s_pause</name>
+              <description>SoC Timer module internal timer [i] pause control bit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESUME</name>
+                  <description>Resume timer [i] counting function</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Pause timer [i] counting function</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
 
         <register>
           <dim>4</dim>

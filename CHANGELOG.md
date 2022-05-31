@@ -17,6 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - soc_boot_ctrl
   - reset_status
   - osc_25m_off
+  - soc_glb_rst
+  - soc_reset_tim
+  - soc_sleep_tim
+  - soc_sleep_ctl
+  - clk_stable_tim
+  - cpu_wakup_tim
+  - soc_wakup_src
+  - cpu_wakup_cfg
+  - timer_pause_ctl
   - uart_sclk_cfg
   - uart_rst_ctl
 
