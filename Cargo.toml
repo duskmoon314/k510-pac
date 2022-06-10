@@ -8,6 +8,14 @@ categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["no-std", "riscv", "register", "peripheral"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/duskmoon314/k510-pac"
+include = [
+    "src/**/*",
+    "LICENSE-*",
+    "README.md",
+    "CHANGELOG.md",
+    "device.x",
+    "build.rs",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
