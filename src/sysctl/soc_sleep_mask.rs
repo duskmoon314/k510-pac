@@ -34,8 +34,26 @@ impl From<crate::W<SOC_SLEEP_MASK_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Fields `WE_(0-13)` writer - Write enable for bit i"]
-pub type WE__W<'a, const O: u8> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, O>;
+#[doc = "Field `WE_usb_slp_mask` writer - Write enable for bit 13 (ub_slp_mask)"]
+pub type WE_USB_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 29>;
+#[doc = "Field `WE_h264_slp_mask` writer - Write enable for bit 12 (h264_slp_mask)"]
+pub type WE_H264_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 28>;
+#[doc = "Field `WE_disp_slp_mask` writer - Write enable for bit 11 (disp_slp_mask)"]
+pub type WE_DISP_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 27>;
+#[doc = "Field `WE_isp_slp_mask` writer - Write enable for bit 10 (isp_slp_mask)"]
+pub type WE_ISP_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 26>;
+#[doc = "Field `WE_sram1_slp_mask` writer - Write enable for bit 9 (sram1_slp_mask)"]
+pub type WE_SRAM1_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 25>;
+#[doc = "Field `WE_sram0_slp_mask` writer - Write enable for bit 8 (sram0_slp_mask)"]
+pub type WE_SRAM0_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 24>;
+#[doc = "Field `WE_mctl_slp_mask` writer - Write enable for bit 7 (mctl_slp_mask)"]
+pub type WE_MCTL_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 23>;
+#[doc = "Field `WE_peri_slp_mask` writer - Write enable for bit 6 (peri_slp_mask)"]
+pub type WE_PERI_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 22>;
+#[doc = "Field `WE_stor_slp_mask` writer - Write enable for bit 5 (stor_slp_mask)"]
+pub type WE_STOR_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 21>;
+#[doc = "Field `WE_gnne_slp_mask` writer - Write enable for bit 3 (gnne_slp_mask)"]
+pub type WE_GNNE_SLP_MASK_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_MASK_SPEC, bool, 19>;
 #[doc = "PD_USB sleep mask bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USB_SLP_MASK_A {
@@ -589,80 +607,55 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Write enable for bit i"]
+    #[doc = "Bit 29 - Write enable for bit 13 (ub_slp_mask)"]
     #[inline(always)]
-    pub unsafe fn we_<const O: u8>(&mut self) -> WE__W<O> {
-        WE__W::new(self)
+    pub fn we_usb_slp_mask(&mut self) -> WE_USB_SLP_MASK_W {
+        WE_USB_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 16 - Write enable for bit i"]
+    #[doc = "Bit 28 - Write enable for bit 12 (h264_slp_mask)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE__W<16> {
-        WE__W::new(self)
+    pub fn we_h264_slp_mask(&mut self) -> WE_H264_SLP_MASK_W {
+        WE_H264_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 17 - Write enable for bit i"]
+    #[doc = "Bit 27 - Write enable for bit 11 (disp_slp_mask)"]
     #[inline(always)]
-    pub fn we_1(&mut self) -> WE__W<17> {
-        WE__W::new(self)
+    pub fn we_disp_slp_mask(&mut self) -> WE_DISP_SLP_MASK_W {
+        WE_DISP_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 18 - Write enable for bit i"]
+    #[doc = "Bit 26 - Write enable for bit 10 (isp_slp_mask)"]
     #[inline(always)]
-    pub fn we_2(&mut self) -> WE__W<18> {
-        WE__W::new(self)
+    pub fn we_isp_slp_mask(&mut self) -> WE_ISP_SLP_MASK_W {
+        WE_ISP_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 19 - Write enable for bit i"]
+    #[doc = "Bit 25 - Write enable for bit 9 (sram1_slp_mask)"]
     #[inline(always)]
-    pub fn we_3(&mut self) -> WE__W<19> {
-        WE__W::new(self)
+    pub fn we_sram1_slp_mask(&mut self) -> WE_SRAM1_SLP_MASK_W {
+        WE_SRAM1_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 20 - Write enable for bit i"]
+    #[doc = "Bit 24 - Write enable for bit 8 (sram0_slp_mask)"]
     #[inline(always)]
-    pub fn we_4(&mut self) -> WE__W<20> {
-        WE__W::new(self)
+    pub fn we_sram0_slp_mask(&mut self) -> WE_SRAM0_SLP_MASK_W {
+        WE_SRAM0_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 21 - Write enable for bit i"]
+    #[doc = "Bit 23 - Write enable for bit 7 (mctl_slp_mask)"]
     #[inline(always)]
-    pub fn we_5(&mut self) -> WE__W<21> {
-        WE__W::new(self)
+    pub fn we_mctl_slp_mask(&mut self) -> WE_MCTL_SLP_MASK_W {
+        WE_MCTL_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 22 - Write enable for bit i"]
+    #[doc = "Bit 22 - Write enable for bit 6 (peri_slp_mask)"]
     #[inline(always)]
-    pub fn we_6(&mut self) -> WE__W<22> {
-        WE__W::new(self)
+    pub fn we_peri_slp_mask(&mut self) -> WE_PERI_SLP_MASK_W {
+        WE_PERI_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 23 - Write enable for bit i"]
+    #[doc = "Bit 21 - Write enable for bit 5 (stor_slp_mask)"]
     #[inline(always)]
-    pub fn we_7(&mut self) -> WE__W<23> {
-        WE__W::new(self)
+    pub fn we_stor_slp_mask(&mut self) -> WE_STOR_SLP_MASK_W {
+        WE_STOR_SLP_MASK_W::new(self)
     }
-    #[doc = "Bit 24 - Write enable for bit i"]
+    #[doc = "Bit 19 - Write enable for bit 3 (gnne_slp_mask)"]
     #[inline(always)]
-    pub fn we_8(&mut self) -> WE__W<24> {
-        WE__W::new(self)
-    }
-    #[doc = "Bit 25 - Write enable for bit i"]
-    #[inline(always)]
-    pub fn we_9(&mut self) -> WE__W<25> {
-        WE__W::new(self)
-    }
-    #[doc = "Bit 26 - Write enable for bit i"]
-    #[inline(always)]
-    pub fn we_10(&mut self) -> WE__W<26> {
-        WE__W::new(self)
-    }
-    #[doc = "Bit 27 - Write enable for bit i"]
-    #[inline(always)]
-    pub fn we_11(&mut self) -> WE__W<27> {
-        WE__W::new(self)
-    }
-    #[doc = "Bit 28 - Write enable for bit i"]
-    #[inline(always)]
-    pub fn we_12(&mut self) -> WE__W<28> {
-        WE__W::new(self)
-    }
-    #[doc = "Bit 29 - Write enable for bit i"]
-    #[inline(always)]
-    pub fn we_13(&mut self) -> WE__W<29> {
-        WE__W::new(self)
+    pub fn we_gnne_slp_mask(&mut self) -> WE_GNNE_SLP_MASK_W {
+        WE_GNNE_SLP_MASK_W::new(self)
     }
     #[doc = "Bit 13 - PD_USB sleep mask bit"]
     #[inline(always)]

@@ -34,22 +34,22 @@ impl From<crate::W<SOC_SLEEP_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_6` reader - Write enable for bit 6"]
-pub type WE_6_R = crate::BitReader<bool>;
-#[doc = "Field `WE_6` writer - Write enable for bit 6"]
-pub type WE_6_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 27>;
-#[doc = "Field `WE_5` reader - Write enable for bit 5"]
-pub type WE_5_R = crate::BitReader<bool>;
-#[doc = "Field `WE_5` writer - Write enable for bit 5"]
-pub type WE_5_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 26>;
-#[doc = "Field `WE_4` reader - Write enable for bit 4"]
-pub type WE_4_R = crate::BitReader<bool>;
-#[doc = "Field `WE_4` writer - Write enable for bit 4"]
-pub type WE_4_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 25>;
-#[doc = "Field `WE_0` reader - Write enable for bit 0"]
-pub type WE_0_R = crate::BitReader<bool>;
-#[doc = "Field `WE_0` writer - Write enable for bit 0"]
-pub type WE_0_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 24>;
+#[doc = "Field `WE_pll3_init_en` reader - Write enable for bit 6 (pll3_init_en)"]
+pub type WE_PLL3_INIT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `WE_pll3_init_en` writer - Write enable for bit 6 (pll3_init_en)"]
+pub type WE_PLL3_INIT_EN_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 27>;
+#[doc = "Field `WE_pll2_init_en` reader - Write enable for bit 5 (pll2_init_en)"]
+pub type WE_PLL2_INIT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `WE_pll2_init_en` writer - Write enable for bit 5 (pll2_init_en)"]
+pub type WE_PLL2_INIT_EN_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 26>;
+#[doc = "Field `WE_auto_slp_en` reader - Write enable for bit 4 (auto_slp_en)"]
+pub type WE_AUTO_SLP_EN_R = crate::BitReader<bool>;
+#[doc = "Field `WE_auto_slp_en` writer - Write enable for bit 4 (auto_slp_en)"]
+pub type WE_AUTO_SLP_EN_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 25>;
+#[doc = "Field `WE_core_sleep_req` reader - Write enable for bit 0 (core_sleep_req)"]
+pub type WE_CORE_SLEEP_REQ_R = crate::BitReader<bool>;
+#[doc = "Field `WE_core_sleep_req` writer - Write enable for bit 0 (core_sleep_req)"]
+pub type WE_CORE_SLEEP_REQ_W<'a> = crate::BitWriter<'a, u32, SOC_SLEEP_CTL_SPEC, bool, 24>;
 #[doc = "PLL3 auto initialization enable bit.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLL3_INIT_EN_A {
@@ -229,25 +229,25 @@ impl<'a> CORE_SLEEP_REQ_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 27 - Write enable for bit 6"]
+    #[doc = "Bit 27 - Write enable for bit 6 (pll3_init_en)"]
     #[inline(always)]
-    pub fn we_6(&self) -> WE_6_R {
-        WE_6_R::new(((self.bits >> 27) & 1) != 0)
+    pub fn we_pll3_init_en(&self) -> WE_PLL3_INIT_EN_R {
+        WE_PLL3_INIT_EN_R::new(((self.bits >> 27) & 1) != 0)
     }
-    #[doc = "Bit 26 - Write enable for bit 5"]
+    #[doc = "Bit 26 - Write enable for bit 5 (pll2_init_en)"]
     #[inline(always)]
-    pub fn we_5(&self) -> WE_5_R {
-        WE_5_R::new(((self.bits >> 26) & 1) != 0)
+    pub fn we_pll2_init_en(&self) -> WE_PLL2_INIT_EN_R {
+        WE_PLL2_INIT_EN_R::new(((self.bits >> 26) & 1) != 0)
     }
-    #[doc = "Bit 25 - Write enable for bit 4"]
+    #[doc = "Bit 25 - Write enable for bit 4 (auto_slp_en)"]
     #[inline(always)]
-    pub fn we_4(&self) -> WE_4_R {
-        WE_4_R::new(((self.bits >> 25) & 1) != 0)
+    pub fn we_auto_slp_en(&self) -> WE_AUTO_SLP_EN_R {
+        WE_AUTO_SLP_EN_R::new(((self.bits >> 25) & 1) != 0)
     }
-    #[doc = "Bit 24 - Write enable for bit 0"]
+    #[doc = "Bit 24 - Write enable for bit 0 (core_sleep_req)"]
     #[inline(always)]
-    pub fn we_0(&self) -> WE_0_R {
-        WE_0_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn we_core_sleep_req(&self) -> WE_CORE_SLEEP_REQ_R {
+        WE_CORE_SLEEP_REQ_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 6 - PLL3 auto initialization enable bit."]
     #[inline(always)]
@@ -266,25 +266,25 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 27 - Write enable for bit 6"]
+    #[doc = "Bit 27 - Write enable for bit 6 (pll3_init_en)"]
     #[inline(always)]
-    pub fn we_6(&mut self) -> WE_6_W {
-        WE_6_W::new(self)
+    pub fn we_pll3_init_en(&mut self) -> WE_PLL3_INIT_EN_W {
+        WE_PLL3_INIT_EN_W::new(self)
     }
-    #[doc = "Bit 26 - Write enable for bit 5"]
+    #[doc = "Bit 26 - Write enable for bit 5 (pll2_init_en)"]
     #[inline(always)]
-    pub fn we_5(&mut self) -> WE_5_W {
-        WE_5_W::new(self)
+    pub fn we_pll2_init_en(&mut self) -> WE_PLL2_INIT_EN_W {
+        WE_PLL2_INIT_EN_W::new(self)
     }
-    #[doc = "Bit 25 - Write enable for bit 4"]
+    #[doc = "Bit 25 - Write enable for bit 4 (auto_slp_en)"]
     #[inline(always)]
-    pub fn we_4(&mut self) -> WE_4_W {
-        WE_4_W::new(self)
+    pub fn we_auto_slp_en(&mut self) -> WE_AUTO_SLP_EN_W {
+        WE_AUTO_SLP_EN_W::new(self)
     }
-    #[doc = "Bit 24 - Write enable for bit 0"]
+    #[doc = "Bit 24 - Write enable for bit 0 (core_sleep_req)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE_0_W {
-        WE_0_W::new(self)
+    pub fn we_core_sleep_req(&mut self) -> WE_CORE_SLEEP_REQ_W {
+        WE_CORE_SLEEP_REQ_W::new(self)
     }
     #[doc = "Bit 6 - PLL3 auto initialization enable bit."]
     #[inline(always)]

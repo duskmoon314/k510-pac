@@ -34,8 +34,8 @@ impl From<crate::W<OSC_25M_OFF_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_0` writer - Write enable for bit 0"]
-pub type WE_0_W<'a> = crate::BitWriter<'a, u32, OSC_25M_OFF_SPEC, bool, 16>;
+#[doc = "Field `WE_osc_25m_clock_off` writer - Write enable for bit 0 (osc_25m_clock_off)"]
+pub type WE_OSC_25M_CLOCK_OFF_W<'a> = crate::BitWriter<'a, u32, OSC_25M_OFF_SPEC, bool, 16>;
 #[doc = "osc 25m clock off\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSC_25M_CLOCK_OFF_A {
@@ -95,10 +95,10 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 16 - Write enable for bit 0"]
+    #[doc = "Bit 16 - Write enable for bit 0 (osc_25m_clock_off)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE_0_W {
-        WE_0_W::new(self)
+    pub fn we_osc_25m_clock_off(&mut self) -> WE_OSC_25M_CLOCK_OFF_W {
+        WE_OSC_25M_CLOCK_OFF_W::new(self)
     }
     #[doc = "Bit 0 - osc 25m clock off"]
     #[inline(always)]

@@ -106,11 +106,30 @@ reset vector register."]
     pub soc_sleep_mask: crate::Reg<soc_sleep_mask::SOC_SLEEP_MASK_SPEC>,
     #[doc = "0x11c - Test pin group select register"]
     pub test_pin_sel: crate::Reg<test_pin_sel::TEST_PIN_SEL_SPEC>,
-    _reserved41: [u8; 0x0f3c],
+    _reserved41: [u8; 0x0ee0],
+    #[doc = "0x1000 - AX25M dual-core RISCV core clock Division configure register"]
+    pub ax25m_clk_cfg: crate::Reg<ax25m_clk_cfg::AX25M_CLK_CFG_SPEC>,
+    #[doc = "0x1004 - AX25M dual-core RISCV core Machine Timer clock Division configure register"]
+    pub ax25m_mtimer_clk_cfg: crate::Reg<ax25m_mtimer_clk_cfg::AX25M_MTIMER_CLK_CFG_SPEC>,
+    _reserved43: [u8; 0x08],
+    #[doc = "0x1010 - AX25P single-core RISCV core clock Division configure register"]
+    pub ax25p_clk_cfg: crate::Reg<ax25p_clk_cfg::AX25P_CLK_CFG_SPEC>,
+    #[doc = "0x1014 - AX25P single-core RISCV core Machine Timer clock Division configure register"]
+    pub ax25p_mtimer_clk_cfg: crate::Reg<ax25p_mtimer_clk_cfg::AX25P_MTIMER_CLK_CFG_SPEC>,
+    _reserved45: [u8; 0x08],
+    #[doc = "0x1020 - GNNE axi clock configure register"]
+    pub gnne_aclk_cfg: crate::Reg<gnne_aclk_cfg::GNNE_ACLK_CFG_SPEC>,
+    _reserved46: [u8; 0x04],
+    #[doc = "0x1028 - GNNE system clock configure register"]
+    pub gnne_sysclk_cfg: crate::Reg<gnne_sysclk_cfg::GNNE_SYSCLK_CFG_SPEC>,
+    _reserved47: [u8; 0x10],
+    #[doc = "0x103c - I2C2AXI clock configure register"]
+    pub i2c2axi_clk_cfg: crate::Reg<i2c2axi_clk_cfg::I2C2AXI_CLK_CFG_SPEC>,
+    _reserved48: [u8; 0x1c],
     #[doc = "0x105c..0x106c - UART\\[i\\]
 host module serial interface clock configure register"]
     pub uart_sclk_cfg: [crate::Reg<uart_sclk_cfg::UART_SCLK_CFG_SPEC>; 4],
-    _reserved42: [u8; 0x0fec],
+    _reserved49: [u8; 0x0fec],
     #[doc = "0x2058..0x2068 - UART\\[i\\]
 host module reset control register"]
     pub uart_rst_ctl: [crate::Reg<uart_rst_ctl::UART_RST_CTL_SPEC>; 4],
@@ -236,6 +255,34 @@ pub mod soc_sleep_mask;
 pub type TEST_PIN_SEL = crate::Reg<test_pin_sel::TEST_PIN_SEL_SPEC>;
 #[doc = "Test pin group select register"]
 pub mod test_pin_sel;
+#[doc = "AX25M_CLK_CFG register accessor: an alias for `Reg<AX25M_CLK_CFG_SPEC>`"]
+pub type AX25M_CLK_CFG = crate::Reg<ax25m_clk_cfg::AX25M_CLK_CFG_SPEC>;
+#[doc = "AX25M dual-core RISCV core clock Division configure register"]
+pub mod ax25m_clk_cfg;
+#[doc = "AX25M_MTIMER_CLK_CFG register accessor: an alias for `Reg<AX25M_MTIMER_CLK_CFG_SPEC>`"]
+pub type AX25M_MTIMER_CLK_CFG = crate::Reg<ax25m_mtimer_clk_cfg::AX25M_MTIMER_CLK_CFG_SPEC>;
+#[doc = "AX25M dual-core RISCV core Machine Timer clock Division configure register"]
+pub mod ax25m_mtimer_clk_cfg;
+#[doc = "AX25P_CLK_CFG register accessor: an alias for `Reg<AX25P_CLK_CFG_SPEC>`"]
+pub type AX25P_CLK_CFG = crate::Reg<ax25p_clk_cfg::AX25P_CLK_CFG_SPEC>;
+#[doc = "AX25P single-core RISCV core clock Division configure register"]
+pub mod ax25p_clk_cfg;
+#[doc = "AX25P_MTIMER_CLK_CFG register accessor: an alias for `Reg<AX25P_MTIMER_CLK_CFG_SPEC>`"]
+pub type AX25P_MTIMER_CLK_CFG = crate::Reg<ax25p_mtimer_clk_cfg::AX25P_MTIMER_CLK_CFG_SPEC>;
+#[doc = "AX25P single-core RISCV core Machine Timer clock Division configure register"]
+pub mod ax25p_mtimer_clk_cfg;
+#[doc = "GNNE_ACLK_CFG register accessor: an alias for `Reg<GNNE_ACLK_CFG_SPEC>`"]
+pub type GNNE_ACLK_CFG = crate::Reg<gnne_aclk_cfg::GNNE_ACLK_CFG_SPEC>;
+#[doc = "GNNE axi clock configure register"]
+pub mod gnne_aclk_cfg;
+#[doc = "GNNE_SYSCLK_CFG register accessor: an alias for `Reg<GNNE_SYSCLK_CFG_SPEC>`"]
+pub type GNNE_SYSCLK_CFG = crate::Reg<gnne_sysclk_cfg::GNNE_SYSCLK_CFG_SPEC>;
+#[doc = "GNNE system clock configure register"]
+pub mod gnne_sysclk_cfg;
+#[doc = "I2C2AXI_CLK_CFG register accessor: an alias for `Reg<I2C2AXI_CLK_CFG_SPEC>`"]
+pub type I2C2AXI_CLK_CFG = crate::Reg<i2c2axi_clk_cfg::I2C2AXI_CLK_CFG_SPEC>;
+#[doc = "I2C2AXI clock configure register"]
+pub mod i2c2axi_clk_cfg;
 #[doc = "UART_SCLK_CFG register accessor: an alias for `Reg<UART_SCLK_CFG_SPEC>`"]
 pub type UART_SCLK_CFG = crate::Reg<uart_sclk_cfg::UART_SCLK_CFG_SPEC>;
 #[doc = "UART\\[i\\]

@@ -40,20 +40,20 @@
           <resetMask>0x7F3F1FFFF</resetMask>
           <fields>
             <field>
-              <name>WE_27_24</name>
-              <description>Write enable for bits [27:24]</description>
+              <name>WE_pll_out_div</name>
+              <description>Write enable for bits [27:24] (pll_out_div)</description>
               <bitRange>[30:30]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_21_16</name>
-              <description>Write enable for bits [21:16]</description>
+              <name>WE_pll_ref_div</name>
+              <description>Write enable for bits [21:16] (pll_ref_div)</description>
               <bitRange>[29:29]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_12_0</name>
-              <description>Write enable for bits [12:0]</description>
+              <name>WE_pll_fb_div</name>
+              <description>Write enable for bits [12:0] (pll_fb_div)</description>
               <bitRange>[28:28]</bitRange>
               <access>write-only</access>
             </field>
@@ -84,14 +84,32 @@
           <resetMask>0x1F0F0FFF</resetMask>
           <fields>
             <field>
-              <name>WE_19_16</name>
-              <description>Write enable for bits [19:16]</description>
-              <bitRange>[28:25]</bitRange>
+              <name>WE_pll_bypass</name>
+              <description>Write enable for bit 19 (pll_bypass)</description>
+              <bitRange>[28:28]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_11_0</name>
-              <description>Write enable for bits [11:0]</description>
+              <name>WE_pll_test</name>
+              <description>Write enable for bit 18 (pll_test)</description>
+              <bitRange>[27:27]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_pll_ensat</name>
+              <description>Write enable for bit 17 (pll_ensat)</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_pll_fasten</name>
+              <description>Write enable for bit 16 (pll_fasten)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_pll_bwadj</name>
+              <description>Write enable for bits [11:0] (pll_bwadj)</description>
               <bitRange>[24:24]</bitRange>
               <access>write-only</access>
             </field>
@@ -180,26 +198,26 @@
           <resetMask>0x0F0FF111</resetMask>
           <fields>
             <field>
-              <name>WE_19_12</name>
-              <description>Write enable for bits [19:12]</description>
+              <name>WE_pll_lock_tim</name>
+              <description>Write enable for bits [19:12] (pll_lock_tim)</description>
               <bitRange>[27:27]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_8</name>
-              <description>Write enable for bit 8</description>
+              <name>WE_pll_clk_oe</name>
+              <description>Write enable for bit 8 (pll_clk_oe)</description>
               <bitRange>[26:26]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_4</name>
-              <description>Write enable for bit 4</description>
+              <name>WE_pll_init</name>
+              <description>Write enable for bit 4 (pll_init)</description>
               <bitRange>[25:25]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_0</name>
-              <description>Write enable for bit 0</description>
+              <name>WE_pll_pwrdwn</name>
+              <description>Write enable for bit 0 (pll_pwrdwn)</description>
               <bitRange>[24:24]</bitRange>
               <access>write-only</access>
             </field>
@@ -412,8 +430,8 @@
           <resetMask>0x0001002F</resetMask>
           <fields>
             <field>
-              <name>WE_0</name>
-              <description>Write enable for bit 0</description>
+              <name>WE_clear_reset_status</name>
+              <description>Write enable for bit 0 (clear_reset_status)</description>
               <bitRange>[16:16]</bitRange>
               <access>write-only</access>
             </field>
@@ -517,8 +535,8 @@
           <resetMask>0x00010001</resetMask>
           <fields>
             <field>
-              <name>WE_0</name>
-              <description>Write enable for bit 0</description>
+              <name>WE_osc_25m_clock_off</name>
+              <description>Write enable for bit 0 (osc_25m_clock_off)</description>
               <bitRange>[16:16]</bitRange>
               <access>write-only</access>
             </field>
@@ -550,8 +568,8 @@
           <resetMask>0x00010001</resetMask>
           <fields>
             <field>
-              <name>WE_0</name>
-              <description>Write enable for bit 0</description>
+              <name>WE_SOC_CORE_GLOBAL_RESET</name>
+              <description>Write enable for bit 0 (SOC_CORE_GLOBAL_RESET)</description>
               <bitRange>[16:16]</bitRange>
             </field>
             <field>
@@ -614,23 +632,23 @@
           <resetMask>0x0F000071</resetMask>
           <fields>
             <field>
-              <name>WE_6</name>
-              <description>Write enable for bit 6</description>
+              <name>WE_pll3_init_en</name>
+              <description>Write enable for bit 6 (pll3_init_en)</description>
               <bitRange>[27:27]</bitRange>
             </field>
             <field>
-              <name>WE_5</name>
-              <description>Write enable for bit 5</description>
+              <name>WE_pll2_init_en</name>
+              <description>Write enable for bit 5 (pll2_init_en)</description>
               <bitRange>[26:26]</bitRange>
             </field>
             <field>
-              <name>WE_4</name>
-              <description>Write enable for bit 4</description>
+              <name>WE_auto_slp_en</name>
+              <description>Write enable for bit 4 (auto_slp_en)</description>
               <bitRange>[25:25]</bitRange>
             </field>
             <field>
-              <name>WE_0</name>
-              <description>Write enable for bit 0</description>
+              <name>WE_core_sleep_req</name>
+              <description>Write enable for bit 0 (core_sleep_req)</description>
               <bitRange>[24:24]</bitRange>
             </field>
             <field>
@@ -831,8 +849,9 @@
             <field>
               <dim>2</dim>
               <dimIncrement>1</dimIncrement>
-              <name>WE_%s</name>
-              <description>Write enable for bit</description>
+              <dimIndex>m,p</dimIndex>
+              <name>WE_soc_wakup_ax25%s_en</name>
+              <description>Write enable for bit (soc_wakup_ax25[mp]_en)</description>
               <bitRange>[24:24]</bitRange>
               <access>write-only</access>
             </field>
@@ -868,8 +887,8 @@
             <field>
               <dim>6</dim>
               <dimIncrement>1</dimIncrement>
-              <name>WE_%s</name>
-              <description>Write enable for bit</description>
+              <name>WE_timer_t%s_pause</name>
+              <description>Write enable for bit (timer_t[i]_pause)</description>
               <bitRange>[16:16]</bitRange>
               <access>write-only</access>
             </field>
@@ -2791,11 +2810,63 @@
           <addressOffset>0x118</addressOffset>
           <fields>
             <field>
-              <dim>14</dim>
-              <dimIncrement>1</dimIncrement>
-              <name>WE_%s</name>
-              <description>Write enable for bit i</description>
-              <bitRange>[16:16]</bitRange>
+              <name>WE_usb_slp_mask</name>
+              <description>Write enable for bit 13 (ub_slp_mask)</description>
+              <bitRange>[29:29]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_h264_slp_mask</name>
+              <description>Write enable for bit 12 (h264_slp_mask)</description>
+              <bitRange>[28:28]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_disp_slp_mask</name>
+              <description>Write enable for bit 11 (disp_slp_mask)</description>
+              <bitRange>[27:27]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_isp_slp_mask</name>
+              <description>Write enable for bit 10 (isp_slp_mask)</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_sram1_slp_mask</name>
+              <description>Write enable for bit 9 (sram1_slp_mask)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_sram0_slp_mask</name>
+              <description>Write enable for bit 8 (sram0_slp_mask)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_mctl_slp_mask</name>
+              <description>Write enable for bit 7 (mctl_slp_mask)</description>
+              <bitRange>[23:23]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_peri_slp_mask</name>
+              <description>Write enable for bit 6 (peri_slp_mask)</description>
+              <bitRange>[22:22]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_stor_slp_mask</name>
+              <description>Write enable for bit 5 (stor_slp_mask)</description>
+              <bitRange>[21:21]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_gnne_slp_mask</name>
+              <description>Write enable for bit 3 (gnne_slp_mask)</description>
+              <bitRange>[19:19]</bitRange>
               <access>write-only</access>
             </field>
             <field>
@@ -3019,6 +3090,965 @@
             </field>
           </fields>
         </register>
+        <register>
+          <name>AX25M_CLK_CFG</name>
+          <description>AX25M dual-core RISCV core clock Division configure register</description>
+          <addressOffset>0x1000</addressOffset>
+          <resetValue>0x00000F61</resetValue>
+          <resetMask>0x3F000FF3</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>WE_ax25m_dcclk%s_en</name>
+              <description>Write enable for bit 10/11 (ax25m_dcclk[01]_en)</description>
+              <bitRange>[28:28]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>WE_ax25m_cclk%s_en</name>
+              <description>Write enable for bit 8/9 (ax25m_cclk[01]_en)</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_ax25m_cclk_div</name>
+              <description>Write enable for bit [7:4] (ax25m_cclk_div)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_ax25m_cclk_sel</name>
+              <description>Write enable for bit [1:0] (ax25m_cclk_sel)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>ax25m_dcclk%s_en</name>
+              <description>AX25M CPU dc clock enable control bit</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable CPU core clock output</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable CPU core clock output</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>ax25m_cclk%s_en</name>
+              <description>AX25M CPU core clock enable control bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable CPU core clock output</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable CPU core clock output</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25m_cclk_div</name>
+              <description>AX25M CPU core clock division ratio configure</description>
+              <bitRange>[7:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D12</name>
+                  <description>12/12 division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D11</name>
+                  <description>11/12 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D10</name>
+                  <description>10/12 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D9</name>
+                  <description>9/12 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D8</name>
+                  <description>8/12 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D7</name>
+                  <description>7/12 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>6/12 division</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>5/12 division</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>4/12 division</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>3/12 division</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>2/12 division</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>1/12 division</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25m_cclk_sel</name>
+              <description>AX25M CPU core clock source selection</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL2_800M</name>
+                  <description>800MHz source clock from PLL 2</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL0_1G</name>
+                  <description>1GHz source clock from PLL 0</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL2_1_2G</name>
+                  <description>1.2GHz source clock from PLL 2</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>AX25M_MTIMER_CLK_CFG</name>
+          <description>AX25M dual-core RISCV core Machine Timer clock Division configure register</description>
+          <addressOffset>0x1004</addressOffset>
+          <resetValue>0x0000014D</resetValue>
+          <resetMask>0x0700017D</resetMask>
+          <fields>
+            <field>
+              <name>WE_ax25m_mtimer_clk_en</name>
+              <description>Write enable for bit 8 (ax25m_mtimer_clk_en)</description>
+              <bitRange>[26:26]</bitRange>
+            </field>
+            <field>
+              <name>WE_ax25m_mtimerclk_div</name>
+              <description>Write enable for bit [6:2] (ax25m_mtimerclk_div)</description>
+              <bitRange>[25:25]</bitRange>
+            </field>
+            <field>
+              <name>WE_ax25m_mtimerclk_sel</name>
+              <description>Write enable for bit 0 (ax25m_mtimerclk_sel)</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>ax25m_mtimer_clk_en</name>
+              <description>AX25M Machine Timer clock enable control bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable ax25m Machine Timer clock</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable ax25m Machine Timer clock</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25m_mtimerclk_div</name>
+              <description>AX25M Machine Timer clock division ratio configure</description>
+              <bitRange>[6:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>no division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>1/2 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>1/3 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>1/4 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>1/5 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D7</name>
+                  <description>1/7 division</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D8</name>
+                  <description>1/8 division</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D9</name>
+                  <description>1/9 division</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D10</name>
+                  <description>1/10 division</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D11</name>
+                  <description>1/11 division</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D12</name>
+                  <description>1/12 division</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D13</name>
+                  <description>1/13 division</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D14</name>
+                  <description>1/14 division</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D15</name>
+                  <description>1/15 division</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D16</name>
+                  <description>1/16 division</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D17</name>
+                  <description>1/17 division</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D18</name>
+                  <description>1/18 division</description>
+                  <value>0x11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D19</name>
+                  <description>1/19 division</description>
+                  <value>0x12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D20</name>
+                  <description>1/20 division</description>
+                  <value>0x13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D21</name>
+                  <description>1/21 division</description>
+                  <value>0x14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D22</name>
+                  <description>1/22 division</description>
+                  <value>0x15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D23</name>
+                  <description>1/23 division</description>
+                  <value>0x16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D24</name>
+                  <description>1/24 division</description>
+                  <value>0x17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D25</name>
+                  <description>1/25 division</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D26</name>
+                  <description>1/26 division</description>
+                  <value>0x19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D27</name>
+                  <description>1/27 division</description>
+                  <value>0x1A</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D28</name>
+                  <description>1/28 division</description>
+                  <value>0x1B</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D29</name>
+                  <description>1/29 division</description>
+                  <value>0x1C</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D30</name>
+                  <description>1/30 division</description>
+                  <value>0x1D</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D31</name>
+                  <description>1/31 division</description>
+                  <value>0x1E</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D32</name>
+                  <description>1/32 division</description>
+                  <value>0x1F</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25m_mtimerclk_sel</name>
+              <description>AX25M Machine Timer clock source selection</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OSC_32KHz</name>
+                  <description>32KHz OSC</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OSC_25MHz</name>
+                  <description>25MHz OSC</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>AX25P_CLK_CFG</name>
+          <description>AX25P single-core RISCV core clock Division configure register</description>
+          <addressOffset>0x1010</addressOffset>
+          <resetValue>0x00000330</resetValue>
+          <resetMask>0x0F000371</resetMask>
+          <fields>
+            <field>
+              <name>WE_ax25p_lmclk_en</name>
+              <description>Write enable for bit 9 (ax25p_lmclk_en)</description>
+              <bitRange>[27:27]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_ax25p_cclk_en</name>
+              <description>Write enable for bit 8 (ax25p_cclk_en)</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_ax25p_cclk_div</name>
+              <description>Write enable for bit [6:4] (ax25p_cclk_div)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_ax25p_cclk_sel</name>
+              <description>Write enable for bit 0 (ax25p_cclk_sel)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>ax25p_lmclk_en</name>
+              <description>AX25P CPU local memory clock enable control bit</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable CPU core clock output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable CPU core clock output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25p_cclk_en</name>
+              <description>AX25P CPU core clock enable control bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable CPU core clock output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable CPU core clock output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25p_cclk_div</name>
+              <description>AX25P CPU core clock division ratio configure</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>6/6 division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>5/6 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>4/6 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>3/6 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>2/6 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25p_cclk_sel</name>
+              <description>AX25P CPU core clock source selection</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL2_792M</name>
+                  <description>792MHz source clock from PLL 2</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL0_1G</name>
+                  <description>1GHz source clock from PLL 0</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>AX25P_MTIMER_CLK_CFG</name>
+          <description>AX25P single-core RISCV core Machine Timer clock Division configure register</description>
+          <addressOffset>0x1014</addressOffset>
+          <resetValue>0x0000014D</resetValue>
+          <resetMask>0x0700017D</resetMask>
+          <fields>
+            <field>
+              <name>WE_ax25p_mtimer_clk_en</name>
+              <description>Write enable for bit 8 (ax25p_mtimer_clk_en)</description>
+              <bitRange>[26:26]</bitRange>
+            </field>
+            <field>
+              <name>WE_ax25p_mtimerclk_div</name>
+              <description>Write enable for bit [6:2] (ax25p_mtimerclk_div)</description>
+              <bitRange>[25:25]</bitRange>
+            </field>
+            <field>
+              <name>WE_ax25p_mtimerclk_sel</name>
+              <description>Write enable for bit 0 (ax25p_mtimerclk_sel)</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>ax25p_mtimer_clk_en</name>
+              <description>AX25P Machine Timer clock enable control bit</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable ax25m Machine Timer clock</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable ax25m Machine Timer clock</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25p_mtimerclk_div</name>
+              <description>AX25P Machine Timer clock division ratio configure</description>
+              <bitRange>[6:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>no division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>1/2 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>1/3 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>1/4 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>1/5 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D7</name>
+                  <description>1/7 division</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D8</name>
+                  <description>1/8 division</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D9</name>
+                  <description>1/9 division</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D10</name>
+                  <description>1/10 division</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D11</name>
+                  <description>1/11 division</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D12</name>
+                  <description>1/12 division</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D13</name>
+                  <description>1/13 division</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D14</name>
+                  <description>1/14 division</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D15</name>
+                  <description>1/15 division</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D16</name>
+                  <description>1/16 division</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D17</name>
+                  <description>1/17 division</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D18</name>
+                  <description>1/18 division</description>
+                  <value>0x11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D19</name>
+                  <description>1/19 division</description>
+                  <value>0x12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D20</name>
+                  <description>1/20 division</description>
+                  <value>0x13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D21</name>
+                  <description>1/21 division</description>
+                  <value>0x14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D22</name>
+                  <description>1/22 division</description>
+                  <value>0x15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D23</name>
+                  <description>1/23 division</description>
+                  <value>0x16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D24</name>
+                  <description>1/24 division</description>
+                  <value>0x17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D25</name>
+                  <description>1/25 division</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D26</name>
+                  <description>1/26 division</description>
+                  <value>0x19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D27</name>
+                  <description>1/27 division</description>
+                  <value>0x1A</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D28</name>
+                  <description>1/28 division</description>
+                  <value>0x1B</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D29</name>
+                  <description>1/29 division</description>
+                  <value>0x1C</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D30</name>
+                  <description>1/30 division</description>
+                  <value>0x1D</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D31</name>
+                  <description>1/31 division</description>
+                  <value>0x1E</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D32</name>
+                  <description>1/32 division</description>
+                  <value>0x1F</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ax25p_mtimerclk_sel</name>
+              <description>AX25P Machine Timer clock source selection</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OSC_32KHz</name>
+                  <description>32KHz OSC</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OSC_25MHz</name>
+                  <description>25MHz OSC</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GNNE_ACLK_CFG</name>
+          <description>GNNE axi clock configure register</description>
+          <addressOffset>0x1020</addressOffset>
+          <fields>
+            <field>
+              <name>WE_gnne_aclk_en</name>
+              <description>Write enable for bit 9 (gnne_aclk_en)</description>
+              <bitRange>[27:27]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_gnne_aclk_div</name>
+              <description>Write enable for bits [6:4] (gnne_aclk_div)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_gnne_aclk_sel</name>
+              <description>Write enable for bit 0 (gnne_aclk_sel)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>gnne_aclk_en</name>
+              <description>GNNE system axi master clock enable control bit</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable GNNE system axi master clock output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable GNNE system axi master clock output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>gnne_aclk_div</name>
+              <description>GNNE axi port clock division ratio configure</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>6/6 division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>5/6 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>4/6 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>3/6 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>2/6 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>gnne_aclk_sel</name>
+              <description>GNNE axi master clock source selection</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL0_500M</name>
+                  <description>500MHz source clock from PLL 0 div2</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL1_667M</name>
+                  <description>667MHz source clock from PLL 1 div2</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GNNE_SYSCLK_CFG</name>
+          <description>GNNE system clock configure register</description>
+          <addressOffset>0x1028</addressOffset>
+          <fields>
+            <field>
+              <name>WE_gnne_sys_clk_en</name>
+              <description>Write enable for bit 9 (gnne_sys_clk_en)</description>
+              <bitRange>[27:27]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_gnne_sys_clk_div</name>
+              <description>Write enable for bits [6:4] (gnne_sys_clk_div)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_gnne_sys_clk_sel</name>
+              <description>Write enable for bit 0 (gnne_sys_clk_sel)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>gnne_sys_clk_en</name>
+              <description>GNNE system main function clock enable control bit</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable GNNE system main function clock output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable GNNE system main function clock output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>gnne_sys_clk_div</name>
+              <description>GNNE system main function clock division ratio configure</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>6/6 division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>5/6 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>4/6 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>3/6 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>2/6 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>gnne_sys_clk_sel</name>
+              <description>GNNE main function clock source selection</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL0_500M</name>
+                  <description>500MHz source clock from PLL 0 div2</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL1_667M</name>
+                  <description>667MHz source clock from PLL 1 div2</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>I2C2AXI_CLK_CFG</name>
+          <description>I2C2AXI clock configure register</description>
+          <addressOffset>0x103C</addressOffset>
+          <resetValue>0x00000001</resetValue>
+          <resetMask>0x01000001</resetMask>
+          <fields>
+            <field>
+              <name>WE_para_i2c2axi_clk_en</name>
+              <description>Write enable for bit 0 (para_i2c2axi_clk_en)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>para_i2c2axi_clk_en</name>
+              <description>I2C2AXI clock enable control</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable I2C2AXI clock</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable I2C2AXI clock</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
 
         <register>
           <dim>4</dim>
@@ -3030,20 +4060,20 @@
           <resetMask>0x070011F1</resetMask>
           <fields>
             <field>
-              <name>WE_12</name>
-              <description>Write enable for bit 12</description>
+              <name>WE_uart_sclk_en</name>
+              <description>Write enable for bit 12 (uart_sclk_en)</description>
               <bitRange>[26:26]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_8_4</name>
-              <description>Write enable for bit [8:4]</description>
+              <name>WE_uart_sclk_div</name>
+              <description>Write enable for bit [8:4] (uart_sclk_div)</description>
               <bitRange>[25:25]</bitRange>
               <access>write-only</access>
             </field>
             <field>
-              <name>WE_0</name>
-              <description>Write enable for bit 0</description>
+              <name>WE_uart_sclk_sel</name>
+              <description>Write enable for bit 0 (uart_sclk_sel)</description>
               <bitRange>[24:24]</bitRange>
               <access>write-only</access>
             </field>
@@ -3069,6 +4099,168 @@
               <name>uart_sclk_div</name>
               <description>UART[i] host module serial clock division ratio configure</description>
               <bitRange>[8:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>no division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>1/2 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>1/3 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>1/4 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>1/5 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D7</name>
+                  <description>1/7 division</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D8</name>
+                  <description>1/8 division</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D9</name>
+                  <description>1/9 division</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D10</name>
+                  <description>1/10 division</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D11</name>
+                  <description>1/11 division</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D12</name>
+                  <description>1/12 division</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D13</name>
+                  <description>1/13 division</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D14</name>
+                  <description>1/14 division</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D15</name>
+                  <description>1/15 division</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D16</name>
+                  <description>1/16 division</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D17</name>
+                  <description>1/17 division</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D18</name>
+                  <description>1/18 division</description>
+                  <value>0x11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D19</name>
+                  <description>1/19 division</description>
+                  <value>0x12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D20</name>
+                  <description>1/20 division</description>
+                  <value>0x13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D21</name>
+                  <description>1/21 division</description>
+                  <value>0x14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D22</name>
+                  <description>1/22 division</description>
+                  <value>0x15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D23</name>
+                  <description>1/23 division</description>
+                  <value>0x16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D24</name>
+                  <description>1/24 division</description>
+                  <value>0x17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D25</name>
+                  <description>1/25 division</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D26</name>
+                  <description>1/26 division</description>
+                  <value>0x19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D27</name>
+                  <description>1/27 division</description>
+                  <value>0x1A</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D28</name>
+                  <description>1/28 division</description>
+                  <value>0x1B</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D29</name>
+                  <description>1/29 division</description>
+                  <value>0x1C</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D30</name>
+                  <description>1/30 division</description>
+                  <value>0x1D</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D31</name>
+                  <description>1/31 division</description>
+                  <value>0x1E</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D32</name>
+                  <description>1/32 division</description>
+                  <value>0x1F</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>uart_sclk_sel</name>

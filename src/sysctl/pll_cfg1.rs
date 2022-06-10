@@ -34,10 +34,17 @@ impl From<crate::W<PLL_CFG1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_19_16` writer - Write enable for bits \\[19:16\\]"]
-pub type WE_19_16_W<'a> = crate::FieldWriter<'a, u32, PLL_CFG1_SPEC, u8, u8, 4, 25>;
-#[doc = "Field `WE_11_0` writer - Write enable for bits \\[11:0\\]"]
-pub type WE_11_0_W<'a> = crate::BitWriter<'a, u32, PLL_CFG1_SPEC, bool, 24>;
+#[doc = "Field `WE_pll_bypass` writer - Write enable for bit 19 (pll_bypass)"]
+pub type WE_PLL_BYPASS_W<'a> = crate::BitWriter<'a, u32, PLL_CFG1_SPEC, bool, 28>;
+#[doc = "Field `WE_pll_test` writer - Write enable for bit 18 (pll_test)"]
+pub type WE_PLL_TEST_W<'a> = crate::BitWriter<'a, u32, PLL_CFG1_SPEC, bool, 27>;
+#[doc = "Field `WE_pll_ensat` writer - Write enable for bit 17 (pll_ensat)"]
+pub type WE_PLL_ENSAT_W<'a> = crate::BitWriter<'a, u32, PLL_CFG1_SPEC, bool, 26>;
+#[doc = "Field `WE_pll_fasten` writer - Write enable for bit 16 (pll_fasten)"]
+pub type WE_PLL_FASTEN_W<'a> = crate::BitWriter<'a, u32, PLL_CFG1_SPEC, bool, 25>;
+#[doc = "Field `WE_pll_bwadj` writer - Write enable for bits \\[11:0\\]
+(pll_bwadj)"]
+pub type WE_PLL_BWADJ_W<'a> = crate::BitWriter<'a, u32, PLL_CFG1_SPEC, bool, 24>;
 #[doc = "PLL\\[i\\]
 bypass mode enable control bit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -289,15 +296,31 @@ bandwidth adjustment parameter."]
     }
 }
 impl W {
-    #[doc = "Bits 25:28 - Write enable for bits \\[19:16\\]"]
+    #[doc = "Bit 28 - Write enable for bit 19 (pll_bypass)"]
     #[inline(always)]
-    pub fn we_19_16(&mut self) -> WE_19_16_W {
-        WE_19_16_W::new(self)
+    pub fn we_pll_bypass(&mut self) -> WE_PLL_BYPASS_W {
+        WE_PLL_BYPASS_W::new(self)
     }
-    #[doc = "Bit 24 - Write enable for bits \\[11:0\\]"]
+    #[doc = "Bit 27 - Write enable for bit 18 (pll_test)"]
     #[inline(always)]
-    pub fn we_11_0(&mut self) -> WE_11_0_W {
-        WE_11_0_W::new(self)
+    pub fn we_pll_test(&mut self) -> WE_PLL_TEST_W {
+        WE_PLL_TEST_W::new(self)
+    }
+    #[doc = "Bit 26 - Write enable for bit 17 (pll_ensat)"]
+    #[inline(always)]
+    pub fn we_pll_ensat(&mut self) -> WE_PLL_ENSAT_W {
+        WE_PLL_ENSAT_W::new(self)
+    }
+    #[doc = "Bit 25 - Write enable for bit 16 (pll_fasten)"]
+    #[inline(always)]
+    pub fn we_pll_fasten(&mut self) -> WE_PLL_FASTEN_W {
+        WE_PLL_FASTEN_W::new(self)
+    }
+    #[doc = "Bit 24 - Write enable for bits \\[11:0\\]
+(pll_bwadj)"]
+    #[inline(always)]
+    pub fn we_pll_bwadj(&mut self) -> WE_PLL_BWADJ_W {
+        WE_PLL_BWADJ_W::new(self)
     }
     #[doc = "Bit 19 - PLL\\[i\\]
 bypass mode enable control bit."]

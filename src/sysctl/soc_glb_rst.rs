@@ -19,8 +19,8 @@ impl From<crate::W<SOC_GLB_RST_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_0` writer - Write enable for bit 0"]
-pub type WE_0_W<'a> = crate::BitWriter<'a, u32, SOC_GLB_RST_SPEC, bool, 16>;
+#[doc = "Field `WE_SOC_CORE_GLOBAL_RESET` writer - Write enable for bit 0 (SOC_CORE_GLOBAL_RESET)"]
+pub type WE_SOC_CORE_GLOBAL_RESET_W<'a> = crate::BitWriter<'a, u32, SOC_GLB_RST_SPEC, bool, 16>;
 #[doc = "SoC core global reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOC_CORE_GLOBAL_RESET_AW {
@@ -51,10 +51,10 @@ impl<'a> SOC_CORE_GLOBAL_RESET_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 16 - Write enable for bit 0"]
+    #[doc = "Bit 16 - Write enable for bit 0 (SOC_CORE_GLOBAL_RESET)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE_0_W {
-        WE_0_W::new(self)
+    pub fn we_soc_core_global_reset(&mut self) -> WE_SOC_CORE_GLOBAL_RESET_W {
+        WE_SOC_CORE_GLOBAL_RESET_W::new(self)
     }
     #[doc = "Bit 0 - SoC core global reset"]
     #[inline(always)]

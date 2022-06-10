@@ -35,6 +35,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - AX25P_CORE_RSTVEC
   - SOC_SLEEP_MASK
   - TEST_PIN_SEL
+  - AX25M_CLK_CFG
+  - AX25M_MTIMER_CLK_CFG
+  - AX25P_CLK_CFG
+  - AX25P_MTIMER_CLK_CFG
+  - GNNE_ACLK_CFG
+  - GNNE_SYSCLK_CFG
+  - I2C2AXI_CLK_CFG
 
 ## [0.0.1] - 2022-05-20
 

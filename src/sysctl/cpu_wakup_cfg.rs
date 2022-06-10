@@ -34,8 +34,9 @@ impl From<crate::W<CPU_WAKUP_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Fields `WE_(0-1)` writer - Write enable for bit"]
-pub type WE__W<'a, const O: u8> = crate::BitWriter<'a, u32, CPU_WAKUP_CFG_SPEC, bool, O>;
+#[doc = "Fields `WE_soc_wakup_ax25(0-1)_en` writer - Write enable for bit (soc_wakup_ax25\\[mp\\]_en)"]
+pub type WE_SOC_WAKUP_AX25_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CPU_WAKUP_CFG_SPEC, bool, O>;
 #[doc = "AX25M/AX25P auto wake-up enable when SoC wakes up.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOC_WAKUP_AX25_EN_A {
@@ -105,20 +106,20 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Write enable for bit"]
+    #[doc = "Write enable for bit (soc_wakup_ax25\\[mp\\]_en)"]
     #[inline(always)]
-    pub unsafe fn we_<const O: u8>(&mut self) -> WE__W<O> {
-        WE__W::new(self)
+    pub unsafe fn we_soc_wakup_ax25_en<const O: u8>(&mut self) -> WE_SOC_WAKUP_AX25_EN_W<O> {
+        WE_SOC_WAKUP_AX25_EN_W::new(self)
     }
-    #[doc = "Bit 24 - Write enable for bit"]
+    #[doc = "Bit 24 - Write enable for bit (soc_wakup_ax25\\[mp\\]_en)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE__W<24> {
-        WE__W::new(self)
+    pub fn we_soc_wakup_ax25m_en(&mut self) -> WE_SOC_WAKUP_AX25_EN_W<24> {
+        WE_SOC_WAKUP_AX25_EN_W::new(self)
     }
-    #[doc = "Bit 25 - Write enable for bit"]
+    #[doc = "Bit 25 - Write enable for bit (soc_wakup_ax25\\[mp\\]_en)"]
     #[inline(always)]
-    pub fn we_1(&mut self) -> WE__W<25> {
-        WE__W::new(self)
+    pub fn we_soc_wakup_ax25p_en(&mut self) -> WE_SOC_WAKUP_AX25_EN_W<25> {
+        WE_SOC_WAKUP_AX25_EN_W::new(self)
     }
     #[doc = "AX25M/AX25P auto wake-up enable when SoC wakes up."]
     #[inline(always)]

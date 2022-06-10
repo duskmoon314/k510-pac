@@ -34,12 +34,15 @@ impl From<crate::W<PLL_CFG0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_27_24` writer - Write enable for bits \\[27:24\\]"]
-pub type WE_27_24_W<'a> = crate::BitWriter<'a, u32, PLL_CFG0_SPEC, bool, 30>;
-#[doc = "Field `WE_21_16` writer - Write enable for bits \\[21:16\\]"]
-pub type WE_21_16_W<'a> = crate::BitWriter<'a, u32, PLL_CFG0_SPEC, bool, 29>;
-#[doc = "Field `WE_12_0` writer - Write enable for bits \\[12:0\\]"]
-pub type WE_12_0_W<'a> = crate::BitWriter<'a, u32, PLL_CFG0_SPEC, bool, 28>;
+#[doc = "Field `WE_pll_out_div` writer - Write enable for bits \\[27:24\\]
+(pll_out_div)"]
+pub type WE_PLL_OUT_DIV_W<'a> = crate::BitWriter<'a, u32, PLL_CFG0_SPEC, bool, 30>;
+#[doc = "Field `WE_pll_ref_div` writer - Write enable for bits \\[21:16\\]
+(pll_ref_div)"]
+pub type WE_PLL_REF_DIV_W<'a> = crate::BitWriter<'a, u32, PLL_CFG0_SPEC, bool, 29>;
+#[doc = "Field `WE_pll_fb_div` writer - Write enable for bits \\[12:0\\]
+(pll_fb_div)"]
+pub type WE_PLL_FB_DIV_W<'a> = crate::BitWriter<'a, u32, PLL_CFG0_SPEC, bool, 28>;
 #[doc = "Field `pll_out_div` reader - PLL\\[i\\]
 VCO output clock post division ratio. It is strongly suggested not to modify this value."]
 pub type PLL_OUT_DIV_R = crate::FieldReader<u8, u8>;
@@ -79,20 +82,23 @@ feedback path clock division ratio."]
     }
 }
 impl W {
-    #[doc = "Bit 30 - Write enable for bits \\[27:24\\]"]
+    #[doc = "Bit 30 - Write enable for bits \\[27:24\\]
+(pll_out_div)"]
     #[inline(always)]
-    pub fn we_27_24(&mut self) -> WE_27_24_W {
-        WE_27_24_W::new(self)
+    pub fn we_pll_out_div(&mut self) -> WE_PLL_OUT_DIV_W {
+        WE_PLL_OUT_DIV_W::new(self)
     }
-    #[doc = "Bit 29 - Write enable for bits \\[21:16\\]"]
+    #[doc = "Bit 29 - Write enable for bits \\[21:16\\]
+(pll_ref_div)"]
     #[inline(always)]
-    pub fn we_21_16(&mut self) -> WE_21_16_W {
-        WE_21_16_W::new(self)
+    pub fn we_pll_ref_div(&mut self) -> WE_PLL_REF_DIV_W {
+        WE_PLL_REF_DIV_W::new(self)
     }
-    #[doc = "Bit 28 - Write enable for bits \\[12:0\\]"]
+    #[doc = "Bit 28 - Write enable for bits \\[12:0\\]
+(pll_fb_div)"]
     #[inline(always)]
-    pub fn we_12_0(&mut self) -> WE_12_0_W {
-        WE_12_0_W::new(self)
+    pub fn we_pll_fb_div(&mut self) -> WE_PLL_FB_DIV_W {
+        WE_PLL_FB_DIV_W::new(self)
     }
     #[doc = "Bits 24:27 - PLL\\[i\\]
 VCO output clock post division ratio. It is strongly suggested not to modify this value."]

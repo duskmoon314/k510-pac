@@ -34,14 +34,15 @@ impl From<crate::W<PLL_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_19_12` writer - Write enable for bits \\[19:12\\]"]
-pub type WE_19_12_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 27>;
-#[doc = "Field `WE_8` writer - Write enable for bit 8"]
-pub type WE_8_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 26>;
-#[doc = "Field `WE_4` writer - Write enable for bit 4"]
-pub type WE_4_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 25>;
-#[doc = "Field `WE_0` writer - Write enable for bit 0"]
-pub type WE_0_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 24>;
+#[doc = "Field `WE_pll_lock_tim` writer - Write enable for bits \\[19:12\\]
+(pll_lock_tim)"]
+pub type WE_PLL_LOCK_TIM_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 27>;
+#[doc = "Field `WE_pll_clk_oe` writer - Write enable for bit 8 (pll_clk_oe)"]
+pub type WE_PLL_CLK_OE_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 26>;
+#[doc = "Field `WE_pll_init` writer - Write enable for bit 4 (pll_init)"]
+pub type WE_PLL_INIT_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 25>;
+#[doc = "Field `WE_pll_pwrdwn` writer - Write enable for bit 0 (pll_pwrdwn)"]
+pub type WE_PLL_PWRDWN_W<'a> = crate::BitWriter<'a, u32, PLL_CTL_SPEC, bool, 24>;
 #[doc = "Field `pll_lock_tim` reader - The time required for PLL\\[i\\]
 to reach lock state."]
 pub type PLL_LOCK_TIM_R = crate::FieldReader<u8, u8>;
@@ -178,25 +179,26 @@ VSO output clock enable control bit."]
     }
 }
 impl W {
-    #[doc = "Bit 27 - Write enable for bits \\[19:12\\]"]
+    #[doc = "Bit 27 - Write enable for bits \\[19:12\\]
+(pll_lock_tim)"]
     #[inline(always)]
-    pub fn we_19_12(&mut self) -> WE_19_12_W {
-        WE_19_12_W::new(self)
+    pub fn we_pll_lock_tim(&mut self) -> WE_PLL_LOCK_TIM_W {
+        WE_PLL_LOCK_TIM_W::new(self)
     }
-    #[doc = "Bit 26 - Write enable for bit 8"]
+    #[doc = "Bit 26 - Write enable for bit 8 (pll_clk_oe)"]
     #[inline(always)]
-    pub fn we_8(&mut self) -> WE_8_W {
-        WE_8_W::new(self)
+    pub fn we_pll_clk_oe(&mut self) -> WE_PLL_CLK_OE_W {
+        WE_PLL_CLK_OE_W::new(self)
     }
-    #[doc = "Bit 25 - Write enable for bit 4"]
+    #[doc = "Bit 25 - Write enable for bit 4 (pll_init)"]
     #[inline(always)]
-    pub fn we_4(&mut self) -> WE_4_W {
-        WE_4_W::new(self)
+    pub fn we_pll_init(&mut self) -> WE_PLL_INIT_W {
+        WE_PLL_INIT_W::new(self)
     }
-    #[doc = "Bit 24 - Write enable for bit 0"]
+    #[doc = "Bit 24 - Write enable for bit 0 (pll_pwrdwn)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE_0_W {
-        WE_0_W::new(self)
+    pub fn we_pll_pwrdwn(&mut self) -> WE_PLL_PWRDWN_W {
+        WE_PLL_PWRDWN_W::new(self)
     }
     #[doc = "Bits 12:19 - The time required for PLL\\[i\\]
 to reach lock state."]

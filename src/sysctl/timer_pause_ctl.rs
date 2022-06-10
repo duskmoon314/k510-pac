@@ -34,8 +34,9 @@ impl From<crate::W<TIMER_PAUSE_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Fields `WE_(0-5)` writer - Write enable for bit"]
-pub type WE__W<'a, const O: u8> = crate::BitWriter<'a, u32, TIMER_PAUSE_CTL_SPEC, bool, O>;
+#[doc = "Fields `WE_timer_t(0-5)_pause` writer - Write enable for bit (timer_t\\[i\\]_pause)"]
+pub type WE_TIMER_T_PAUSE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TIMER_PAUSE_CTL_SPEC, bool, O>;
 #[doc = "SoC Timer module internal timer \\[i\\]
 pause control bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -139,40 +140,40 @@ pause control bit"]
     }
 }
 impl W {
-    #[doc = "Write enable for bit"]
+    #[doc = "Write enable for bit (timer_t\\[i\\]_pause)"]
     #[inline(always)]
-    pub unsafe fn we_<const O: u8>(&mut self) -> WE__W<O> {
-        WE__W::new(self)
+    pub unsafe fn we_timer_t_pause<const O: u8>(&mut self) -> WE_TIMER_T_PAUSE_W<O> {
+        WE_TIMER_T_PAUSE_W::new(self)
     }
-    #[doc = "Bit 16 - Write enable for bit"]
+    #[doc = "Bit 16 - Write enable for bit (timer_t\\[i\\]_pause)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE__W<16> {
-        WE__W::new(self)
+    pub fn we_timer_t0_pause(&mut self) -> WE_TIMER_T_PAUSE_W<16> {
+        WE_TIMER_T_PAUSE_W::new(self)
     }
-    #[doc = "Bit 17 - Write enable for bit"]
+    #[doc = "Bit 17 - Write enable for bit (timer_t\\[i\\]_pause)"]
     #[inline(always)]
-    pub fn we_1(&mut self) -> WE__W<17> {
-        WE__W::new(self)
+    pub fn we_timer_t1_pause(&mut self) -> WE_TIMER_T_PAUSE_W<17> {
+        WE_TIMER_T_PAUSE_W::new(self)
     }
-    #[doc = "Bit 18 - Write enable for bit"]
+    #[doc = "Bit 18 - Write enable for bit (timer_t\\[i\\]_pause)"]
     #[inline(always)]
-    pub fn we_2(&mut self) -> WE__W<18> {
-        WE__W::new(self)
+    pub fn we_timer_t2_pause(&mut self) -> WE_TIMER_T_PAUSE_W<18> {
+        WE_TIMER_T_PAUSE_W::new(self)
     }
-    #[doc = "Bit 19 - Write enable for bit"]
+    #[doc = "Bit 19 - Write enable for bit (timer_t\\[i\\]_pause)"]
     #[inline(always)]
-    pub fn we_3(&mut self) -> WE__W<19> {
-        WE__W::new(self)
+    pub fn we_timer_t3_pause(&mut self) -> WE_TIMER_T_PAUSE_W<19> {
+        WE_TIMER_T_PAUSE_W::new(self)
     }
-    #[doc = "Bit 20 - Write enable for bit"]
+    #[doc = "Bit 20 - Write enable for bit (timer_t\\[i\\]_pause)"]
     #[inline(always)]
-    pub fn we_4(&mut self) -> WE__W<20> {
-        WE__W::new(self)
+    pub fn we_timer_t4_pause(&mut self) -> WE_TIMER_T_PAUSE_W<20> {
+        WE_TIMER_T_PAUSE_W::new(self)
     }
-    #[doc = "Bit 21 - Write enable for bit"]
+    #[doc = "Bit 21 - Write enable for bit (timer_t\\[i\\]_pause)"]
     #[inline(always)]
-    pub fn we_5(&mut self) -> WE__W<21> {
-        WE__W::new(self)
+    pub fn we_timer_t5_pause(&mut self) -> WE_TIMER_T_PAUSE_W<21> {
+        WE_TIMER_T_PAUSE_W::new(self)
     }
     #[doc = "SoC Timer module internal timer \\[i\\]
 pause control bit"]

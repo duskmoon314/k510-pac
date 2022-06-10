@@ -34,8 +34,8 @@ impl From<crate::W<RESET_STATUS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WE_0` writer - Write enable for bit 0"]
-pub type WE_0_W<'a> = crate::BitWriter<'a, u32, RESET_STATUS_SPEC, bool, 16>;
+#[doc = "Field `WE_clear_reset_status` writer - Write enable for bit 0 (clear_reset_status)"]
+pub type WE_CLEAR_RESET_STATUS_W<'a> = crate::BitWriter<'a, u32, RESET_STATUS_SPEC, bool, 16>;
 #[doc = "offchip reset status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFFCHIP_RESET_STATUS_A {
@@ -232,10 +232,10 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 16 - Write enable for bit 0"]
+    #[doc = "Bit 16 - Write enable for bit 0 (clear_reset_status)"]
     #[inline(always)]
-    pub fn we_0(&mut self) -> WE_0_W {
-        WE_0_W::new(self)
+    pub fn we_clear_reset_status(&mut self) -> WE_CLEAR_RESET_STATUS_W {
+        WE_CLEAR_RESET_STATUS_W::new(self)
     }
     #[doc = "Bit 0 - Clear reset status"]
     #[inline(always)]
