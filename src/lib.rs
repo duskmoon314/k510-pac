@@ -30,6 +30,7 @@ extern "C" {
     fn UART1();
     fn UART2();
     fn UART3();
+    fn GPIO();
     fn SYSCTL();
 }
 #[doc(hidden)]
@@ -60,7 +61,7 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 21] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: GPIO },
     Vector { _handler: SYSCTL },
 ];
 #[doc(hidden)]
@@ -200,6 +201,34 @@ impl core::fmt::Debug for UART3 {
 }
 #[doc = "Universal Asynchronous Receivers/Transmitters"]
 pub mod uart;
+#[doc = "General Purpose I/O"]
+pub struct GPIO {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPIO {}
+impl GPIO {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpio::RegisterBlock = 0x9705_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpio::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for GPIO {
+    type Target = gpio::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for GPIO {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO").finish()
+    }
+}
+#[doc = "General Purpose I/O"]
+pub mod gpio;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -215,6 +244,8 @@ pub struct Peripherals {
     pub UART2: UART2,
     #[doc = "UART3"]
     pub UART3: UART3,
+    #[doc = "GPIO"]
+    pub GPIO: GPIO,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -246,6 +277,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             UART3: UART3 {
+                _marker: PhantomData,
+            },
+            GPIO: GPIO {
                 _marker: PhantomData,
             },
         }

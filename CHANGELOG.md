@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2] - 2022-06-11
+
 ### Added
 
+- register description of GPIO
 - register name, address and description of sysctl
 - register detailed description of sysctl
   - pll_cfg0
@@ -54,4 +57,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - register description of uart
 - generate code via svd2rust 0.24.0
 
+[0.0.2]: https://github.com/duskmoon314/k510-pac/releases/tag/v0.0.2
 [0.0.1]: https://github.com/duskmoon314/k510-pac/releases/tag/v0.0.1

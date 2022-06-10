@@ -7608,5 +7608,533 @@
       </registers>
     </peripheral>
 
+    <peripheral>
+      <name>GPIO</name>
+      <description>General Purpose I/O</description>
+      <groupName>Peripheral</groupName>
+      <baseAddress>0x97050000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>GPIO</name>
+        <value>19</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>GPIO_SWPORTA_DR</name>
+          <description>data register</description>
+          <addressOffset>0x00</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_SWPORTA_DR</name>
+              <description>Values written to this register are output on the I/O signals for Port A if the corresponding data direction bits for Port A are set to Output mode and the corresponding control bit for Port A is set to Software mode. The value read back is equal to the last value written to this register.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_SWPORTA_DDR</name>
+          <description>data direction</description>
+          <addressOffset>0x04</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_SWPORTA_DDR</name>
+              <description>Values written to this register independently control the direction of the corresponding data bit in Port A. The default direction can be configured as input or output after system reset through the GPIO_DFLT_DIR_A parameter.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INPUT</name>
+                  <description>Input Direction</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTPUT</name>
+                  <description>Output Direction</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_SWPORTA_CTL</name>
+          <description>data source control</description>
+          <addressOffset>0x08</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_SWPORTA_CTL</name>
+              <description>The data and control source for a signal can come from either software or hardware; this bit selects between them.</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_INTEN</name>
+          <description>interrupt enable</description>
+          <addressOffset>0x30</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_INTEN</name>
+              <description>Allows each bit of Port A to be configured for interrupts. By default the generation of interrupts is disabled. Whenever a 1 is written to a bit of this register, it configures the corresponding bit on Port A to become an interrupt; otherwise, Port A operates as a normal GPIO signal. Interrupts are disabled on the corresponding bits of Port A if the corresponding data direction register is set to Output or if Port A mode is set to Hardware.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupt is disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Interrupt is enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_INTMASK</name>
+          <description>interrupt mask</description>
+          <addressOffset>0x34</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_INTMASK</name>
+              <description>Controls whether an interrupt on Port A can create an interrupt for the interrupt controller by not masking it. By default, all interrupts bits are unmasked. Whenever a 1 is written to a bit in this register, it masks the interrupt generation capability for this signal; otherwise interrupts are allowed through. The unmasked status can be read as well as the resultant status after masking.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Interrupt bits are unmasked</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Mask interrupt</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_INTTYPE_LEVEL</name>
+          <description>interrupt level</description>
+          <addressOffset>0x38</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_INTTYPE_LEVEL</name>
+              <description>Controls the type of interrupt that can occur on Port A. Whenever a 0 is written to a bit of this register, it configures the interrupt type to be level- sensitive; otherwise, it is edgesensitive.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LEVEL_SENSITIVE</name>
+                  <description>Interrupt is level sensitive</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EDGE_SENSITIVE</name>
+                  <description>Interrupt is edge sensitive</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_INT_POLARITY</name>
+          <description>interrupt polarity</description>
+          <addressOffset>0x3C</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_INT_POLARITY</name>
+              <description>Controls the polarity of edge or level sensitivity that can occur on input of Port A. Whenever a 0 is written to a bit of this register, it configures the interrupt type to falling-edge or active-low sensitive; otherwise, it is rising-edge or active-high sensitive.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ACTIVE_LOW</name>
+                  <description>Active Low polarity</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE_HIGH</name>
+                  <description>Active High polarity</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_INTSTATUS</name>
+          <description>interrupt status</description>
+          <addressOffset>0x40</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>GPIO_INTSTATUS</name>
+              <description>Interrupt status of Port A.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Inactive</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Active</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_RAW_INTSTATUS</name>
+          <description>raw interrupt status</description>
+          <addressOffset>0x44</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>GPIO_RAW_INTSTATUS</name>
+              <description>Raw interrupt status of Port A (premasking bits).</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INACTIVE</name>
+                  <description>Inactive</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACTIVE</name>
+                  <description>Active</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_DEBOUNCE</name>
+          <description>debounce enable</description>
+          <addressOffset>0x48</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_DEBOUNCE</name>
+              <description>Controls whether an external signal that is the source of an interrupt needs to be debounced to remove any spurious glitches. Writing a 1 to a bit in this register enables the debouncing circuitry. A signal must be valid for two periods of an external clock before it is internally processed.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable debounce</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable debounce</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_PORTA_EOI</name>
+          <description>end of interrupt</description>
+          <addressOffset>0x4C</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>GPIO_PORTA_EOI</name>
+              <description>Controls the clearing of edge type interrupts from Port A. When a 1 is written into a corresponding bit of this register, the interrupt is cleared. All interrupts are cleared when Port A is not configured for interrupts.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CLEAR</name>
+                  <description>Clear interrupt</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_EXT_PORTA</name>
+          <description>external port</description>
+          <addressOffset>0x50</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>GPIO_EXT_PORTA</name>
+              <description>This register always reflects the signals value on the External Port A.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_LS_SYNC</name>
+          <description>synchronization level</description>
+          <addressOffset>0x60</addressOffset>
+        </register>
+        <register>
+          <name>GPIO_ID_CODE</name>
+          <description>ID info</description>
+          <addressOffset>0x64</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>GPIO_ID_CODE</name>
+              <description>This is a user-specified code that a system can read. It can be used for chip identification, and so on.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_INT_BOTHEDGE</name>
+          <description>interrupt edge type</description>
+          <addressOffset>0x68</addressOffset>
+          <fields>
+            <field>
+              <name>GPIO_INT_BOTHEDGE</name>
+              <description>Controls the edge type of interrupt that can occur on Port A. Whenever a particular bit is programmed to 1, it enables the generation of interrupts on both the rising edge and the falling edge of an external input signal corresponding to that bit on port A. - The values programmed in the registers gpio_intype_level and gpio_int_polarity for this particular bit are not considered when the corresponding bit of this register is set to 1. - Whenever a particular bit is programmed to 0, the interrupt type depends on the value of the corresponding bits in the gpio_inttype_level and gpio_int_polarity registers.</description>
+              <bitRange>[31:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SINGLE_EDGE</name>
+                  <description>Single Edge sensitive</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BOTH_EDGE</name>
+                  <description>Both Edge sensitive</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_VER_ID_CODE</name>
+          <description>version info</description>
+          <addressOffset>0x6C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>GPIO_VER_ID_CODE</name>
+              <description>ASCII value for each number in the version, followed by *. For example 32_31_32_2A represents the version 2.12*.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_CONFIG_REG2</name>
+          <description>parameters info</description>
+          <addressOffset>0x70</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>ENCODED_ID_PWIDTH_A</name>
+              <description>The value of this register is derived from the GPIO_PWIDTH_A configuration parameter</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>GPIO_CONFIG_REG1</name>
+          <description>parameters info</description>
+          <addressOffset>0x74</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>INTERRUPT_BOTH_EDGE_TYPE</name>
+              <description>The value of this register is derived from the GPIO_INT_BOTHEDGE configuration parameter</description>
+              <bitRange>[21:21]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SINGLE_EDGE</name>
+                  <description>Interrupt generation on rising or falling edge</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BOTH_EDGE</name>
+                  <description>Interrupt generation on both rising and falling edge</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ENCODED_ID_WIDTH</name>
+              <description>The value of this register is derived from the GPIO_ID_WIDTH configuration parameter.</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+            <field>
+              <name>GPIO_ID</name>
+              <description>The value of this register is derived from the GPIO_ID configuration parameter.</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_INCLUDED</name>
+                  <description>GPIO_ID not included</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INCLUDED</name>
+                  <description>GPIO_ID included</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADD_ENCODED_PARAMS</name>
+              <description>The value of this register is derived from the GPIO_ADD_ENCODED_PARAMS configuration parameter.</description>
+              <bitRange>[14:14]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_ADDED</name>
+                  <description>Encoded parameters not added</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADDED</name>
+                  <description>Encoded parameters added</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DEBOUNCE</name>
+              <description>The value of this register is derived from the GPIO_DEBOUNCE configuration parameter.</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EXCLUDE</name>
+                  <description>Exclude debounce capability</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INCLUDE</name>
+                  <description>Include debounce capability</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PORTA_INTR</name>
+              <description>The value of this register is derived from the GPIO_PORTA_INTR configuration parameter.</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>PORT A is not used as an interrupt source</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>PORT A is used as an interrupt source</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>A,B,C,D</dimIndex>
+              <name>HW_PORT%s</name>
+              <description>The value of this register is derived from the GPIO_HW_PORT[ABCD] configuration parameter.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>EXCLUDED</name>
+                  <description>PORT has external, auxiliary hardware signals excluded</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INCLUDED</name>
+                  <description>PORT has external, auxiliary hardware signals included</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>A,B,C,D</dimIndex>
+              <name>PORT%s_SINGLE_CTL</name>
+              <description>The value of this register is derived from the GPIO_PORT[ABCD]_SINGLE_CTL configuration parameter.</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_SINGLE</name>
+                  <description>PORT is not controlled from a single source</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SINGLE</name>
+                  <description>PORT is controlled from a single source</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <!-- 
+              3:2 NUM_PORTS
+              1:0 APB_DATA_WIDTH
+             -->
+            <field>
+              <name>NUM_PORTS</name>
+              <description>The value of this register is derived from the GPIO_NUM_PORT configuration parameter.</description>
+              <bitRange>[3:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NUM_PORTS_1</name>
+                  <description>One port</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NUM_PORTS_2</name>
+                  <description>Two ports</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NUM_PORTS_3</name>
+                  <description>Three ports</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NUM_PORTS_4</name>
+                  <description>Four ports</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>APB_DATA_WIDTH</name>
+              <description>The value of this register is derived from the GPIO_APB_DATA_WIDTH configuration parameter.</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>APB_8BITS</name>
+                  <description>APB DATA WIDTH is 8 bits</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB_16BITS</name>
+                  <description>APB DATA WIDTH is 16 bits</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB_32BITS</name>
+                  <description>APB DATA WIDTH is 32 bits</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>
