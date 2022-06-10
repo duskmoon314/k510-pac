@@ -4049,7 +4049,308 @@
             </field>
           </fields>
         </register>
-
+        <register>
+          <name>NOC_CLK_CFG</name>
+          <description>NOC bus clock Division and configure register</description>
+          <addressOffset>0x1040</addressOffset>
+          <fields>
+            <field>
+              <name>WE_noc_clk1_div</name>
+              <description>Write enable for bits [10:8] (noc_clk1_div)</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_noc_clk0_div</name>
+              <description>Write enable for bits [6:4] (noc_clk0_div)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>noc_clk%s_div</name>
+              <description>NOC domain[i] bus clock division ratio configure</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>6/6 division</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>5/6 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>4/6 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>3/6 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>2/6 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D1</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PERI_SYS_BUS_CLK_CFG</name>
+          <description>Peripheral subsystem modules bus IF clock configure register</description>
+          <addressOffset>0x1050</addressOffset>
+          <resetValue>0x00000037</resetValue>
+          <resetMask>0x0300007F</resetMask>
+          <fields>
+            <field>
+              <name>WE_peri_sys_hclk_div</name>
+              <description>Write enable for bits [6:4] (peri_sys_hclk_div)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_peri_sys_pclk_div</name>
+              <description>Write enable for bits [3:0] (peri_sys_pclk_div)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>peri_sys_hclk_div</name>
+              <description>Peripheral system AHB hclk division ratio configure</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D2</name>
+                  <description>1/2 division</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D3</name>
+                  <description>1/3 division</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>1/4 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>1/5 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D7</name>
+                  <description>1/7 division</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D8</name>
+                  <description>1/8 division</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>peri_sys_pclk_div</name>
+              <description>Peripheral system APB pclk division ratio configure</description>
+              <bitRange>[3:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D4</name>
+                  <description>1/4 division</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D5</name>
+                  <description>1/5 division</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D6</name>
+                  <description>1/6 division</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D7</name>
+                  <description>1/7 division</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D8</name>
+                  <description>1/8 division</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D9</name>
+                  <description>1/9 division</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D10</name>
+                  <description>1/10 division</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D11</name>
+                  <description>1/11 division</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D12</name>
+                  <description>1/12 division</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D13</name>
+                  <description>1/13 division</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D14</name>
+                  <description>1/14 division</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D15</name>
+                  <description>1/15 division</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D16</name>
+                  <description>1/16 division</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>PERI_SYS_BUS_CLK_EN</name>
+          <description>Peripheral subsystem modules bus IF clock enable register</description>
+          <addressOffset>0x1054</addressOffset>
+          <resetValue>0x000007EF</resetValue>
+          <resetMask>0x07EF07EF</resetMask>
+          <fields>
+            <field>
+              <name>WE_audif_pclk_en</name>
+              <description>Write enable for bit 10 (audif_pclk_en)</description>
+              <bitRange>[26:26]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>WE_spi_%s_hclk_en</name>
+              <description>Write enable for bit 6-9 (spi_[0-3]_hclk_en)</description>
+              <bitRange>[22:22]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WE_i2s_2_pclk_en</name>
+              <description>Write enable for bit 5 (i2s_2_pclk_en)</description>
+              <bitRange>[21:21]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>WE_uart_%s_pclk_en</name>
+              <description>Write enable for bit 0-3 (uart_[0-3]_pclk_en)</description>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>audif_hclk_en</name>
+              <description>Audio data interface slave APB port clock enable control</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable AUD_IF slave APB port clock</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable AUD_IF slave APB port clock</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>spi_%s_hclk_en</name>
+              <description>SPI host [i] slave AHB interface clock enable control</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable SPI [i] slave AHB interface clock</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable SPI [i] slave AHB interface clock</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>i2s_2_pclk_en</name>
+              <description>I2S 2 slave APB interface clock enable control</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable I2S 2 slave APB port clock</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable I2S 2 slave APB port clock</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>uart_%s_pclk_en</name>
+              <description>UART host [i] slave APB interface clock enable control</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable UART [i] slave APB port clock</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable UART [i] slave APB port clock</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
         <register>
           <dim>4</dim>
           <dimIncrement>0x4</dimIncrement>
@@ -4281,7 +4582,251 @@
             </field>
           </fields>
         </register>
-
+        <register>
+          <name>I2S2_SCLK_CFG</name>
+          <description>I2S 2 slave module serial interface clock configure register</description>
+          <addressOffset>0x1070</addressOffset>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>SPI%s_SCLK_CFG</name>
+          <description>SPI[i] host module serial interface clock configure register</description>
+          <addressOffset>0x1074</addressOffset>
+        </register>
+        <register>
+          <name>AUDIF_SCLK_CFG</name>
+          <description>Audio interface module serial clock configure register</description>
+          <addressOffset>0x1088</addressOffset>
+        </register>
+        <register>
+          <name>AUDIF_DEVCLK_CFG</name>
+          <description>Audio device clock configure register</description>
+          <addressOffset>0x108C</addressOffset>
+        </register>
+        <register>
+          <name>SEC_SYS_BUS_CLK_CFG</name>
+          <description>Security Subsystem bus interface clock configure register</description>
+          <addressOffset>0x1090</addressOffset>
+        </register>
+        <register>
+          <name>SEC_SYS_BUS_CLK_EN</name>
+          <description>Security Subsystem modules bus interface clock control register</description>
+          <addressOffset>0x1094</addressOffset>
+        </register>
+        <register>
+          <name>OTP_CLK_EN</name>
+          <description>OTP modules clock control register</description>
+          <addressOffset>0x1098</addressOffset>
+        </register>
+        <register>
+          <name>SRAM_BUS_CLK_EN</name>
+          <description>SRAM block 0/1 bus clock enable control register</description>
+          <addressOffset>0x10A0</addressOffset>
+        </register>
+        <register>
+          <name>SOC_CTL_PCLK_EN</name>
+          <description>SOC Control Units slave APB clock enable control register</description>
+          <addressOffset>0x10B0</addressOffset>
+        </register>
+        <register>
+          <name>SOC_CTL_PCLK_EN1</name>
+          <description>SOC Control Units slave APB clock enable control register</description>
+          <addressOffset>0x10B4</addressOffset>
+        </register>
+        <register>
+          <dim>7</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>I2C%s_ICCLK_CFG</name>
+          <description>I2C[i] host module serial clock configure register</description>
+          <addressOffset>0x10B8</addressOffset>
+        </register>
+        <register>
+          <dim>3</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>WDT%s_TCLK_CFG</name>
+          <description>WDT[i] module tick clock configure register</description>
+          <addressOffset>0x10D4</addressOffset>
+        </register>
+        <register>
+          <name>TIMER_TCLK_SRC</name>
+          <description>System Timer module tick clocks source configure register</description>
+          <addressOffset>0x10E0</addressOffset>
+        </register>
+        <register>
+          <name>TIMER_TCLK_CFG</name>
+          <description>System Timer module tick clocks division configure register</description>
+          <addressOffset>0x10E4</addressOffset>
+        </register>
+        <register>
+          <name>TIMER_TCLK_CFG1</name>
+          <description>System Timer module tick clocks division configure register</description>
+          <addressOffset>0x10E8</addressOffset>
+        </register>
+        <register>
+          <name>VAD_SCLK_CFG</name>
+          <description>VAD module audio data serial clock configure register</description>
+          <addressOffset>0x10EC</addressOffset>
+        </register>
+        <register>
+          <name>STOR_SYS_BUS_CLK_EN</name>
+          <description>Storage subsystem modules bus IF clock enable register</description>
+          <addressOffset>0x1100</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TRX_CLK_CFG</name>
+          <description>EMAC-PHY interface transceiver clock configure register</description>
+          <addressOffset>0x1104</addressOffset>
+        </register>
+        <register>
+          <name>SD_CARD_CLK_CFG</name>
+          <description>EMAC-PHY interface transceiver clock configure register</description>
+          <addressOffset>0x1108</addressOffset>
+        </register>
+        <register>
+          <name>SENSOR_CLK_EN</name>
+          <description>SENSOR clock enable register</description>
+          <addressOffset>0x110C</addressOffset>
+        </register>
+        <register>
+          <name>ISP_SYS_PCLK_EN</name>
+          <description>ISP system APB clock enable control register</description>
+          <addressOffset>0x1110</addressOffset>
+        </register>
+        <register>
+          <name>ISP_SYS_ACLK_EN</name>
+          <description>ISP system APB clock enable control register</description>
+          <addressOffset>0x1114</addressOffset>
+        </register>
+        <register>
+          <name>DISP_SYS_PCLK_EN</name>
+          <description>DISP system APB clock enable control register</description>
+          <addressOffset>0x1118</addressOffset>
+        </register>
+        <register>
+          <name>DISP_SYS_ACLK_EN</name>
+          <description>DISP system APB clock enable control register</description>
+          <addressOffset>0x111C</addressOffset>
+        </register>
+        <register>
+          <name>TPG_PIXEL_CLK_CFG</name>
+          <description>VI module tpg pixel clock configure register</description>
+          <addressOffset>0x1120</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>CSI%s_PIXEL_CLK_CFG</name>
+          <description>CSI[i] module pixel clock configure register</description>
+          <addressOffset>0x1124</addressOffset>
+        </register>
+        <register>
+          <name>DISP_PIXEL_CLK_CFG</name>
+          <description>DISP module pixel clock configure register</description>
+          <addressOffset>0x1134</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>CSI%s_SYS_CLK_CFG</name>
+          <description>CSI[i] module system clock configure register</description>
+          <addressOffset>0x113C</addressOffset>
+        </register>
+        <register>
+          <name>DSI_SYS_CLK_CFG</name>
+          <description>DSI module system clock configure register</description>
+          <addressOffset>0x114C</addressOffset>
+        </register>
+        <register>
+          <name>H264_ACLK_EN</name>
+          <description>H264 module AXI clock enable control register</description>
+          <addressOffset>0x1150</addressOffset>
+        </register>
+        <register>
+          <name>USB_CLK_EN</name>
+          <description>USB host module clock enable control register</description>
+          <addressOffset>0x1154</addressOffset>
+        </register>
+        <register>
+          <name>TXDPHY_CLK_EN</name>
+          <description>MIPI TXDPHY clock enable control register</description>
+          <addressOffset>0x1158</addressOffset>
+        </register>
+        <register>
+          <name>RXDPHY_CLK_EN</name>
+          <description>MIPI RXDPHY clock enable control register</description>
+          <addressOffset>0x115C</addressOffset>
+        </register>
+        <register>
+          <name>MEM_CTL_CMD_FIFO</name>
+          <description>Memory Controller DFS Command FIFO</description>
+          <addressOffset>0x1160</addressOffset>
+        </register>
+        <register>
+          <name>MEM_CTL_CMD_FIFO_STS</name>
+          <description>Memory Controller DFS Command FIFO STATUS</description>
+          <addressOffset>0x1164</addressOffset>
+        </register>
+        <register>
+          <name>MEM_CTL_CLK_CFG</name>
+          <description>Memory Controller clock configuration register</description>
+          <addressOffset>0x1168</addressOffset>
+        </register>
+        <register>
+          <name>MEM_CTL_DFS_CFG</name>
+          <description>Memory Controller clock DFS configuration register</description>
+          <addressOffset>0x116C</addressOffset>
+        </register>
+        <register>
+          <name>MEM_CTL_CMD_FIFO_FLUSH</name>
+          <description>Memory Controller DFS Command FIFO FLUSH</description>
+          <addressOffset>0x1170</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_RST_TIM</name>
+          <description>AX25M dual-core RISCV reset timing control register</description>
+          <addressOffset>0x2000</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_RST_TIM</name>
+          <description>AX25P single-core RISCV reset timing control register</description>
+          <addressOffset>0x2010</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_RST_CTL</name>
+          <description>AX25P single-core RISCV reset control register</description>
+          <addressOffset>0x2014</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_RST_TIM</name>
+          <description>GNNE reset timing control register</description>
+          <addressOffset>0x2028</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_RST_CTL</name>
+          <description>GNNE reset control register</description>
+          <addressOffset>0x202C</addressOffset>
+        </register>
+        <register>
+          <name>SOC_CTL_RST_CTL</name>
+          <description>SOC Control subsystem reseting control register</description>
+          <addressOffset>0x2040</addressOffset>
+        </register>
+        <register>
+          <name>SOC_CTL_RST_CTL1</name>
+          <description>SOC Control subsystem reseting control register</description>
+          <addressOffset>0x2044</addressOffset>
+        </register>
+        <register>
+          <name>PERI_SYS_RST_TIM</name>
+          <description>Peripheral subsystem reset timing control register</description>
+          <addressOffset>0x2050</addressOffset>
+        </register>
+        <register>
+          <name>UART_RST_TIM</name>
+          <description>UART host module reset timing control register</description>
+          <addressOffset>0x2054</addressOffset>
+        </register>
         <register>
           <dim>4</dim>
           <dimIncrement>0x4</dimIncrement>
@@ -4311,7 +4856,791 @@
             </field>
           </fields>
         </register>
-
+        <register>
+          <name>I2S_RST_TIM</name>
+          <description>I2S slave module reset timing control register</description>
+          <addressOffset>0x2068</addressOffset>
+        </register>
+        <register>
+          <name>I2S2_RST_CTL</name>
+          <description>I2S 2 slave module reset control register</description>
+          <addressOffset>0x206C</addressOffset>
+        </register>
+        <register>
+          <name>SPI_RST_TIM</name>
+          <description>SPI module reset timing control register</description>
+          <addressOffset>0x2070</addressOffset>
+        </register>
+        <register>
+          <name>SPI0_RST_CTL</name>
+          <description>SPI 0 host module reset control register</description>
+          <addressOffset>0x2074</addressOffset>
+        </register>
+        <register>
+          <name>SPI1_RST_CTL</name>
+          <description>SPI 1 host module reset control register</description>
+          <addressOffset>0x2078</addressOffset>
+        </register>
+        <register>
+          <name>SPI2_RST_CTL</name>
+          <description>SPI 2 host module reset control register</description>
+          <addressOffset>0x207C</addressOffset>
+        </register>
+        <register>
+          <name>SPI3_RST_CTL</name>
+          <description>SPI 3 slave module reset control register</description>
+          <addressOffset>0x2080</addressOffset>
+        </register>
+        <register>
+          <name>AUDIF_RST_TIM</name>
+          <description>Audio Interface module reset timing control register</description>
+          <addressOffset>0x2084</addressOffset>
+        </register>
+        <register>
+          <name>AUDIF_RST_CTL</name>
+          <description>Audio Interface module reset control register</description>
+          <addressOffset>0x2088</addressOffset>
+        </register>
+        <register>
+          <name>SEC_SYS_RST_TIM</name>
+          <description>Security subsystem reset timing control register</description>
+          <addressOffset>0x208C</addressOffset>
+        </register>
+        <register>
+          <name>SHA_RST_TIM</name>
+          <description>SHA module reset timing control register</description>
+          <addressOffset>0x2090</addressOffset>
+        </register>
+        <register>
+          <name>SHA_RST_CTL</name>
+          <description>SHA module reset control register</description>
+          <addressOffset>0x2094</addressOffset>
+        </register>
+        <register>
+          <name>AES_RST_TIM</name>
+          <description>AES module reset timing control register</description>
+          <addressOffset>0x2098</addressOffset>
+        </register>
+        <register>
+          <name>AES_RST_CTL</name>
+          <description>AES module reset control register</description>
+          <addressOffset>0x209C</addressOffset>
+        </register>
+        <register>
+          <name>RSA_RST_TIM</name>
+          <description>RSA module reset timing control register</description>
+          <addressOffset>0x20A0</addressOffset>
+        </register>
+        <register>
+          <name>RSA_RST_CTL</name>
+          <description>RSA module reset control register</description>
+          <addressOffset>0x20A4</addressOffset>
+        </register>
+        <register>
+          <name>ROM_RST_TIM</name>
+          <description>ROM module reset timing control register</description>
+          <addressOffset>0x20A8</addressOffset>
+        </register>
+        <register>
+          <name>ROM_RST_CTL</name>
+          <description>ROM module reset control register</description>
+          <addressOffset>0x20AC</addressOffset>
+        </register>
+        <register>
+          <name>OTP_RST_TIM</name>
+          <description>OTP module reset timing control register</description>
+          <addressOffset>0x20B0</addressOffset>
+        </register>
+        <register>
+          <name>OTP_RST_CTL</name>
+          <description>OTP module reset control register</description>
+          <addressOffset>0x20B4</addressOffset>
+        </register>
+        <register>
+          <name>STOR_SYS_RST_TIM</name>
+          <description>Storage subsystem reset timing control register</description>
+          <addressOffset>0x20C0</addressOffset>
+        </register>
+        <register>
+          <name>SDCTL_RST_TIM</name>
+          <description>SD host controllers reset timing control register</description>
+          <addressOffset>0x20C4</addressOffset>
+        </register>
+        <register>
+          <name>SDC0_RST_CTL</name>
+          <description>SD host controller 0 reset control register</description>
+          <addressOffset>0x20C8</addressOffset>
+        </register>
+        <register>
+          <name>SDC1_RST_CTL</name>
+          <description>SD host controller 1 reset control register</description>
+          <addressOffset>0x20CC</addressOffset>
+        </register>
+        <register>
+          <name>SDC2_RST_CTL</name>
+          <description>SD host controller 2 reset control register</description>
+          <addressOffset>0x20D0</addressOffset>
+        </register>
+        <register>
+          <name>DMAC_RST_TIM</name>
+          <description>DMA controllers reset timing control register</description>
+          <addressOffset>0x20D4</addressOffset>
+        </register>
+        <register>
+          <name>PERI_DMA_RST_CTL</name>
+          <description>Peripheral DMAC reset control register</description>
+          <addressOffset>0x20D8</addressOffset>
+        </register>
+        <register>
+          <name>SYS_DMA_RST_CTL</name>
+          <description>Memory DMAC reset control register</description>
+          <addressOffset>0x20DC</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RST_TIM</name>
+          <description>EMAC host controllers reset timing control register</description>
+          <addressOffset>0x20E0</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RST_CTL</name>
+          <description>EMAC host controllers reset control register</description>
+          <addressOffset>0x20E4</addressOffset>
+        </register>
+        <register>
+          <name>SDIO_RST_TIM</name>
+          <description>SDIO slave controller reset timing control register</description>
+          <addressOffset>0x20E8</addressOffset>
+        </register>
+        <register>
+          <name>SDIO_RST_CTL</name>
+          <description>SD slave controllers reset control register</description>
+          <addressOffset>0x20EC</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_RST_TIM</name>
+          <description>Memory controller reset timing control register</description>
+          <addressOffset>0x20F0</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_RST_CTL</name>
+          <description>Memory controller module reset control register</description>
+          <addressOffset>0x20F4</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_RST_TIM</name>
+          <description>SRAM block 0 reset timing control register</description>
+          <addressOffset>0x2100</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_RST_CTL</name>
+          <description>SRAM block 0 module reset control register</description>
+          <addressOffset>0x2104</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_RST_TIM</name>
+          <description>SRAM block 1 reset timing control register</description>
+          <addressOffset>0x2110</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_RST_CTL</name>
+          <description>SRAM block 1 module reset control register</description>
+          <addressOffset>0x2114</addressOffset>
+        </register>
+        <register>
+          <name>ISP_SYS_RST_TIM</name>
+          <description>Video subsystem reset timing control register</description>
+          <addressOffset>0x2118</addressOffset>
+        </register>
+        <register>
+          <name>ISP_RST_TIM</name>
+          <description>ISP module reset timing control register</description>
+          <addressOffset>0x211C</addressOffset>
+        </register>
+        <register>
+          <name>ISP_F2K_RST_CTL</name>
+          <description>ISP_F2K module reset control register</description>
+          <addressOffset>0x2124</addressOffset>
+        </register>
+        <register>
+          <name>ISP_R2K_RST_CTL</name>
+          <description>ISP_R2K module reset control register</description>
+          <addressOffset>0x2128</addressOffset>
+        </register>
+        <register>
+          <name>ISP_TOF_RST_CTL</name>
+          <description>ISP_TOF module reset control register</description>
+          <addressOffset>0x212C</addressOffset>
+        </register>
+        <register>
+          <name>CSI_RST_TIM</name>
+          <description>CSI module reset timing control register</description>
+          <addressOffset>0x2130</addressOffset>
+        </register>
+        <register>
+          <name>CSI0_RST_CTL</name>
+          <description>CSI0 module reset control register</description>
+          <addressOffset>0x2134</addressOffset>
+        </register>
+        <register>
+          <name>CSI1_RST_CTL</name>
+          <description>CSI1 module reset control register</description>
+          <addressOffset>0x2138</addressOffset>
+        </register>
+        <register>
+          <name>SENSOR_RST_TIM</name>
+          <description>SENSOR reset timing control register</description>
+          <addressOffset>0x2144</addressOffset>
+        </register>
+        <register>
+          <name>SENSOR_RST_CTL</name>
+          <description>SENSOR reset control register</description>
+          <addressOffset>0x2148</addressOffset>
+        </register>
+        <register>
+          <name>VI_RST_TIM</name>
+          <description>VI module reset timing control register</description>
+          <addressOffset>0x214C</addressOffset>
+        </register>
+        <register>
+          <name>VI_RST_CTL</name>
+          <description>VI module reset control register</description>
+          <addressOffset>0x2150</addressOffset>
+        </register>
+        <register>
+          <name>MFBC_RST_TIM</name>
+          <description>MFBC module reset timing control register</description>
+          <addressOffset>0x2154</addressOffset>
+        </register>
+        <register>
+          <name>MFBC_RST_CTL</name>
+          <description>MFBC module reset control register</description>
+          <addressOffset>0x2158</addressOffset>
+        </register>
+        <register>
+          <name>DISP_SYS_RST_TIM</name>
+          <description>Display subsystem reset timing control register</description>
+          <addressOffset>0x215C</addressOffset>
+        </register>
+        <register>
+          <name>DSI_RST_TIM</name>
+          <description>DSI module reset timing control register</description>
+          <addressOffset>0x2160</addressOffset>
+        </register>
+        <register>
+          <name>DSI_RST_CTL</name>
+          <description>DSI module reset control register</description>
+          <addressOffset>0x2164</addressOffset>
+        </register>
+        <register>
+          <name>BT1120_RST_TIM</name>
+          <description>BT1120 module reset timing control register</description>
+          <addressOffset>0x2168</addressOffset>
+        </register>
+        <register>
+          <name>BT1120_RST_CTL</name>
+          <description>BT1120 module reset control register</description>
+          <addressOffset>0x216C</addressOffset>
+        </register>
+        <register>
+          <name>TWOD_RST_TIM</name>
+          <description>TWOD module reset timing control register</description>
+          <addressOffset>0x2170</addressOffset>
+        </register>
+        <register>
+          <name>TWOD_RST_CTL</name>
+          <description>TWOD module reset control register</description>
+          <addressOffset>0x2174</addressOffset>
+        </register>
+        <register>
+          <name>VO_RST_TIM</name>
+          <description>VO module reset timing control register</description>
+          <addressOffset>0x2178</addressOffset>
+        </register>
+        <register>
+          <name>VO_RST_CTL</name>
+          <description>VO module reset control register</description>
+          <addressOffset>0x217C</addressOffset>
+        </register>
+        <register>
+          <name>H264_RST_TIM</name>
+          <description>H264 module reset timing control register</description>
+          <addressOffset>0x2180</addressOffset>
+        </register>
+        <register>
+          <name>H264_RST_CTL</name>
+          <description>H264 module reset control register</description>
+          <addressOffset>0x2184</addressOffset>
+        </register>
+        <register>
+          <name>USB_RST_TIM</name>
+          <description>USB module reset timing control register</description>
+          <addressOffset>0x2188</addressOffset>
+        </register>
+        <register>
+          <name>USB_RST_CTL</name>
+          <description>USB module reset control register</description>
+          <addressOffset>0x218C</addressOffset>
+        </register>
+        <register>
+          <name>MIPI_CORNER_RST_TIM</name>
+          <description>MIPI CORNER module reset timing control register</description>
+          <addressOffset>0x2190</addressOffset>
+        </register>
+        <register>
+          <name>MIPI_CORNER_RST_CTL</name>
+          <description>MIPI CORNER module reset control register</description>
+          <addressOffset>0x2194</addressOffset>
+        </register>
+        <register>
+          <name>DDR_PHY_RST_CTL</name>
+          <description>DDR PHY reset control register</description>
+          <addressOffset>0x2198</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_PWR_TIM</name>
+          <description>AX25M dual-core processor power controller timing register</description>
+          <addressOffset>0x3000</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_LPI_TIM</name>
+          <description>AX25M domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3004</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_LPI_CTL</name>
+          <description>AX25M NOC power controller low-power interface control register</description>
+          <addressOffset>0x3008</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_PWR_CTL</name>
+          <description>AX25M power domain power status control register</description>
+          <addressOffset>0x300C</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_LPI_STAT</name>
+          <description>AX25M NOC power controller low-power interface status register</description>
+          <addressOffset>0x3010</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_PWR_STAT</name>
+          <description>AX25M power domain current power status register</description>
+          <addressOffset>0x3014</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_WFI_TIM</name>
+          <description>AX25M dual-core processor WFI signal waiting timeout configure register</description>
+          <addressOffset>0x3018</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_PWR_TIM</name>
+          <description>AX25P single-core processor power controller timing register</description>
+          <addressOffset>0x3020</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_LPI_TIM</name>
+          <description>AX25P domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3024</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_LPI_CTL</name>
+          <description>AX25P NOC power controller low-power interface control register</description>
+          <addressOffset>0x3028</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_PWR_CTL</name>
+          <description>AX25P power domain power state control register</description>
+          <addressOffset>0x302C</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_LPI_STAT</name>
+          <description>AX25P NOC power controller low-power interface status register</description>
+          <addressOffset>0x3030</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_PWR_STAT</name>
+          <description>AX25P power domain current power status register</description>
+          <addressOffset>0x3034</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_WFI_TIM</name>
+          <description>AX25P processor WFI signal waiting timeout configure register</description>
+          <addressOffset>0x3038</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_PWR_TIM</name>
+          <description>GNNE power controller timing register</description>
+          <addressOffset>0x3060</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_LPI_TIM</name>
+          <description>GNNE power domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3064</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_LPI_CTL</name>
+          <description>GNNE power domain NOC power controller low- power interface control register</description>
+          <addressOffset>0x3068</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_PWR_CTL</name>
+          <description>GNNE power domain power state control register</description>
+          <addressOffset>0x306C</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_LPI_STAT</name>
+          <description>GNNE NOC power controller low-power interface status register</description>
+          <addressOffset>0x3070</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_PWR_STAT</name>
+          <description>GNNE power domain current power status register</description>
+          <addressOffset>0x3074</addressOffset>
+        </register>
+        <register>
+          <name>SEC_PWR_TIM</name>
+          <description>Security subsystem domain power controller timing register</description>
+          <addressOffset>0x3080</addressOffset>
+        </register>
+        <register>
+          <name>SEC_LPI_TIM</name>
+          <description>Security subsystem domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3084</addressOffset>
+        </register>
+        <register>
+          <name>SEC_LPI_CTL</name>
+          <description>Security subsystem NOC power controller low- power interface control register</description>
+          <addressOffset>0x3088</addressOffset>
+        </register>
+        <register>
+          <name>SEC_PWR_CTL</name>
+          <description>Security subsys power domain power state control register</description>
+          <addressOffset>0x308C</addressOffset>
+        </register>
+        <register>
+          <name>SEC_LPI_STAT</name>
+          <description>Security subsystem NOC power controller low- power interface status register</description>
+          <addressOffset>0x3090</addressOffset>
+        </register>
+        <register>
+          <name>SEC_PWR_STAT</name>
+          <description>Security subsystem power domain current power status register</description>
+          <addressOffset>0x3094</addressOffset>
+        </register>
+        <register>
+          <name>STOR_PWR_TIM</name>
+          <description>Storage subsystem domain power controller timing register</description>
+          <addressOffset>0x30A0</addressOffset>
+        </register>
+        <register>
+          <name>STOR_LPI_TIM</name>
+          <description>Storage subsystem domain NOC power controller LPI timing register</description>
+          <addressOffset>0x30A4</addressOffset>
+        </register>
+        <register>
+          <name>STOR_LPI_CTL</name>
+          <description>Storage subsystem NOC power controller low- power interface control register</description>
+          <addressOffset>0x30A8</addressOffset>
+        </register>
+        <register>
+          <name>STOR_PWR_CTL</name>
+          <description>Storage subsystem power domain power state control register</description>
+          <addressOffset>0x30AC</addressOffset>
+        </register>
+        <register>
+          <name>STOR_LPI_STAT</name>
+          <description>Storage subsystem NOC power controller low- power interface status register</description>
+          <addressOffset>0x30B0</addressOffset>
+        </register>
+        <register>
+          <name>STOR_PWR_STAT</name>
+          <description>Storage subsystem power domain current power status register</description>
+          <addressOffset>0x30B4</addressOffset>
+        </register>
+        <register>
+          <name>PERI_PWR_TIM</name>
+          <description>Peripheral subsystem domain power controller timing register</description>
+          <addressOffset>0x30C0</addressOffset>
+        </register>
+        <register>
+          <name>PERI_LPI_TIM</name>
+          <description>Peripheral subsystem domain NOC power controller LPI timing register</description>
+          <addressOffset>0x30C4</addressOffset>
+        </register>
+        <register>
+          <name>PERI_LPI_CTL</name>
+          <description>Peripheral subsystem NOC power controller low- power interface control register</description>
+          <addressOffset>0x30C8</addressOffset>
+        </register>
+        <register>
+          <name>PERI_PWR_CTL</name>
+          <description>Peripheral subsystem power domain power state control register</description>
+          <addressOffset>0x30CC</addressOffset>
+        </register>
+        <register>
+          <name>PERI_LPI_STAT</name>
+          <description>Peripheral subsystem NOC power controller low- power interface status register</description>
+          <addressOffset>0x30D0</addressOffset>
+        </register>
+        <register>
+          <name>PERI_PWR_STAT</name>
+          <description>Peripheral subsystem power domain current power status register</description>
+          <addressOffset>0x30D4</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_PWR_TIM0</name>
+          <description>System Memory contorller power controller timing register</description>
+          <addressOffset>0x30E0</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_PWR_TIM1</name>
+          <description>System Memory contorller power controller timing register</description>
+          <addressOffset>0x30E4</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_LPI_TIM</name>
+          <description>Memory Controller domain NOC power controller LPI timing register</description>
+          <addressOffset>0x30E8</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_LPI_CTL</name>
+          <description>Memory Controller domain NOC power controller low-power interface control register</description>
+          <addressOffset>0x30EC</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_PWR_CTL</name>
+          <description>Memory Controller power domain power status control register</description>
+          <addressOffset>0x30F0</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_LPI_STAT</name>
+          <description>Memory Controller NOC power controller low- power interface status register</description>
+          <addressOffset>0x30F4</addressOffset>
+        </register>
+        <register>
+          <name>MCTL_PWR_STAT</name>
+          <description>Memory Controller power domain current power status register</description>
+          <addressOffset>0x30F8</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_PWR_TIM</name>
+          <description>System SRAM block 0 power controller timing register</description>
+          <addressOffset>0x3100</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_LPI_TIM</name>
+          <description>System SRAM block 0 domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3104</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_LPI_CTL</name>
+          <description>System SRAM block 0 domain NOC power controller low-power interface control register</description>
+          <addressOffset>0x3108</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_PWR_CTL</name>
+          <description>System SRAM block 0 power domain power status control register</description>
+          <addressOffset>0x310C</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_LPI_STAT</name>
+          <description>System SRAM block 0 NOC power controller low- power interface status register</description>
+          <addressOffset>0x3110</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_PWR_STAT</name>
+          <description>System SRAM block 0 power domain current power status register</description>
+          <addressOffset>0x3114</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_PWR_TIM</name>
+          <description>System SRAM block 1 power controller timing register</description>
+          <addressOffset>0x3120</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_LPI_TIM</name>
+          <description>System SRAM block 1 domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3124</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_LPI_CTL</name>
+          <description>System SRAM block 1 domain NOC power controller low-power interface control register</description>
+          <addressOffset>0x3128</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_PWR_CTL</name>
+          <description>System SRAM block 1 power domain power status control register</description>
+          <addressOffset>0x312C</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_LPI_STAT</name>
+          <description>System SRAM block 1 NOC power controller low- power interface status register</description>
+          <addressOffset>0x3130</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_PWR_STAT</name>
+          <description>System SRAM block 1 power domain current power status register</description>
+          <addressOffset>0x3134</addressOffset>
+        </register>
+        <register>
+          <name>DISP_PWR_TIM</name>
+          <description>Display System power controller timing register</description>
+          <addressOffset>0x3160</addressOffset>
+        </register>
+        <register>
+          <name>DISP_LPI_TIM</name>
+          <description>System DISP domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3164</addressOffset>
+        </register>
+        <register>
+          <name>DISP_LPI_CTL</name>
+          <description>System DISP domain NOC power controller low- power interface control register</description>
+          <addressOffset>0x3168</addressOffset>
+        </register>
+        <register>
+          <name>DISP_PWR_CTL</name>
+          <description>System DISP power domain power status control register</description>
+          <addressOffset>0x316C</addressOffset>
+        </register>
+        <register>
+          <name>DISP_LPI_STAT</name>
+          <description>System DISP NOC power controller low-power interface status register</description>
+          <addressOffset>0x3170</addressOffset>
+        </register>
+        <register>
+          <name>DISP_PWR_STAT</name>
+          <description>System DISP power domain current power status register</description>
+          <addressOffset>0x3174</addressOffset>
+        </register>
+        <register>
+          <name>H264_PWR_TIM</name>
+          <description>System H264 power controller timing register</description>
+          <addressOffset>0x3180</addressOffset>
+        </register>
+        <register>
+          <name>H264_LPI_TIM</name>
+          <description>System H264 domain NOC power controller LPI timing register</description>
+          <addressOffset>0x3184</addressOffset>
+        </register>
+        <register>
+          <name>H264_LPI_CTL</name>
+          <description>System H264 domain NOC power controller low- power interface control register</description>
+          <addressOffset>0x3188</addressOffset>
+        </register>
+        <register>
+          <name>H264_PWR_CTL</name>
+          <description>System H264 power domain power status control register</description>
+          <addressOffset>0x318C</addressOffset>
+        </register>
+        <register>
+          <name>H264_LPI_STAT</name>
+          <description>System H264 NOC power controller low-power interface status register</description>
+          <addressOffset>0x3190</addressOffset>
+        </register>
+        <register>
+          <name>H264_PWR_STAT</name>
+          <description>System H264 power domain current power status register</description>
+          <addressOffset>0x3194</addressOffset>
+        </register>
+        <register>
+          <name>USB_PWR_TIM</name>
+          <description>System USB power controller timing register</description>
+          <addressOffset>0x31A0</addressOffset>
+        </register>
+        <register>
+          <name>USB_LPI_TIM</name>
+          <description>System USB domain NOC power controller LPI timing register</description>
+          <addressOffset>0x31A4</addressOffset>
+        </register>
+        <register>
+          <name>USB_LPI_CTL</name>
+          <description>System USB domain NOC power controller low- power interface control register</description>
+          <addressOffset>0x31A8</addressOffset>
+        </register>
+        <register>
+          <name>USB_PWR_CTL</name>
+          <description>System USB power domain power status control register</description>
+          <addressOffset>0x31AC</addressOffset>
+        </register>
+        <register>
+          <name>USB_LPI_STAT</name>
+          <description>System USB NOC power controller low-power interface status register</description>
+          <addressOffset>0x31B0</addressOffset>
+        </register>
+        <register>
+          <name>USB_PWR_STAT</name>
+          <description>System USB power domain current power status register</description>
+          <addressOffset>0x31B4</addressOffset>
+        </register>
+        <register>
+          <name>ISP_PWR_TIM</name>
+          <description>System ISP power controller timing register</description>
+          <addressOffset>0x31C0</addressOffset>
+        </register>
+        <register>
+          <name>ISP_LPI_TIM</name>
+          <description>System ISP domain NOC power controller LPI timing register</description>
+          <addressOffset>0x31C4</addressOffset>
+        </register>
+        <register>
+          <name>ISP_LPI_CTL</name>
+          <description>System ISP domain NOC power controller low- power interface control register</description>
+          <addressOffset>0x31C8</addressOffset>
+        </register>
+        <register>
+          <name>ISP_PWR_CTL</name>
+          <description>System ISP power domain power status control register</description>
+          <addressOffset>0x31CC</addressOffset>
+        </register>
+        <register>
+          <name>ISP_LPI_STAT</name>
+          <description>ISP NOC power controller low-power interface status register</description>
+          <addressOffset>0x31D0</addressOffset>
+        </register>
+        <register>
+          <name>ISP_PWR_STAT</name>
+          <description>ISP power domain current power status register</description>
+          <addressOffset>0x31D4</addressOffset>
+        </register>
+        <register>
+          <name>PWR_DOM_GRP_EN</name>
+          <description>power domain group repair en</description>
+          <addressOffset>0x3258</addressOffset>
+        </register>
+        <register>
+          <name>REPAIR_STATUS</name>
+          <description>power domain group repair status</description>
+          <addressOffset>0x325C</addressOffset>
+        </register>
+        <register>
+          <name>AX25M_REPAIR_TIM</name>
+          <description>AX25M power domain repair timer register</description>
+          <addressOffset>0x3260</addressOffset>
+        </register>
+        <register>
+          <name>AX25P_REPAIR_TIM</name>
+          <description>AX25P power domain repair timer register</description>
+          <addressOffset>0x3264</addressOffset>
+        </register>
+        <register>
+          <name>GNNE_REPAIR_TIM</name>
+          <description>GNNE power domain repair timer register</description>
+          <addressOffset>0x3268</addressOffset>
+        </register>
+        <register>
+          <name>SRAM0_REPAIR_TIM</name>
+          <description>SRAM0 power domain repair timer register</description>
+          <addressOffset>0x326C</addressOffset>
+        </register>
+        <register>
+          <name>SRAM1_REPAIR_TIM</name>
+          <description>SRAM1 power domain repair timer register</description>
+          <addressOffset>0x3270</addressOffset>
+        </register>
+        <register>
+          <name>ISP_SYS_REPAIR_TIM</name>
+          <description>ISP_SYS power domain repair timer register</description>
+          <addressOffset>0x3274</addressOffset>
+        </register>
       </registers>
     </peripheral>
 

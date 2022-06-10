@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- register description of sysctl
+- register name, address and description of sysctl
+- register detailed description of sysctl
   - pll_cfg0
   - pll_cfg1
   - pll_ctl
@@ -42,6 +43,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - GNNE_ACLK_CFG
   - GNNE_SYSCLK_CFG
   - I2C2AXI_CLK_CFG
+  - NOC_CLK_CFG
+  - PERI_SYS_BUS_CLK_CFG
+  - PERI_SYS_BUS_CLK_EN
 
 ## [0.0.1] - 2022-05-20
 

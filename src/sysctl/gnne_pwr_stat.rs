@@ -1,0 +1,64 @@
+#[doc = "Register `GNNE_PWR_STAT` reader"]
+pub struct R(crate::R<GNNE_PWR_STAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GNNE_PWR_STAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GNNE_PWR_STAT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GNNE_PWR_STAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GNNE_PWR_STAT` writer"]
+pub struct W(crate::W<GNNE_PWR_STAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GNNE_PWR_STAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GNNE_PWR_STAT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GNNE_PWR_STAT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "GNNE power domain current power status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gnne_pwr_stat](index.html) module"]
+pub struct GNNE_PWR_STAT_SPEC;
+impl crate::RegisterSpec for GNNE_PWR_STAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [gnne_pwr_stat::R](R) reader structure"]
+impl crate::Readable for GNNE_PWR_STAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [gnne_pwr_stat::W](W) writer structure"]
+impl crate::Writable for GNNE_PWR_STAT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GNNE_PWR_STAT to value 0"]
+impl crate::Resettable for GNNE_PWR_STAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}
