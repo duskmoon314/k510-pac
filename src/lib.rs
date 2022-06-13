@@ -229,6 +229,90 @@ impl core::fmt::Debug for GPIO {
 }
 #[doc = "General Purpose I/O"]
 pub mod gpio;
+#[doc = "Machine Timer"]
+pub struct MTIMER {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for MTIMER {}
+impl MTIMER {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const mtimer::RegisterBlock = 0x9e00_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const mtimer::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for MTIMER {
+    type Target = mtimer::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for MTIMER {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MTIMER").finish()
+    }
+}
+#[doc = "Machine Timer"]
+pub mod mtimer;
+#[doc = "software Platform-Level Interrupt Controller"]
+pub struct PLIC_SW {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PLIC_SW {}
+impl PLIC_SW {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const plic_sw::RegisterBlock = 0x9e40_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const plic_sw::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for PLIC_SW {
+    type Target = plic_sw::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for PLIC_SW {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PLIC_SW").finish()
+    }
+}
+#[doc = "software Platform-Level Interrupt Controller"]
+pub mod plic_sw;
+#[doc = "Platform-Level Interrupt Controller"]
+pub struct PLIC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PLIC {}
+impl PLIC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const plic::RegisterBlock = 0x9ec0_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const plic::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for PLIC {
+    type Target = plic::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for PLIC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PLIC").finish()
+    }
+}
+#[doc = "Platform-Level Interrupt Controller"]
+pub mod plic;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -246,6 +330,12 @@ pub struct Peripherals {
     pub UART3: UART3,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
+    #[doc = "MTIMER"]
+    pub MTIMER: MTIMER,
+    #[doc = "PLIC_SW"]
+    pub PLIC_SW: PLIC_SW,
+    #[doc = "PLIC"]
+    pub PLIC: PLIC,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -280,6 +370,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             GPIO: GPIO {
+                _marker: PhantomData,
+            },
+            MTIMER: MTIMER {
+                _marker: PhantomData,
+            },
+            PLIC_SW: PLIC_SW {
+                _marker: PhantomData,
+            },
+            PLIC: PLIC {
                 _marker: PhantomData,
             },
         }

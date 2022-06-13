@@ -8136,5 +8136,543 @@
       </registers>
     </peripheral>
 
+    <peripheral>
+      <name>MTIMER</name>
+      <description>Machine Timer</description>
+      <groupName>CPU</groupName>
+      <baseAddress>0x9E000000</baseAddress>
+      <registers>
+        <register>
+          <name>MTIME</name>
+          <description>real-time counter register\n\nA constant frequency real-time counter. A timer interrupt is generated when mtime >= mtimecmp</description>
+          <addressOffset>0x0</addressOffset>
+          <size>64</size>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x8</dimIncrement>
+          <name>MTIMECMP%s</name>
+          <description>stores a 64-bit value for comparing with mtime for generate core[i] timer interrupt\n\nstores a 64-bit value for comparing with mtime for generate core[i] timer interrupt when mtime >= mtimecmp[i]</description>
+          <addressOffset>0x8</addressOffset>
+          <size>64</size>
+          <resetValue>0xFFFFFFFFFFFFFFFF</resetValue>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>PLIC_SW</name>
+      <description>software Platform-Level Interrupt Controller</description>
+      <groupName>CPU</groupName>
+      <baseAddress>0x9E400000</baseAddress>
+      <registers>
+        <register>
+          <name>FEATURE_ENABLE</name>
+          <description>Feature Enable Register</description>
+          <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>PREEMPTIVE_PRIORITY_INTERRUPT_ENABLE</name>
+              <description>Preemptive Priority Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Preemptive priority interrupt feature is Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Preemptive priority interrupt feature is Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>VECTORED_MODE_ENABLE</name>
+              <description>Enable Vectored Mode for PLIC\n\nAX25MP not support vector mode</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Vectored mode is Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Vectored mode is Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>127</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <dimIndex>1-127</dimIndex>
+          <name>SOURCE%s_PRIORITY</name>
+          <description>Priority Register for Source[i]</description>
+          <addressOffset>0x4</addressOffset>
+          <resetValue>0x1</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <name>PRIORITY</name>
+              <description>Interrupt Source Priority</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>PENDING%s</name>
+          <description>Souce[i:i+31] interrupt pending</description>
+          <addressOffset>0x1000</addressOffset>
+          <fields>
+            <field>
+              <dim>32</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>SOURCE%s</name>
+              <description>Source[i] interrupt pending status</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_PENDING</name>
+                  <description>Source[i] interrupt is not pending</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Source[i] interrupt is pending</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>TRIGGER%s</name>
+          <description>Souce[i:i+31] interrupt trigger type</description>
+          <addressOffset>0x1080</addressOffset>
+          <fields>
+            <field>
+              <dim>32</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>SOURCE%s</name>
+              <description>Source[i] interrupt trigger type</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LEVEL</name>
+                  <description>Level Triggered</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EDGE</name>
+                  <description>Edge Triggered</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>128</dimIncrement>
+          <name>TARGET%s_ENABLE</name>
+          <description>Target[M] enable registers</description>
+          <addressOffset>0x2000</addressOffset>
+          <register>
+            <dim>4</dim>
+            <dimIncrement>0x4</dimIncrement>
+            <name>ENABLE%s</name>
+            <description>Target[i:i+31] enable registers</description>
+            <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <dim>32</dim>
+                <dimIncrement>0x1</dimIncrement>
+                <name>SOURCE%s</name>
+                <description>SOURCE[i] enable status</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLED</name>
+                    <description>Target[i] is disabled</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLED</name>
+                    <description>Target[i] is enabled</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x1000</dimIncrement>
+          <name>CONTEXT%s</name>
+          <description>Target[M]'s context: priority threshold, claim and complete, preempted priority</description>
+          <addressOffset>0x200000</addressOffset>
+          <register>
+            <name>THRESHOLD</name>
+            <description>Target[M]'s priority threshold register</description>
+            <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <name>THRESHOLD</name>
+                <description>Target[M]'s priority threshold</description>
+                <bitRange>[15:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>CLAIM_COMPLETE</name>
+            <description>Target[M]'s claim and complete register</description>
+            <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>CLAIM_COMPLETE</name>
+                <description>Target[M]'s claim and complete</description>
+                <bitRange>[15:0]</bitRange>
+                <writeConstraint>
+                  <range>
+                    <minimum>0</minimum>
+                    <maximum>127</maximum>
+                  </range>
+                </writeConstraint>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>PREEMPTED_PRIORITY</name>
+            <description>Target[M]'s preempted priority register\n\nprovide the preempted priority stack information for each target</description>
+            <addressOffset>0x8</addressOffset>
+            <fields>
+              <field>
+                <dim>16</dim>
+                <dimIncrement>0x1</dimIncrement>
+                <name>PREEMPTED_PRIORITY%s</name>
+                <description>Target[M]'s preempted priority[P]</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_PREEMPTED</name>
+                    <description>This priority no preempted by a higher priority interrupt</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>PREEMPTED</name>
+                    <description>This priority has been preempted by a higher priority interrupt</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <register>
+          <name>NUMBER_INTERRUPT_TARGET</name>
+          <description>Number of interrupt and target configuration register</description>
+          <addressOffset>0x1100</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>TARGET</name>
+              <description>Number of supported target</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>INTERRUPT</name>
+              <description>Number of supported interrupt</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>VERSION_MAX_PRIORITY_CONFIGURATION</name>
+          <description>Version and Maximum priority configuration register</description>
+          <addressOffset>0x1104</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>MAX_PRIORITY</name>
+              <description>The maximum priority supported</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>VERSION</name>
+              <description>The version of the AndeStar V5 PLIC design</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>PLIC</name>
+      <description>Platform-Level Interrupt Controller</description>
+      <groupName>CPU</groupName>
+      <baseAddress>0x9EC00000</baseAddress>
+      <registers>
+        <register>
+          <name>FEATURE_ENABLE</name>
+          <description>Feature Enable Register</description>
+          <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>PREEMPTIVE_PRIORITY_INTERRUPT_ENABLE</name>
+              <description>Preemptive Priority Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Preemptive priority interrupt feature is Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Preemptive priority interrupt feature is Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>VECTORED_MODE_ENABLE</name>
+              <description>Enable Vectored Mode for PLIC\n\nAX25MP not support vector mode</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Vectored mode is Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Vectored mode is Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>127</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <dimIndex>1-127</dimIndex>
+          <name>SOURCE%s_PRIORITY</name>
+          <description>Priority Register for Source[i]</description>
+          <addressOffset>0x4</addressOffset>
+          <resetValue>0x1</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <name>PRIORITY</name>
+              <description>Interrupt Source Priority</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>PENDING%s</name>
+          <description>Souce[i:i+31] interrupt pending</description>
+          <addressOffset>0x1000</addressOffset>
+          <fields>
+            <field>
+              <dim>32</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>SOURCE%s</name>
+              <description>Source[i] interrupt pending status</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_PENDING</name>
+                  <description>Source[i] interrupt is not pending</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Source[i] interrupt is pending</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>TRIGGER%s</name>
+          <description>Souce[i:i+31] interrupt trigger type</description>
+          <addressOffset>0x1080</addressOffset>
+          <fields>
+            <field>
+              <dim>32</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>SOURCE%s</name>
+              <description>Source[i] interrupt trigger type</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LEVEL</name>
+                  <description>Level Triggered</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EDGE</name>
+                  <description>Edge Triggered</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <cluster>
+          <dim>4</dim>
+          <dimIncrement>128</dimIncrement>
+          <name>TARGET%s_ENABLE</name>
+          <description>Target[M] enable registers</description>
+          <addressOffset>0x2000</addressOffset>
+          <register>
+            <dim>4</dim>
+            <dimIncrement>0x4</dimIncrement>
+            <name>ENABLE%s</name>
+            <description>Target[i:i+31] enable registers</description>
+            <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <dim>32</dim>
+                <dimIncrement>0x1</dimIncrement>
+                <name>SOURCE%s</name>
+                <description>SOURCE[i] enable status</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLED</name>
+                    <description>Target[i] is disabled</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLED</name>
+                    <description>Target[i] is enabled</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>4</dim>
+          <dimIncrement>0x1000</dimIncrement>
+          <name>CONTEXT%s</name>
+          <description>Target[M]'s context: priority threshold, claim and complete, preempted priority</description>
+          <addressOffset>0x200000</addressOffset>
+          <register>
+            <name>THRESHOLD</name>
+            <description>Target[M]'s priority threshold register</description>
+            <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <name>THRESHOLD</name>
+                <description>Target[M]'s priority threshold</description>
+                <bitRange>[15:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>CLAIM_COMPLETE</name>
+            <description>Target[M]'s claim and complete register</description>
+            <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>CLAIM_COMPLETE</name>
+                <description>Target[M]'s claim and complete</description>
+                <bitRange>[15:0]</bitRange>
+                <writeConstraint>
+                  <range>
+                    <minimum>0</minimum>
+                    <maximum>127</maximum>
+                  </range>
+                </writeConstraint>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>PREEMPTED_PRIORITY</name>
+            <description>Target[M]'s preempted priority register\n\nprovide the preempted priority stack information for each target</description>
+            <addressOffset>0x8</addressOffset>
+            <fields>
+              <field>
+                <dim>16</dim>
+                <dimIncrement>0x1</dimIncrement>
+                <name>PREEMPTED_PRIORITY%s</name>
+                <description>Target[M]'s preempted priority[P]</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_PREEMPTED</name>
+                    <description>This priority no preempted by a higher priority interrupt</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>PREEMPTED</name>
+                    <description>This priority has been preempted by a higher priority interrupt</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <register>
+          <name>NUMBER_INTERRUPT_TARGET</name>
+          <description>Number of interrupt and target configuration register</description>
+          <addressOffset>0x1100</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>TARGET</name>
+              <description>Number of supported target</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>INTERRUPT</name>
+              <description>Number of supported interrupt</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>VERSION_MAX_PRIORITY_CONFIGURATION</name>
+          <description>Version and Maximum priority configuration register</description>
+          <addressOffset>0x1104</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>MAX_PRIORITY</name>
+              <description>The maximum priority supported</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>VERSION</name>
+              <description>The version of the AndeStar V5 PLIC design</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>

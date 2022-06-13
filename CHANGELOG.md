@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- register description of MTIMER, PLIC, PLIC_SW (CPU)
+
 ## [0.0.2] - 2022-06-11
 
 ### Added
