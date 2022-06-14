@@ -7609,6 +7609,75 @@
     </peripheral>
 
     <peripheral>
+      <dim>3</dim>
+      <dimIncrement>0x10000</dimIncrement>
+      <name>WDT%s</name>
+      <description>Watch Dog Timer</description>
+      <groupName>Peripheral</groupName>
+      <baseAddress>0x97010000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x10000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>WDT_CR</name>
+          <description>control register</description>
+          <addressOffset>0x0</addressOffset>
+        </register>
+        <register>
+          <name>WDT_TORR</name>
+          <description>timeout rage</description>
+          <addressOffset>0x4</addressOffset>
+        </register>
+        <register>
+          <name>WDT_CCVR</name>
+          <description>current counter</description>
+          <addressOffset>0x8</addressOffset>
+        </register>
+        <register>
+          <name>WDT_CRR</name>
+          <description>counter restart</description>
+          <addressOffset>0xc</addressOffset>
+        </register>
+        <register>
+          <name>WDT_STAT</name>
+          <description>interrupt status</description>
+          <addressOffset>0x10</addressOffset>
+        </register>
+        <register>
+          <name>WDT_EOI</name>
+          <description>interrupt clear</description>
+          <addressOffset>0x14</addressOffset>
+        </register>
+        <register>
+          <name>WDT_PROT_LEVEL</name>
+          <description>protection level</description>
+          <addressOffset>0x1c</addressOffset>
+        </register>
+        <register>
+          <dim>5</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <dimIndex>5,4,3,2,1</dimIndex>
+          <name>WDT_COMP_PARAM_%s</name>
+          <description>parameters info</description>
+          <addressOffset>0xe4</addressOffset>
+        </register>
+        <register>
+          <name>WDT_COMP_VERSION</name>
+          <description>version info</description>
+          <addressOffset>0xf8</addressOffset>
+        </register>
+        <register>
+          <name>WDT_COMP_TYPE</name>
+          <description>type info</description>
+          <addressOffset>0xfc</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>GPIO</name>
       <description>General Purpose I/O</description>
       <groupName>Peripheral</groupName>

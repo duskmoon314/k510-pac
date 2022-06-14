@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - register description of MTIMER, PLIC, PLIC_SW (CPU)
+- register address of WDT
 
 ## [0.0.2] - 2022-06-11
 

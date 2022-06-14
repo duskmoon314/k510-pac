@@ -201,6 +201,86 @@ impl core::fmt::Debug for UART3 {
 }
 #[doc = "Universal Asynchronous Receivers/Transmitters"]
 pub mod uart;
+#[doc = "Watch Dog Timer"]
+pub struct WDT0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for WDT0 {}
+impl WDT0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const wdt::RegisterBlock = 0x9701_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const wdt::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for WDT0 {
+    type Target = wdt::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for WDT0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WDT0").finish()
+    }
+}
+#[doc = "Watch Dog Timer"]
+pub struct WDT1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for WDT1 {}
+impl WDT1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const wdt::RegisterBlock = 0x9702_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const wdt::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for WDT1 {
+    type Target = wdt::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for WDT1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WDT1").finish()
+    }
+}
+#[doc = "Watch Dog Timer"]
+pub struct WDT2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for WDT2 {}
+impl WDT2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const wdt::RegisterBlock = 0x9703_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const wdt::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for WDT2 {
+    type Target = wdt::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for WDT2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WDT2").finish()
+    }
+}
+#[doc = "Watch Dog Timer"]
+pub mod wdt;
 #[doc = "General Purpose I/O"]
 pub struct GPIO {
     _marker: PhantomData<*const ()>,
@@ -328,6 +408,12 @@ pub struct Peripherals {
     pub UART2: UART2,
     #[doc = "UART3"]
     pub UART3: UART3,
+    #[doc = "WDT0"]
+    pub WDT0: WDT0,
+    #[doc = "WDT1"]
+    pub WDT1: WDT1,
+    #[doc = "WDT2"]
+    pub WDT2: WDT2,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
     #[doc = "MTIMER"]
@@ -367,6 +453,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             UART3: UART3 {
+                _marker: PhantomData,
+            },
+            WDT0: WDT0 {
+                _marker: PhantomData,
+            },
+            WDT1: WDT1 {
+                _marker: PhantomData,
+            },
+            WDT2: WDT2 {
                 _marker: PhantomData,
             },
             GPIO: GPIO {
