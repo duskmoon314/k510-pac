@@ -21,6 +21,6 @@ jobs:
           override: true
       - name: Install Rust targets
         run: rustup target add riscv64imac-unknown-none-elf
-      - uses: katyo/publish-crates@v1
+      - uses: katyo/publish-crates@v2
         with:
           registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
